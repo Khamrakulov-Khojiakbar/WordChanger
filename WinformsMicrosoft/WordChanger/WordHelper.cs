@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using Word = Microsoft.Office.Interop.Word;
-
-using System.Windows.Forms;
+﻿using Word = Microsoft.Office.Interop.Word;
 
 namespace WinformsMicrosoft.WordChanger
 {
@@ -49,8 +44,10 @@ namespace WinformsMicrosoft.WordChanger
                 {
                     Word.Find find = app.Selection.Find;
 
-                    find.Text = item.Key;
-                    find.Replacement.Text = item.Value;
+                        find.Text = item.Key;
+                        find.Replacement.Text = item.Value;
+                   
+                    
 
                     object wrap = Word.WdFindWrap.wdFindContinue;
                     object replace = Word.WdReplace.wdReplaceAll;

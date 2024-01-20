@@ -35,6 +35,10 @@
             label1 = new Label();
             label3 = new Label();
             panel1 = new Panel();
+            occupationalHazardsTextBox = new TextBox();
+            occupationalHazardsYes = new CheckBox();
+            occupationalHazardsCheckBoxNo = new CheckBox();
+            label9 = new Label();
             checkBox3 = new CheckBox();
             checkBox2 = new CheckBox();
             checkBox1 = new CheckBox();
@@ -131,6 +135,10 @@
             // panel1
             // 
             panel1.BackColor = SystemColors.ActiveCaption;
+            panel1.Controls.Add(occupationalHazardsTextBox);
+            panel1.Controls.Add(occupationalHazardsYes);
+            panel1.Controls.Add(occupationalHazardsCheckBoxNo);
+            panel1.Controls.Add(label9);
             panel1.Controls.Add(checkBox3);
             panel1.Controls.Add(checkBox2);
             panel1.Controls.Add(checkBox1);
@@ -150,12 +158,53 @@
             panel1.Size = new Size(1138, 969);
             panel1.TabIndex = 14;
             // 
+            // occupationalHazardsTextBox
+            // 
+            occupationalHazardsTextBox.Enabled = false;
+            occupationalHazardsTextBox.Location = new Point(269, 657);
+            occupationalHazardsTextBox.Name = "occupationalHazardsTextBox";
+            occupationalHazardsTextBox.Size = new Size(706, 23);
+            occupationalHazardsTextBox.TabIndex = 21;
+            // 
+            // occupationalHazardsYes
+            // 
+            occupationalHazardsYes.AutoSize = true;
+            occupationalHazardsYes.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            occupationalHazardsYes.Location = new Point(214, 659);
+            occupationalHazardsYes.Name = "occupationalHazardsYes";
+            occupationalHazardsYes.Size = new Size(51, 19);
+            occupationalHazardsYes.TabIndex = 20;
+            occupationalHazardsYes.Text = "есть";
+            occupationalHazardsYes.UseVisualStyleBackColor = true;
+            // 
+            // occupationalHazardsCheckBoxNo
+            // 
+            occupationalHazardsCheckBoxNo.AutoSize = true;
+            occupationalHazardsCheckBoxNo.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            occupationalHazardsCheckBoxNo.Location = new Point(164, 659);
+            occupationalHazardsCheckBoxNo.Name = "occupationalHazardsCheckBoxNo";
+            occupationalHazardsCheckBoxNo.Size = new Size(45, 19);
+            occupationalHazardsCheckBoxNo.TabIndex = 19;
+            occupationalHazardsCheckBoxNo.Text = "нет";
+            occupationalHazardsCheckBoxNo.UseVisualStyleBackColor = true;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label9.Location = new Point(30, 655);
+            label9.Name = "label9";
+            label9.Size = new Size(128, 21);
+            label9.TabIndex = 18;
+            label9.Text = "Профвредности:";
+            // 
             // checkBox3
             // 
             checkBox3.AutoSize = true;
+            checkBox3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             checkBox3.Location = new Point(577, 615);
             checkBox3.Name = "checkBox3";
-            checkBox3.Size = new Size(77, 19);
+            checkBox3.Size = new Size(79, 19);
             checkBox3.TabIndex = 17;
             checkBox3.Text = "хорошие";
             checkBox3.UseVisualStyleBackColor = true;
@@ -163,9 +212,10 @@
             // checkBox2
             // 
             checkBox2.AutoSize = true;
+            checkBox2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             checkBox2.Location = new Point(416, 615);
             checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(155, 19);
+            checkBox2.Size = new Size(164, 19);
             checkBox2.TabIndex = 16;
             checkBox2.Text = "неудовлетворительные";
             checkBox2.UseVisualStyleBackColor = true;
@@ -173,9 +223,10 @@
             // checkBox1
             // 
             checkBox1.AutoSize = true;
+            checkBox1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             checkBox1.Location = new Point(268, 615);
             checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(142, 19);
+            checkBox1.Size = new Size(150, 19);
             checkBox1.TabIndex = 15;
             checkBox1.Text = "удовлетворительные";
             checkBox1.UseVisualStyleBackColor = true;
@@ -387,5 +438,9 @@
         private CheckBox checkBox3;
         private CheckBox checkBox2;
         private CheckBox checkBox1;
+        private TextBox occupationalHazardsTextBox;
+        private CheckBox occupationalHazardsYes;
+        private CheckBox occupationalHazardsCheckBoxNo;
+        private Label label9;
     }
 }

@@ -6,8 +6,9 @@ namespace WinformsMicrosoft
 {
     public partial class Form1 : Form
     {
+        public CheckBox socialLivingConditionsCheckBox;
+        public CheckBox occupationalHazardsCheckbox;
 
-        
 
         private string? wordFilePath;
         public Form1()
@@ -20,13 +21,18 @@ namespace WinformsMicrosoft
 
         public void InitializeCheckBoxes()
         {
-            checkBox1.CheckedChanged += CheckBox_CheckedChanged;
-            checkBox2.CheckedChanged += CheckBox_CheckedChanged;
-            checkBox3.CheckedChanged += CheckBox_CheckedChanged;
+            checkBox1.CheckedChanged += CheckBox_CheckedChanged_SocialLiving;
+            checkBox2.CheckedChanged += CheckBox_CheckedChanged_SocialLiving;
+            checkBox3.CheckedChanged += CheckBox_CheckedChanged_SocialLiving;
+
+            occupationalHazardsCheckBoxNo.CheckedChanged += CheckBox_ChekedChanged_OccupationalHazards;
+            occupationalHazardsYes.CheckedChanged += CheckBox_ChekedChanged_OccupationalHazards;
         }
 
-        private void CheckBox_CheckedChanged(object sender, EventArgs e)
+        private void CheckBox_CheckedChanged_SocialLiving(object sender, EventArgs e)
         {
+            socialLivingConditionsCheckBox = (CheckBox)sender;
+
             CheckBox[] checkBoxes = { checkBox1, checkBox2, checkBox3 };
 
             foreach (CheckBox check in checkBoxes)
@@ -36,20 +42,44 @@ namespace WinformsMicrosoft
                     check.Checked = false;
                 }
             }
+
         }
 
+        private void CheckBox_ChekedChanged_OccupationalHazards(object sender, EventArgs e)
+        {
+            occupationalHazardsCheckbox = (CheckBox)sender;
 
+            CheckBox[] checkBoxes = { occupationalHazardsCheckBoxNo, occupationalHazardsYes };
+
+            foreach (CheckBox check in checkBoxes)
+            {
+                if (check != sender)
+                {
+                    check.Checked = false;
+                }
+            }
+
+            if (occupationalHazardsYes.Checked == true)
+            {
+                occupationalHazardsTextBox.Enabled = true;
+            }
+            else
+                occupationalHazardsTextBox.Enabled = false;
+
+        }
 
         private void Change_Click(object sender, EventArgs e)
         {
             string time = DateTime.Now.ToString("ddMMyyyyHHmm");
-            if (!string.IsNullOrEmpty(wordFilePath))
+            try
             {
-
-                var helper = new WordHelper(wordFilePath);
-                var items = new Dictionary<string, string>
+                if (!string.IsNullOrEmpty(wordFilePath))
                 {
 
+
+                    var helper = new WordHelper(wordFilePath);
+                    var items = new Dictionary<string, string>
+                {
                     {"<FIO>", textBox1.Text },
                     {"<BD>", dateTimePicker1.Text },
                     {"<DTN>", DateTime.Now.ToString("dd.MM.yyyy") },
@@ -57,18 +87,27 @@ namespace WinformsMicrosoft
                     {"<COMPL>", complaintsTextBoxMainForm.Text },
                     {"<PAIN1>", painsMainTextBox.Text },
                     {"<morbi>",  anamnesismorbiTextBox.Text },
-                    {"<vitae>",  anamnesisVitaeTextBox.Text}
+                    {"<vitae>",  anamnesisVitaeTextBox.Text},
+                    {"<SLC>", $"({socialLivingConditionsCheckBox.Text})" },
+                    {"<occupationalHazards>", $"({occupationalHazardsCheckbox.Text}): {occupationalHazardsTextBox.Text}" }
                 };
 
-                //helper.FIOForFile = textBox1.Text + DateTime.Now.ToString(" dd_MM_yyyy HH:mm");
-                helper.FIOForFile = textBox1.Text;
-                helper.FIOForFile += $" {time}";
-                helper.Process(items);
+                    //helper.FIOForFile = textBox1.Text + DateTime.Now.ToString(" dd_MM_yyyy HH:mm");
+                    helper.FIOForFile = textBox1.Text;
+                    helper.FIOForFile += $" {time}";
+                    helper.Process(items);
+                }
+                else
+                {
+                    MessageBox.Show("Что-то пошло не так посмотрите настройки программы", "Не найден файл", buttons: MessageBoxButtons.OK, icon: MessageBoxIcon.Error);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Что-то пошло не так посмотрите настройки программы", "Не найден файл", buttons: MessageBoxButtons.OK, icon: MessageBoxIcon.Error);
+                MessageBox.Show("Убедитесь что все поля заполнены!");
             }
+
+
         }
 
         private void button1_Click(object sender, EventArgs e)
