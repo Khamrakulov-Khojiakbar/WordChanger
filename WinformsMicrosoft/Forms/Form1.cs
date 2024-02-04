@@ -8,22 +8,24 @@ namespace WinformsMicrosoft
     {
         public CheckBox socialLivingConditionsCheckBox;
         public CheckBox occupationalHazardsCheckbox;
-
+        private string retiredStringData = "РќР• РќРђ РџР•РќРЎРР";
+        private string smokigStringData = "РќР• РљРЈР РРў";
 
         private string? wordFilePath;
         public Form1()
         {
             InitializeComponent();
             InitializeCheckBoxes();
+            FalseAll();
             dateTimePicker2.Text = DateTime.Now.ToString("HH:mm");
             wordFilePath = $"{ConfigurationManager.AppSettings["WordFilePath"]}";
         }
 
         public void InitializeCheckBoxes()
         {
-            checkBox1.CheckedChanged += CheckBox_CheckedChanged_SocialLiving;
-            checkBox2.CheckedChanged += CheckBox_CheckedChanged_SocialLiving;
-            checkBox3.CheckedChanged += CheckBox_CheckedChanged_SocialLiving;
+            occupationHazarGoodCheckBox.CheckedChanged += CheckBox_CheckedChanged_SocialLiving;
+            occupationHazardsnotbadCheckBox.CheckedChanged += CheckBox_CheckedChanged_SocialLiving;
+            occupationHazardVeryGoodCheckBox.CheckedChanged += CheckBox_CheckedChanged_SocialLiving;
 
             occupationalHazardsCheckBoxNo.CheckedChanged += CheckBox_ChekedChanged_OccupationalHazards;
             occupationalHazardsYes.CheckedChanged += CheckBox_ChekedChanged_OccupationalHazards;
@@ -33,7 +35,7 @@ namespace WinformsMicrosoft
         {
             socialLivingConditionsCheckBox = (CheckBox)sender;
 
-            CheckBox[] checkBoxes = { checkBox1, checkBox2, checkBox3 };
+            CheckBox[] checkBoxes = { occupationHazarGoodCheckBox, occupationHazardsnotbadCheckBox, occupationHazardVeryGoodCheckBox };
 
             foreach (CheckBox check in checkBoxes)
             {
@@ -80,16 +82,18 @@ namespace WinformsMicrosoft
                     var helper = new WordHelper(wordFilePath);
                     var items = new Dictionary<string, string>
                 {
-                    {"<FIO>", textBox1.Text },
-                    {"<BD>", dateTimePicker1.Text },
-                    {"<DTN>", DateTime.Now.ToString("dd.MM.yyyy") },
-                    {"<Time>", DateTime.Now.ToString("HH:mm") },
-                    {"<COMPL>", complaintsTextBoxMainForm.Text },
-                    {"<PAIN1>", painsMainTextBox.Text },
-                    {"<morbi>",  anamnesismorbiTextBox.Text },
-                    {"<vitae>",  anamnesisVitaeTextBox.Text},
-                    {"<SLC>", $"({socialLivingConditionsCheckBox.Text})" },
-                    {"<occupationalHazards>", $"({occupationalHazardsCheckbox.Text}): {occupationalHazardsTextBox.Text}" }
+                        {"<FIO>", textBox1.Text },
+                        {"<BD>", dateTimePicker1.Text },
+                        {"<DTN>", DateTime.Now.ToString("dd.MM.yyyy") },
+                        {"<Time>", DateTime.Now.ToString("HH:mm") },
+                        {"<COMPL>", complaintsTextBoxMainForm.Text },
+                        {"<PAIN1>", painsMainTextBox.Text },
+                        {"<morbi>",  anamnesismorbiTextBox.Text },
+                        {"<vitae>",  anamnesisVitaeTextBox.Text},
+                        {"<SLC>", $"({socialLivingConditionsCheckBox.Text})" },
+                        {"<occupationalHazards>", $"({occupationalHazardsCheckbox.Text}): {occupationalHazardsTextBox.Text}" },
+                        {"<retired>", retiredStringData },
+                        {"<smoking>", smokigStringData }
                 };
 
                     //helper.FIOForFile = textBox1.Text + DateTime.Now.ToString(" dd_MM_yyyy HH:mm");
@@ -99,12 +103,12 @@ namespace WinformsMicrosoft
                 }
                 else
                 {
-                    MessageBox.Show("Что-то пошло не так посмотрите настройки программы", "Не найден файл", buttons: MessageBoxButtons.OK, icon: MessageBoxIcon.Error);
+                    MessageBox.Show("Р§С‚Рѕ-С‚Рѕ РїРѕС€Р»Рѕ РЅРµ С‚Р°Рє РїРѕСЃРјРѕС‚СЂРёС‚Рµ РЅР°СЃС‚СЂРѕР№РєРё РїСЂРѕРіСЂР°РјРјС‹", "РќРµ РЅР°Р№РґРµРЅ С„Р°Р№Р»", buttons: MessageBoxButtons.OK, icon: MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Убедитесь что все поля заполнены!");
+                MessageBox.Show("РЈР±РµРґРёС‚РµСЃСЊ С‡С‚Рѕ РІСЃРµ РїРѕР»СЏ Р·Р°РїРѕР»РЅРµРЅС‹!");
             }
 
 
@@ -139,6 +143,105 @@ namespace WinformsMicrosoft
                 painsMainTextBox.Text = painsMainTextBox.Text.Substring(0, painsMainTextBox.TextLength - 1);
             }
 
+        }
+
+        private void FalseAll()
+        {
+            retiredCheckBox.Checked = false;
+            retiredAge.Enabled = false;
+            disabilityAge.Enabled = false;
+            disabilityCheckBox.Enabled = false;
+            disabilityGroup.Enabled = false;
+            smokingAge.Enabled = false;
+            packOfSmokeNUmeric.Enabled = false;
+        }
+
+        private void retiredCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (retiredCheckBox.Checked == true)
+            {
+                retiredAge.Enabled = true;
+                disabilityCheckBox.Enabled = true;
+                retiredStringData = $"РќР° РїРµРЅСЃРёРё СЃ {retiredAge} Р»РµС‚";
+            }
+
+            else
+            {
+                disabilityCheckBox.Checked = false;
+                retiredCheckBox.Checked = false;
+                retiredAge.Enabled = false;
+                disabilityAge.Enabled = false;
+                disabilityCheckBox.Enabled = false;
+                if (retiredCheckBox.Checked == false && disabilityCheckBox.Checked == false)
+                {
+                    retiredStringData = "РќР• РќРђ РџР•РќРЎРР";
+                }
+            }
+        }
+
+        private void disabilityCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (disabilityCheckBox.Checked == true && retiredAge.Enabled == true)
+            {
+                disabilityGroup.Enabled = true;
+                disabilityAge.Enabled = true;
+                retiredStringData += $" РРЅРІР°Р»РёРґРЅРѕСЃС‚СЊ: РіСЂСѓРїРїР° {disabilityGroup.Value} СЃ {disabilityAge.Value} Р»РµС‚";
+            }
+            else
+            {
+                disabilityGroup.Enabled = false;
+                disabilityAge.Enabled = false;
+
+                if (retiredCheckBox.Checked == false && disabilityCheckBox.Checked == false)
+                {
+                    retiredStringData = "РќР• РќРђ РџР•РќРЎРР";
+                }
+            }
+        }
+
+        private void smokingCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (smokingCheckBox.Checked == true)
+            {
+                smokingAge.Enabled = true;
+                packOfSmokeNUmeric.Enabled = true;
+            }
+            else
+            {
+                smokingAge.Enabled = false;
+                packOfSmokeNUmeric.Enabled = false;
+            }
+        }
+
+        private void occupationalHazardsCheckBoxNo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (occupationalHazardsCheckBoxNo.Checked == true)
+            {
+                occupationalHazardsYes.Enabled = false;
+                occupationalHazardsTextBox.Enabled = false;
+                occupationalHazardsYes.Checked = false;
+            }
+            else
+            {
+                occupationalHazardsYes.Checked = false;
+                occupationalHazardsYes.Enabled = true;
+            }
+        }
+
+        private void occupationalHazardsYes_CheckedChanged(object sender, EventArgs e)
+        {
+            if(occupationalHazardsYes.Checked == true)
+            {
+                occupationalHazardsCheckBoxNo.Checked = false;
+                occupationalHazardsCheckBoxNo.Enabled = false;
+                occupationalHazardsTextBox.Enabled = true;
+            }
+            else
+            {
+                occupationalHazardsTextBox.Enabled = false;
+                occupationalHazardsCheckBoxNo.Enabled = true;
+                occupationalHazardsCheckBoxNo.Checked = false;
+            }
         }
     }
 }
