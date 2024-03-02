@@ -1,4 +1,6 @@
-﻿namespace WinformsMicrosoft
+﻿using WinformsMicrosoft.Elements;
+
+namespace WinformsMicrosoft
 {
     partial class Form1
     {
@@ -35,6 +37,34 @@
             label1 = new Label();
             label3 = new Label();
             panel1 = new Panel();
+            numericUpDown3 = new NumericUpDown();
+            label29 = new Label();
+            childBearingNumericUp = new NumericUpDown();
+            label28 = new Label();
+            gestationNumericUp = new NumericUpDown();
+            label30 = new Label();
+            label27 = new Label();
+            climactericNumeric = new NumericUpDown();
+            label26 = new Label();
+            label25 = new Label();
+            unillnessPregnancyCheckBox = new CheckBox();
+            unregularCheckBox = new CheckBox();
+            illnessPregnancyCheckBox = new CheckBox();
+            regularPregnancyCheckBox = new CheckBox();
+            label23 = new Label();
+            pregnancyNumeric = new NumericUpDown();
+            label24 = new Label();
+            pregnancyCheckBox = new CheckBox();
+            allergyHistoryTextBox = new TextBox();
+            label22 = new Label();
+            zimoticdeseasesTextBox = new TextBox();
+            label21 = new Label();
+            pastIllnessTextBox = new TextBox();
+            label18 = new Label();
+            label19 = new Label();
+            alcoholAge = new NumericUpDown();
+            label20 = new Label();
+            alcoholCheckBox = new CheckBox();
             packOfSmokeNUmeric = new NumericUpDown();
             label17 = new Label();
             label15 = new Label();
@@ -74,6 +104,12 @@
             complaintsTextBoxMainForm = new TextBox();
             label2 = new Label();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)childBearingNumericUp).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)gestationNumericUp).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)climactericNumeric).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pregnancyNumeric).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)alcoholAge).BeginInit();
             ((System.ComponentModel.ISupportInitialize)packOfSmokeNUmeric).BeginInit();
             ((System.ComponentModel.ISupportInitialize)smokingAge).BeginInit();
             ((System.ComponentModel.ISupportInitialize)disabilityAge).BeginInit();
@@ -86,7 +122,7 @@
             // 
             // Change
             // 
-            Change.Location = new Point(1009, 876);
+            Change.Location = new Point(2162, 666);
             Change.Margin = new Padding(4, 3, 4, 3);
             Change.Name = "Change";
             Change.Size = new Size(88, 27);
@@ -97,8 +133,9 @@
             // 
             // dateTimePicker1
             // 
+            dateTimePicker1.CustomFormat = "dd.MM.yyyy";
             dateTimePicker1.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            dateTimePicker1.Format = DateTimePickerFormat.Short;
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
             dateTimePicker1.Location = new Point(174, 60);
             dateTimePicker1.Margin = new Padding(4, 3, 4, 3);
             dateTimePicker1.Name = "dateTimePicker1";
@@ -155,7 +192,35 @@
             // 
             // panel1
             // 
-            panel1.BackColor = SystemColors.ActiveCaption;
+            panel1.BackColor = SystemColors.GradientActiveCaption;
+            panel1.Controls.Add(numericUpDown3);
+            panel1.Controls.Add(label29);
+            panel1.Controls.Add(childBearingNumericUp);
+            panel1.Controls.Add(label28);
+            panel1.Controls.Add(gestationNumericUp);
+            panel1.Controls.Add(label30);
+            panel1.Controls.Add(label27);
+            panel1.Controls.Add(climactericNumeric);
+            panel1.Controls.Add(label26);
+            panel1.Controls.Add(label25);
+            panel1.Controls.Add(unillnessPregnancyCheckBox);
+            panel1.Controls.Add(unregularCheckBox);
+            panel1.Controls.Add(illnessPregnancyCheckBox);
+            panel1.Controls.Add(regularPregnancyCheckBox);
+            panel1.Controls.Add(label23);
+            panel1.Controls.Add(pregnancyNumeric);
+            panel1.Controls.Add(label24);
+            panel1.Controls.Add(pregnancyCheckBox);
+            panel1.Controls.Add(allergyHistoryTextBox);
+            panel1.Controls.Add(label22);
+            panel1.Controls.Add(zimoticdeseasesTextBox);
+            panel1.Controls.Add(label21);
+            panel1.Controls.Add(pastIllnessTextBox);
+            panel1.Controls.Add(label18);
+            panel1.Controls.Add(label19);
+            panel1.Controls.Add(alcoholAge);
+            panel1.Controls.Add(label20);
+            panel1.Controls.Add(alcoholCheckBox);
             panel1.Controls.Add(packOfSmokeNUmeric);
             panel1.Controls.Add(label17);
             panel1.Controls.Add(label15);
@@ -192,22 +257,314 @@
             panel1.Location = new Point(-1, 0);
             panel1.Margin = new Padding(4, 3, 4, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(4000, 1000);
+            panel1.Size = new Size(4000, 768);
             panel1.TabIndex = 14;
+            // 
+            // numericUpDown3
+            // 
+            numericUpDown3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            numericUpDown3.Location = new Point(1448, 273);
+            numericUpDown3.Name = "numericUpDown3";
+            numericUpDown3.Size = new Size(78, 29);
+            numericUpDown3.TabIndex = 67;
+            // 
+            // label29
+            // 
+            label29.AutoSize = true;
+            label29.BackColor = Color.Transparent;
+            label29.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label29.Location = new Point(1377, 275);
+            label29.Name = "label29";
+            label29.Size = new Size(69, 21);
+            label29.TabIndex = 66;
+            label29.Text = "абортов";
+            // 
+            // childBearingNumericUp
+            // 
+            childBearingNumericUp.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            childBearingNumericUp.Location = new Point(1448, 240);
+            childBearingNumericUp.Name = "childBearingNumericUp";
+            childBearingNumericUp.Size = new Size(78, 29);
+            childBearingNumericUp.TabIndex = 65;
+            // 
+            // label28
+            // 
+            label28.AutoSize = true;
+            label28.BackColor = Color.Transparent;
+            label28.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label28.Location = new Point(1390, 242);
+            label28.Name = "label28";
+            label28.Size = new Size(54, 21);
+            label28.TabIndex = 64;
+            label28.Text = "родов";
+            // 
+            // gestationNumericUp
+            // 
+            gestationNumericUp.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            gestationNumericUp.Location = new Point(1306, 240);
+            gestationNumericUp.Name = "gestationNumericUp";
+            gestationNumericUp.Size = new Size(78, 29);
+            gestationNumericUp.TabIndex = 63;
+            // 
+            // label30
+            // 
+            label30.AutoSize = true;
+            label30.BackColor = Color.Transparent;
+            label30.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label30.Location = new Point(1179, 242);
+            label30.Name = "label30";
+            label30.Size = new Size(121, 21);
+            label30.TabIndex = 61;
+            label30.Text = "Беременностей";
+            // 
+            // label27
+            // 
+            label27.AutoSize = true;
+            label27.BackColor = Color.Transparent;
+            label27.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label27.Location = new Point(1365, 205);
+            label27.Name = "label27";
+            label27.Size = new Size(33, 21);
+            label27.TabIndex = 60;
+            label27.Text = "лет";
+            // 
+            // climactericNumeric
+            // 
+            climactericNumeric.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            climactericNumeric.Location = new Point(1279, 203);
+            climactericNumeric.Name = "climactericNumeric";
+            climactericNumeric.Size = new Size(78, 29);
+            climactericNumeric.TabIndex = 59;
+            climactericNumeric.ValueChanged += climactericNumeric_ValueChanged;
+            // 
+            // label26
+            // 
+            label26.AutoSize = true;
+            label26.BackColor = Color.Transparent;
+            label26.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label26.Location = new Point(1258, 205);
+            label26.Name = "label26";
+            label26.Size = new Size(17, 21);
+            label26.TabIndex = 58;
+            label26.Text = "c";
+            // 
+            // label25
+            // 
+            label25.AutoSize = true;
+            label25.BackColor = Color.Transparent;
+            label25.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label25.Location = new Point(1179, 205);
+            label25.Name = "label25";
+            label25.Size = new Size(73, 21);
+            label25.TabIndex = 57;
+            label25.Text = "Климакс:";
+            // 
+            // unillnessPregnancyCheckBox
+            // 
+            unillnessPregnancyCheckBox.AutoSize = true;
+            unillnessPregnancyCheckBox.BackColor = Color.Transparent;
+            unillnessPregnancyCheckBox.Location = new Point(1536, 177);
+            unillnessPregnancyCheckBox.Name = "unillnessPregnancyCheckBox";
+            unillnessPregnancyCheckBox.Size = new Size(118, 19);
+            unillnessPregnancyCheckBox.TabIndex = 56;
+            unillnessPregnancyCheckBox.Text = "безболезненные";
+            unillnessPregnancyCheckBox.UseVisualStyleBackColor = false;
+            // 
+            // unregularCheckBox
+            // 
+            unregularCheckBox.AutoSize = true;
+            unregularCheckBox.BackColor = Color.Transparent;
+            unregularCheckBox.Location = new Point(1536, 153);
+            unregularCheckBox.Name = "unregularCheckBox";
+            unregularCheckBox.Size = new Size(105, 19);
+            unregularCheckBox.TabIndex = 55;
+            unregularCheckBox.Text = "нерегулярные";
+            unregularCheckBox.UseVisualStyleBackColor = false;
+            // 
+            // illnessPregnancyCheckBox
+            // 
+            illnessPregnancyCheckBox.AutoSize = true;
+            illnessPregnancyCheckBox.BackColor = Color.Transparent;
+            illnessPregnancyCheckBox.Location = new Point(1426, 177);
+            illnessPregnancyCheckBox.Name = "illnessPregnancyCheckBox";
+            illnessPregnancyCheckBox.Size = new Size(100, 19);
+            illnessPregnancyCheckBox.TabIndex = 54;
+            illnessPregnancyCheckBox.Text = "болезненные";
+            illnessPregnancyCheckBox.UseVisualStyleBackColor = false;
+            // 
+            // regularPregnancyCheckBox
+            // 
+            regularPregnancyCheckBox.AutoSize = true;
+            regularPregnancyCheckBox.BackColor = Color.Transparent;
+            regularPregnancyCheckBox.Location = new Point(1426, 152);
+            regularPregnancyCheckBox.Name = "regularPregnancyCheckBox";
+            regularPregnancyCheckBox.Size = new Size(92, 19);
+            regularPregnancyCheckBox.TabIndex = 53;
+            regularPregnancyCheckBox.Text = "регулярные";
+            regularPregnancyCheckBox.UseVisualStyleBackColor = false;
+            // 
+            // label23
+            // 
+            label23.AutoSize = true;
+            label23.BackColor = Color.Transparent;
+            label23.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label23.Location = new Point(1377, 154);
+            label23.Name = "label23";
+            label23.Size = new Size(33, 21);
+            label23.TabIndex = 52;
+            label23.Text = "лет";
+            // 
+            // pregnancyNumeric
+            // 
+            pregnancyNumeric.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            pregnancyNumeric.Location = new Point(1293, 150);
+            pregnancyNumeric.Name = "pregnancyNumeric";
+            pregnancyNumeric.Size = new Size(78, 29);
+            pregnancyNumeric.TabIndex = 51;
+            pregnancyNumeric.ValueChanged += pregnancyNumeric_ValueChanged;
+            // 
+            // label24
+            // 
+            label24.AutoSize = true;
+            label24.BackColor = Color.Transparent;
+            label24.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label24.Location = new Point(1271, 154);
+            label24.Name = "label24";
+            label24.Size = new Size(17, 21);
+            label24.TabIndex = 50;
+            label24.Text = "c";
+            // 
+            // pregnancyCheckBox
+            // 
+            pregnancyCheckBox.AutoSize = true;
+            pregnancyCheckBox.BackColor = Color.Transparent;
+            pregnancyCheckBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            pregnancyCheckBox.Location = new Point(1174, 153);
+            pregnancyCheckBox.Name = "pregnancyCheckBox";
+            pregnancyCheckBox.Size = new Size(103, 25);
+            pregnancyCheckBox.TabIndex = 49;
+            pregnancyCheckBox.Text = "Месячные";
+            pregnancyCheckBox.UseVisualStyleBackColor = false;
+            pregnancyCheckBox.CheckedChanged += pregnancyCheckBox_CheckedChanged;
+            // 
+            // allergyHistoryTextBox
+            // 
+            allergyHistoryTextBox.Location = new Point(1373, 119);
+            allergyHistoryTextBox.Multiline = true;
+            allergyHistoryTextBox.Name = "allergyHistoryTextBox";
+            allergyHistoryTextBox.Size = new Size(274, 23);
+            allergyHistoryTextBox.TabIndex = 48;
+            allergyHistoryTextBox.TextChanged += allergyHistoryTextBox_TextChanged;
+            // 
+            // label22
+            // 
+            label22.AutoSize = true;
+            label22.BackColor = Color.Transparent;
+            label22.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label22.Location = new Point(1174, 117);
+            label22.Name = "label22";
+            label22.Size = new Size(185, 21);
+            label22.TabIndex = 47;
+            label22.Text = "Аллергический анамнез:";
+            // 
+            // zimoticdeseasesTextBox
+            // 
+            zimoticdeseasesTextBox.Location = new Point(1373, 91);
+            zimoticdeseasesTextBox.Multiline = true;
+            zimoticdeseasesTextBox.Name = "zimoticdeseasesTextBox";
+            zimoticdeseasesTextBox.Size = new Size(274, 23);
+            zimoticdeseasesTextBox.TabIndex = 46;
+            zimoticdeseasesTextBox.TextChanged += zimoticdeseasesTextBox_TextChanged;
+            // 
+            // label21
+            // 
+            label21.AutoSize = true;
+            label21.BackColor = Color.Transparent;
+            label21.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label21.Location = new Point(1174, 91);
+            label21.Name = "label21";
+            label21.Size = new Size(193, 21);
+            label21.TabIndex = 45;
+            label21.Text = "Инфекционные болезни: ";
+            // 
+            // pastIllnessTextBox
+            // 
+            pastIllnessTextBox.Location = new Point(1432, 63);
+            pastIllnessTextBox.Multiline = true;
+            pastIllnessTextBox.Name = "pastIllnessTextBox";
+            pastIllnessTextBox.Size = new Size(215, 23);
+            pastIllnessTextBox.TabIndex = 44;
+            pastIllnessTextBox.TextChanged += pastIllnessTextBox_TextChanged;
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.BackColor = Color.Transparent;
+            label18.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label18.Location = new Point(1174, 62);
+            label18.Name = "label18";
+            label18.Size = new Size(252, 21);
+            label18.TabIndex = 43;
+            label18.Text = "Перенесенные болезни и травмы:";
+            // 
+            // label19
+            // 
+            label19.AutoSize = true;
+            label19.BackColor = Color.Transparent;
+            label19.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label19.Location = new Point(1497, 20);
+            label19.Name = "label19";
+            label19.Size = new Size(33, 21);
+            label19.TabIndex = 42;
+            label19.Text = "лет";
+            // 
+            // alcoholAge
+            // 
+            alcoholAge.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            alcoholAge.Location = new Point(1413, 16);
+            alcoholAge.Name = "alcoholAge";
+            alcoholAge.Size = new Size(78, 29);
+            alcoholAge.TabIndex = 41;
+            alcoholAge.ValueChanged += alcoholAge_ValueChanged;
+            // 
+            // label20
+            // 
+            label20.AutoSize = true;
+            label20.BackColor = Color.Transparent;
+            label20.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label20.Location = new Point(1390, 20);
+            label20.Name = "label20";
+            label20.Size = new Size(17, 21);
+            label20.TabIndex = 40;
+            label20.Text = "c";
+            // 
+            // alcoholCheckBox
+            // 
+            alcoholCheckBox.AutoSize = true;
+            alcoholCheckBox.BackColor = Color.Transparent;
+            alcoholCheckBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            alcoholCheckBox.Location = new Point(1174, 18);
+            alcoholCheckBox.Name = "alcoholCheckBox";
+            alcoholCheckBox.Size = new Size(210, 25);
+            alcoholCheckBox.TabIndex = 39;
+            alcoholCheckBox.Text = "Употребление алькоголя:";
+            alcoholCheckBox.UseVisualStyleBackColor = false;
+            alcoholCheckBox.CheckedChanged += alcoholCheckBox_CheckedChanged;
             // 
             // packOfSmokeNUmeric
             // 
             packOfSmokeNUmeric.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            packOfSmokeNUmeric.Location = new Point(283, 739);
+            packOfSmokeNUmeric.Location = new Point(282, 666);
             packOfSmokeNUmeric.Name = "packOfSmokeNUmeric";
             packOfSmokeNUmeric.Size = new Size(78, 29);
             packOfSmokeNUmeric.TabIndex = 38;
+            packOfSmokeNUmeric.ValueChanged += smokingAge_ValueChanged;
             // 
             // label17
             // 
             label17.AutoSize = true;
             label17.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label17.Location = new Point(368, 745);
+            label17.Location = new Point(367, 672);
             label17.Name = "label17";
             label17.Size = new Size(102, 21);
             label17.TabIndex = 37;
@@ -217,7 +574,7 @@
             // 
             label15.AutoSize = true;
             label15.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label15.Location = new Point(235, 742);
+            label15.Location = new Point(234, 669);
             label15.Name = "label15";
             label15.Size = new Size(33, 21);
             label15.TabIndex = 36;
@@ -226,16 +583,17 @@
             // smokingAge
             // 
             smokingAge.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            smokingAge.Location = new Point(151, 738);
+            smokingAge.Location = new Point(150, 665);
             smokingAge.Name = "smokingAge";
             smokingAge.Size = new Size(78, 29);
             smokingAge.TabIndex = 35;
+            smokingAge.ValueChanged += packOfSmokeNUmeric_ValueChanged;
             // 
             // label16
             // 
             label16.AutoSize = true;
             label16.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label16.Location = new Point(129, 742);
+            label16.Location = new Point(128, 669);
             label16.Name = "label16";
             label16.Size = new Size(17, 21);
             label16.TabIndex = 34;
@@ -245,7 +603,7 @@
             // 
             smokingCheckBox.AutoSize = true;
             smokingCheckBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            smokingCheckBox.Location = new Point(30, 742);
+            smokingCheckBox.Location = new Point(29, 669);
             smokingCheckBox.Name = "smokingCheckBox";
             smokingCheckBox.Size = new Size(92, 25);
             smokingCheckBox.TabIndex = 33;
@@ -257,7 +615,7 @@
             // 
             label14.AutoSize = true;
             label14.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label14.Location = new Point(429, 697);
+            label14.Location = new Point(428, 624);
             label14.Name = "label14";
             label14.Size = new Size(59, 21);
             label14.TabIndex = 32;
@@ -267,7 +625,7 @@
             // 
             label12.AutoSize = true;
             label12.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label12.Location = new Point(687, 697);
+            label12.Location = new Point(686, 624);
             label12.Name = "label12";
             label12.Size = new Size(33, 21);
             label12.TabIndex = 31;
@@ -276,16 +634,17 @@
             // disabilityAge
             // 
             disabilityAge.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            disabilityAge.Location = new Point(603, 693);
+            disabilityAge.Location = new Point(602, 620);
             disabilityAge.Name = "disabilityAge";
             disabilityAge.Size = new Size(78, 29);
             disabilityAge.TabIndex = 30;
+            disabilityAge.ValueChanged += disabilityAge_ValueChanged;
             // 
             // label13
             // 
             label13.AutoSize = true;
             label13.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label13.Location = new Point(581, 697);
+            label13.Location = new Point(580, 624);
             label13.Name = "label13";
             label13.Size = new Size(17, 21);
             label13.TabIndex = 29;
@@ -294,16 +653,17 @@
             // disabilityGroup
             // 
             disabilityGroup.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            disabilityGroup.Location = new Point(494, 693);
+            disabilityGroup.Location = new Point(493, 620);
             disabilityGroup.Name = "disabilityGroup";
             disabilityGroup.Size = new Size(78, 29);
             disabilityGroup.TabIndex = 28;
+            disabilityGroup.ValueChanged += disabilityGroup_ValueChanged;
             // 
             // disabilityCheckBox
             // 
             disabilityCheckBox.AutoSize = true;
             disabilityCheckBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            disabilityCheckBox.Location = new Point(300, 695);
+            disabilityCheckBox.Location = new Point(299, 622);
             disabilityCheckBox.Name = "disabilityCheckBox";
             disabilityCheckBox.Size = new Size(135, 25);
             disabilityCheckBox.TabIndex = 27;
@@ -315,7 +675,7 @@
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label11.Location = new Point(237, 697);
+            label11.Location = new Point(236, 624);
             label11.Name = "label11";
             label11.Size = new Size(33, 21);
             label11.TabIndex = 26;
@@ -324,16 +684,17 @@
             // retiredAge
             // 
             retiredAge.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            retiredAge.Location = new Point(153, 693);
+            retiredAge.Location = new Point(152, 620);
             retiredAge.Name = "retiredAge";
             retiredAge.Size = new Size(78, 29);
             retiredAge.TabIndex = 25;
+            retiredAge.ValueChanged += retiredAge_ValueChanged;
             // 
             // label10
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label10.Location = new Point(131, 697);
+            label10.Location = new Point(130, 624);
             label10.Name = "label10";
             label10.Size = new Size(17, 21);
             label10.TabIndex = 24;
@@ -343,7 +704,7 @@
             // 
             retiredCheckBox.AutoSize = true;
             retiredCheckBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            retiredCheckBox.Location = new Point(31, 695);
+            retiredCheckBox.Location = new Point(30, 622);
             retiredCheckBox.Name = "retiredCheckBox";
             retiredCheckBox.Size = new Size(106, 25);
             retiredCheckBox.TabIndex = 23;
@@ -354,7 +715,7 @@
             // occupationalHazardsTextBox
             // 
             occupationalHazardsTextBox.Enabled = false;
-            occupationalHazardsTextBox.Location = new Point(269, 657);
+            occupationalHazardsTextBox.Location = new Point(268, 584);
             occupationalHazardsTextBox.Name = "occupationalHazardsTextBox";
             occupationalHazardsTextBox.Size = new Size(827, 23);
             occupationalHazardsTextBox.TabIndex = 21;
@@ -363,7 +724,7 @@
             // 
             occupationalHazardsYes.AutoSize = true;
             occupationalHazardsYes.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            occupationalHazardsYes.Location = new Point(214, 659);
+            occupationalHazardsYes.Location = new Point(213, 586);
             occupationalHazardsYes.Name = "occupationalHazardsYes";
             occupationalHazardsYes.Size = new Size(51, 19);
             occupationalHazardsYes.TabIndex = 20;
@@ -375,7 +736,7 @@
             // 
             occupationalHazardsCheckBoxNo.AutoSize = true;
             occupationalHazardsCheckBoxNo.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            occupationalHazardsCheckBoxNo.Location = new Point(164, 659);
+            occupationalHazardsCheckBoxNo.Location = new Point(163, 586);
             occupationalHazardsCheckBoxNo.Name = "occupationalHazardsCheckBoxNo";
             occupationalHazardsCheckBoxNo.Size = new Size(45, 19);
             occupationalHazardsCheckBoxNo.TabIndex = 19;
@@ -387,7 +748,7 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label9.Location = new Point(31, 657);
+            label9.Location = new Point(30, 584);
             label9.Name = "label9";
             label9.Size = new Size(128, 21);
             label9.TabIndex = 18;
@@ -397,7 +758,7 @@
             // 
             occupationHazardVeryGoodCheckBox.AutoSize = true;
             occupationHazardVeryGoodCheckBox.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            occupationHazardVeryGoodCheckBox.Location = new Point(594, 618);
+            occupationHazardVeryGoodCheckBox.Location = new Point(593, 545);
             occupationHazardVeryGoodCheckBox.Name = "occupationHazardVeryGoodCheckBox";
             occupationHazardVeryGoodCheckBox.Size = new Size(79, 19);
             occupationHazardVeryGoodCheckBox.TabIndex = 17;
@@ -408,7 +769,7 @@
             // 
             occupationHazardsnotbadCheckBox.AutoSize = true;
             occupationHazardsnotbadCheckBox.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            occupationHazardsnotbadCheckBox.Location = new Point(424, 618);
+            occupationHazardsnotbadCheckBox.Location = new Point(423, 545);
             occupationHazardsnotbadCheckBox.Name = "occupationHazardsnotbadCheckBox";
             occupationHazardsnotbadCheckBox.Size = new Size(164, 19);
             occupationHazardsnotbadCheckBox.TabIndex = 16;
@@ -419,7 +780,7 @@
             // 
             occupationHazarGoodCheckBox.AutoSize = true;
             occupationHazarGoodCheckBox.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            occupationHazarGoodCheckBox.Location = new Point(269, 618);
+            occupationHazarGoodCheckBox.Location = new Point(268, 545);
             occupationHazarGoodCheckBox.Name = "occupationHazarGoodCheckBox";
             occupationHazarGoodCheckBox.Size = new Size(150, 19);
             occupationHazarGoodCheckBox.TabIndex = 15;
@@ -430,7 +791,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.Location = new Point(31, 616);
+            label8.Location = new Point(30, 543);
             label8.Name = "label8";
             label8.Size = new Size(221, 21);
             label8.TabIndex = 14;
@@ -441,7 +802,7 @@
             panel4.BackColor = Color.SkyBlue;
             panel4.Controls.Add(anamnesisVitaeTextBox);
             panel4.Controls.Add(label7);
-            panel4.Location = new Point(15, 441);
+            panel4.Location = new Point(15, 373);
             panel4.Name = "panel4";
             panel4.Size = new Size(1082, 151);
             panel4.TabIndex = 12;
@@ -470,7 +831,7 @@
             panel3.BackColor = Color.SkyBlue;
             panel3.Controls.Add(anamnesismorbiTextBox);
             panel3.Controls.Add(label5);
-            panel3.Location = new Point(15, 266);
+            panel3.Location = new Point(15, 216);
             panel3.Name = "panel3";
             panel3.Size = new Size(1082, 151);
             panel3.TabIndex = 11;
@@ -526,7 +887,7 @@
             panel2.Controls.Add(complaintsTextBoxMainForm);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(label4);
-            panel2.Location = new Point(14, 122);
+            panel2.Location = new Point(15, 91);
             panel2.Margin = new Padding(4, 3, 4, 3);
             panel2.Name = "panel2";
             panel2.Size = new Size(1082, 119);
@@ -588,16 +949,22 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
-            ClientSize = new Size(3844, 961);
+            ClientSize = new Size(3364, 721);
             Controls.Add(textBox1);
             Controls.Add(panel1);
             Margin = new Padding(4, 3, 4, 3);
-            MaximumSize = new Size(6000, 1000);
+            MaximumSize = new Size(6000, 766);
             Name = "Form1";
             Text = "Form1";
             WindowState = FormWindowState.Maximized;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)childBearingNumericUp).EndInit();
+            ((System.ComponentModel.ISupportInitialize)gestationNumericUp).EndInit();
+            ((System.ComponentModel.ISupportInitialize)climactericNumeric).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pregnancyNumeric).EndInit();
+            ((System.ComponentModel.ISupportInitialize)alcoholAge).EndInit();
             ((System.ComponentModel.ISupportInitialize)packOfSmokeNUmeric).EndInit();
             ((System.ComponentModel.ISupportInitialize)smokingAge).EndInit();
             ((System.ComponentModel.ISupportInitialize)disabilityAge).EndInit();
@@ -660,5 +1027,33 @@
         private NumericUpDown smokingAge;
         private Label label16;
         private CheckBox smokingCheckBox;
+        private Label label19;
+        private NumericUpDown alcoholAge;
+        private Label label20;
+        private CheckBox alcoholCheckBox;
+        private TextBox pastIllnessTextBox;
+        private Label label18;
+        private TextBox zimoticdeseasesTextBox;
+        private Label label21;
+        private Label label22;
+        private TextBox allergyHistoryTextBox;
+        private Label label23;
+        private NumericUpDown pregnancyNumeric;
+        private Label label24;
+        private CheckBox pregnancyCheckBox;
+        private Label label25;
+        private CheckBox unillnessPregnancyCheckBox;
+        private CheckBox unregularCheckBox;
+        private CheckBox illnessPregnancyCheckBox;
+        private CheckBox regularPregnancyCheckBox;
+        private Label label27;
+        private NumericUpDown climactericNumeric;
+        private Label label26;
+        private NumericUpDown numericUpDown3;
+        private Label label29;
+        private NumericUpDown childBearingNumericUp;
+        private Label label28;
+        private NumericUpDown gestationNumericUp;
+        private Label label30;
     }
 }

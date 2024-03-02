@@ -9,17 +9,49 @@ namespace WinformsMicrosoft
         public CheckBox socialLivingConditionsCheckBox;
         public CheckBox occupationalHazardsCheckbox;
         private string retiredStringData = "НЕ НА ПЕНСИИ";
+        private string disabilityStringData = "НЕТ ИНВАЛИДНОСТИ";
         private string smokigStringData = "НЕ КУРИТ";
-
+        private string alchoholDrinking = "НЕ УПОТРЕБЛЯЕТ АЛЬКОГОЛЬ";
+        private string pastIllness = "ОТРИЦАЕТ";
+        private string zimoticdiseasesString = "ОТРИЦАЕТ";
+        private string allergyHistoryStringData = "ОТРИЦАЕТ";
+        private string pregnancyStringData = "";
+        private string pregnancyCheckBoxStringData = "";
+        private string climatericStringData = "";
         private string? wordFilePath;
+
         public Form1()
         {
             InitializeComponent();
             InitializeCheckBoxes();
+            IntializePregnancyCheckBox();
             FalseAll();
+            alcoholAge.Value = 18;
             dateTimePicker2.Text = DateTime.Now.ToString("HH:mm");
             wordFilePath = $"{ConfigurationManager.AppSettings["WordFilePath"]}";
         }
+
+        private void FalseAll()
+        {
+            retiredCheckBox.Checked = false;
+            retiredAge.Enabled = false;
+            disabilityAge.Enabled = false;
+            disabilityCheckBox.Enabled = false;
+            disabilityGroup.Enabled = false;
+            smokingAge.Enabled = false;
+            packOfSmokeNUmeric.Enabled = false;
+            alcoholAge.Enabled = false;
+            pregnancyNumeric.Enabled = false;
+            foreach (var a in pregnancyCheckBox_ChekedChanged1())
+            {
+                a.Enabled = false;
+            }
+            climactericNumeric.Enabled = false;
+
+        }
+
+
+        #region CheckBoxChangesMethods
 
         public void InitializeCheckBoxes()
         {
@@ -30,6 +62,47 @@ namespace WinformsMicrosoft
             occupationalHazardsCheckBoxNo.CheckedChanged += CheckBox_ChekedChanged_OccupationalHazards;
             occupationalHazardsYes.CheckedChanged += CheckBox_ChekedChanged_OccupationalHazards;
         }
+
+        private void IntializePregnancyCheckBox()
+        {
+            regularPregnancyCheckBox.CheckedChanged += pregnancyCheckBox_ChekedChanged;
+            unregularCheckBox.CheckedChanged += pregnancyCheckBox_ChekedChanged;
+            illnessPregnancyCheckBox.CheckedChanged += pregnancyCheckBox_ChekedChanged;
+            unillnessPregnancyCheckBox.CheckedChanged += pregnancyCheckBox_ChekedChanged;
+        }
+
+
+        private CheckBox[] pregnancyCheckBox_ChekedChanged1()
+        {
+
+            CheckBox[] checkBoxes = { regularPregnancyCheckBox, unregularCheckBox, illnessPregnancyCheckBox, unillnessPregnancyCheckBox };
+
+            return checkBoxes;
+        }
+
+        private void pregnancyCheckBox_ChekedChanged(object sender, EventArgs e)
+        {
+            int checkCount = 0;
+            pregnancyCheckBoxStringData = ""; // Очистим строку перед добавлением новых данных
+            CheckBox[] checkBoxes = { regularPregnancyCheckBox, unregularCheckBox, illnessPregnancyCheckBox, unillnessPregnancyCheckBox };
+
+            foreach (var check in checkBoxes)
+            {
+                if (check.Checked == true)
+                {
+                    checkCount++;
+                    if (checkCount <= 2)
+                    {
+                        pregnancyCheckBoxStringData += $" {check.Text}";
+                    }
+                    else
+                    {
+                        check.Checked = false; // Если уже отмечено два флажка, снимаем отметку с остальных
+                    }
+                }
+            }
+        }
+
 
         private void CheckBox_CheckedChanged_SocialLiving(object sender, EventArgs e)
         {
@@ -69,6 +142,7 @@ namespace WinformsMicrosoft
                 occupationalHazardsTextBox.Enabled = false;
 
         }
+        #endregion
 
         private void Change_Click(object sender, EventArgs e)
         {
@@ -88,12 +162,18 @@ namespace WinformsMicrosoft
                         {"<Time>", DateTime.Now.ToString("HH:mm") },
                         {"<COMPL>", complaintsTextBoxMainForm.Text },
                         {"<PAIN1>", painsMainTextBox.Text },
-                        {"<morbi>",  anamnesismorbiTextBox.Text },
+                        {"<morbi>",  anamnesismorbiTextBox.Text + "<morbi>" },
                         {"<vitae>",  anamnesisVitaeTextBox.Text},
                         {"<SLC>", $"({socialLivingConditionsCheckBox.Text})" },
-                        {"<occupationalHazards>", $"({occupationalHazardsCheckbox.Text}): {occupationalHazardsTextBox.Text}" },
+                        {"<occupationalHazards>", $"({occupationalHazardsCheckbox.Text}) {occupationalHazardsTextBox.Text}" },
                         {"<retired>", retiredStringData },
-                        {"<smoking>", smokigStringData }
+                        {"<disability>", disabilityStringData },
+                        {"<smoking>", smokigStringData },
+                        {"<alcohol>", alchoholDrinking },
+                        {"<pastillness>", pastIllness },
+                        {"<zimoticdiseases>", zimoticdiseasesString },
+                        {"<allergyHistory>", allergyHistoryStringData},
+                        {"<pregnancyData>", $"{pregnancyStringData} ({pregnancyCheckBoxStringData})" }
                 };
 
                     //helper.FIOForFile = textBox1.Text + DateTime.Now.ToString(" dd_MM_yyyy HH:mm");
@@ -113,7 +193,7 @@ namespace WinformsMicrosoft
 
 
         }
-
+        #region Begin of program
         private void button1_Click(object sender, EventArgs e)
         {
             ComplaintsCrudForm complaintsCrudForm = new ComplaintsCrudForm();
@@ -144,74 +224,10 @@ namespace WinformsMicrosoft
             }
 
         }
+        #endregion
 
-        private void FalseAll()
-        {
-            retiredCheckBox.Checked = false;
-            retiredAge.Enabled = false;
-            disabilityAge.Enabled = false;
-            disabilityCheckBox.Enabled = false;
-            disabilityGroup.Enabled = false;
-            smokingAge.Enabled = false;
-            packOfSmokeNUmeric.Enabled = false;
-        }
+        #region OccupationHazardsMethods
 
-        private void retiredCheckBox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (retiredCheckBox.Checked == true)
-            {
-                retiredAge.Enabled = true;
-                disabilityCheckBox.Enabled = true;
-                retiredStringData = $"На пенсии с {retiredAge} лет";
-            }
-
-            else
-            {
-                disabilityCheckBox.Checked = false;
-                retiredCheckBox.Checked = false;
-                retiredAge.Enabled = false;
-                disabilityAge.Enabled = false;
-                disabilityCheckBox.Enabled = false;
-                if (retiredCheckBox.Checked == false && disabilityCheckBox.Checked == false)
-                {
-                    retiredStringData = "НЕ НА ПЕНСИИ";
-                }
-            }
-        }
-
-        private void disabilityCheckBox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (disabilityCheckBox.Checked == true && retiredAge.Enabled == true)
-            {
-                disabilityGroup.Enabled = true;
-                disabilityAge.Enabled = true;
-                retiredStringData += $" Инвалидность: группа {disabilityGroup.Value} с {disabilityAge.Value} лет";
-            }
-            else
-            {
-                disabilityGroup.Enabled = false;
-                disabilityAge.Enabled = false;
-
-                if (retiredCheckBox.Checked == false && disabilityCheckBox.Checked == false)
-                {
-                    retiredStringData = "НЕ НА ПЕНСИИ";
-                }
-            }
-        }
-
-        private void smokingCheckBox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (smokingCheckBox.Checked == true)
-            {
-                smokingAge.Enabled = true;
-                packOfSmokeNUmeric.Enabled = true;
-            }
-            else
-            {
-                smokingAge.Enabled = false;
-                packOfSmokeNUmeric.Enabled = false;
-            }
-        }
 
         private void occupationalHazardsCheckBoxNo_CheckedChanged(object sender, EventArgs e)
         {
@@ -230,7 +246,7 @@ namespace WinformsMicrosoft
 
         private void occupationalHazardsYes_CheckedChanged(object sender, EventArgs e)
         {
-            if(occupationalHazardsYes.Checked == true)
+            if (occupationalHazardsYes.Checked == true)
             {
                 occupationalHazardsCheckBoxNo.Checked = false;
                 occupationalHazardsCheckBoxNo.Enabled = false;
@@ -241,6 +257,287 @@ namespace WinformsMicrosoft
                 occupationalHazardsTextBox.Enabled = false;
                 occupationalHazardsCheckBoxNo.Enabled = true;
                 occupationalHazardsCheckBoxNo.Checked = false;
+            }
+        }
+        #endregion
+
+        #region retiredAll
+
+        private void retiredAge_ValueChanged(object sender, EventArgs e)
+        {
+            if (retiredCheckBox.Checked == true)
+            {
+                retiredAge.Enabled = true;
+                disabilityCheckBox.Enabled = true;
+                retiredStringData = $"На пенсии с {retiredAge.Value} лет";
+            }
+
+            else
+            {
+                disabilityCheckBox.Checked = false;
+                retiredCheckBox.Checked = false;
+                retiredAge.Enabled = false;
+                disabilityAge.Enabled = false;
+                disabilityCheckBox.Enabled = false;
+                if (retiredCheckBox.Checked == false && disabilityCheckBox.Checked == false)
+                {
+                    retiredStringData = "НЕ НА ПЕНСИИ";
+                }
+            }
+        }
+
+        private void retiredCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (retiredCheckBox.Checked == true)
+            {
+                retiredAge.Enabled = true;
+                disabilityCheckBox.Enabled = true;
+                retiredStringData = $"На пенсии с {retiredAge.Value} лет";
+            }
+
+            else
+            {
+                disabilityCheckBox.Checked = false;
+                retiredCheckBox.Checked = false;
+                retiredAge.Enabled = false;
+                disabilityAge.Enabled = false;
+                disabilityCheckBox.Enabled = false;
+                if (retiredCheckBox.Checked == false && disabilityCheckBox.Checked == false)
+                {
+                    retiredStringData = "НЕ НА ПЕНСИИ";
+                }
+            }
+        }
+
+        #endregion
+
+        #region DisabilityAll
+        private void disabilityCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (disabilityCheckBox.Checked == true && retiredAge.Enabled == true)
+            {
+                disabilityGroup.Enabled = true;
+                disabilityAge.Enabled = true;
+                disabilityStringData = $" Инвалидность: группа {disabilityGroup.Value} с {disabilityAge.Value} лет";
+            }
+            else
+            {
+                disabilityGroup.Enabled = false;
+                disabilityAge.Enabled = false;
+
+                if (retiredCheckBox.Checked == false && disabilityCheckBox.Checked == false)
+                {
+                    disabilityStringData = "НЕТ ИНВАЛИДНОСТИ";
+                }
+            }
+        }
+
+        private void disabilityGroup_ValueChanged(object sender, EventArgs e)
+        {
+            if (disabilityCheckBox.Checked == true && retiredAge.Enabled == true)
+            {
+                disabilityGroup.Enabled = true;
+                disabilityAge.Enabled = true;
+                disabilityStringData = $" Инвалидность: группа {disabilityGroup.Value} с {disabilityAge.Value} лет";
+            }
+            else
+            {
+                disabilityGroup.Enabled = false;
+                disabilityAge.Enabled = false;
+
+                if (retiredCheckBox.Checked == false && disabilityCheckBox.Checked == false)
+                {
+                    disabilityStringData = "НЕТ ИНВАЛИДНОСТИ";
+                }
+            }
+        }
+
+        private void disabilityAge_ValueChanged(object sender, EventArgs e)
+        {
+            if (disabilityCheckBox.Checked == true && retiredAge.Enabled == true)
+            {
+                disabilityGroup.Enabled = true;
+                disabilityAge.Enabled = true;
+                disabilityStringData = $" Инвалидность: группа {disabilityGroup.Value} с {disabilityAge.Value} лет";
+            }
+            else
+            {
+                disabilityGroup.Enabled = false;
+                disabilityAge.Enabled = false;
+
+                if (retiredCheckBox.Checked == false && disabilityCheckBox.Checked == false)
+                {
+                    disabilityStringData = "НЕТ ИНВАЛИДНОСТИ";
+                }
+            }
+        }
+        #endregion
+
+        #region AboutSmokingAll
+        private void smokingAge_ValueChanged(object sender, EventArgs e)
+        {
+            if (smokingCheckBox.Checked == true)
+            {
+                smokingAge.Enabled = true;
+                packOfSmokeNUmeric.Enabled = true;
+                smokigStringData = $"с {smokingAge.Value} лет {packOfSmokeNUmeric.Value} пачек в день";
+            }
+            else
+            {
+                smokigStringData = "НЕ КУРИТ";
+                smokingAge.Enabled = false;
+                packOfSmokeNUmeric.Enabled = false;
+            }
+        }
+
+        private void packOfSmokeNUmeric_ValueChanged(object sender, EventArgs e)
+        {
+            if (smokingCheckBox.Checked == true)
+            {
+                smokingAge.Enabled = true;
+                packOfSmokeNUmeric.Enabled = true;
+                smokigStringData = $"с {smokingAge.Value} лет {packOfSmokeNUmeric.Value} пачек в день";
+            }
+            else
+            {
+                smokigStringData = "НЕ КУРИТ";
+                smokingAge.Enabled = false;
+                packOfSmokeNUmeric.Enabled = false;
+            }
+        }
+
+        private void smokingCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (smokingCheckBox.Checked == true)
+            {
+                smokingAge.Enabled = true;
+                packOfSmokeNUmeric.Enabled = true;
+                smokigStringData = $"с {smokingAge.Value} лет {packOfSmokeNUmeric.Value} пачек в день";
+            }
+            else
+            {
+                smokigStringData = "НЕ КУРИТ";
+                smokingAge.Enabled = false;
+                packOfSmokeNUmeric.Enabled = false;
+            }
+        }
+        #endregion
+
+        #region AboutAlcohol
+        private void alcoholAge_ValueChanged(object sender, EventArgs e)
+        {
+            if (alcoholCheckBox.Checked == true)
+            {
+                alcoholAge.Enabled = true;
+                alchoholDrinking = $"с {alcoholAge.Value} лет";
+            }
+            else
+            {
+                alcoholAge.Enabled = false;
+                alchoholDrinking = "НЕ УПОТРЕБЛЯЕТ АЛЬКОГОЛЬ";
+            }
+        }
+
+        private void alcoholCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (alcoholCheckBox.Checked == true)
+            {
+                alchoholDrinking = $"с {alcoholAge.Value} лет";
+                alcoholAge.Enabled = true;
+            }
+            else
+            {
+                alchoholDrinking = "НЕ УПОТРЕБЛЯЕТ АЛЬКОГОЛЬ";
+                alcoholAge.Enabled = false;
+            }
+        }
+        #endregion
+
+        #region pastIllness
+        private void pastIllnessTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (pastIllnessTextBox.Text != "ОТРИЦАЕТ")
+            {
+                pastIllness = pastIllnessTextBox.Text;
+            }
+            else
+            {
+                pastIllness = "ОТРИЦАЕТ";
+            }
+        }
+        #endregion
+
+
+
+        private void zimoticdeseasesTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (zimoticdeseasesTextBox.Text != "ОТРИЦАЕТ")
+            {
+                zimoticdiseasesString = zimoticdeseasesTextBox.Text;
+            }
+            else
+            {
+                zimoticdiseasesString = "ОТРИЦАЕТ";
+            }
+        }
+
+        private void allergyHistoryTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (allergyHistoryTextBox.Text != "ОТРИЦАЕТ")
+            {
+                allergyHistoryStringData = allergyHistoryTextBox.Text;
+            }
+            else
+            {
+                allergyHistoryStringData = "ОТРИЦАЕТ";
+            }
+        }
+
+        private void pregnancyCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (pregnancyCheckBox.Checked == true)
+            {
+                pregnancyNumeric.Enabled = true;
+                climactericNumeric.Enabled = true;
+                foreach (var a in pregnancyCheckBox_ChekedChanged1())
+                {
+                    a.Enabled = true;
+                }
+            }
+            else
+            {
+                pregnancyNumeric.Enabled = false;
+                climactericNumeric.Enabled = false;
+                foreach (var a in pregnancyCheckBox_ChekedChanged1())
+                {
+                    a.Enabled = false;
+                }
+            }
+        }
+
+        private void pregnancyNumeric_ValueChanged(object sender, EventArgs e)
+        {
+            if (pregnancyCheckBox.Checked = true)
+            {
+                pregnancyNumeric.Enabled = true;
+                pregnancyStringData = $"с {pregnancyNumeric.Value} лет";
+            }
+            else
+            {
+                pregnancyNumeric.Enabled = false;
+                pregnancyStringData = "";
+            }
+        }
+
+        private void climactericNumeric_ValueChanged(object sender, EventArgs e)
+        {
+            if (pregnancyCheckBox.Checked = true)
+            {
+                climactericNumeric.Enabled = true;
+            }
+            else
+            {
+                climactericNumeric.Enabled = false;
             }
         }
     }

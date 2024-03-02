@@ -82,16 +82,17 @@ namespace WinformsMicrosoft.Forms
 
         private void illnessAddButton_Click(object sender, EventArgs e)
         {
-            List<Complaints> existComplaint = _dbContext.Complaints.ToList();
+            var existComplaint = _dbContext.illnessCategories.ToList();
 
             IllnessCategory category = new IllnessCategory()
             {
                 CategoryName = illnessTextBox.Text
             };
 
-            bool comlaintExisting = existComplaint.Any(x => x.ComplaintName == category.CategoryName);
+            //bool comlaintExisting = existComplaint.Any(x => x.ComplaintName == category.CategoryName);
+            var comlaintExisting = existComplaint.Where(x => x.CategoryName == category.CategoryName);
 
-            if(comlaintExisting)
+            if(!comlaintExisting.Any())
             {
                 _dbContext.illnessCategories.Add(category);
                 _dbContext.SaveChanges();
