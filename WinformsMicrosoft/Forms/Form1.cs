@@ -1,4 +1,5 @@
 using System.Configuration;
+using System.Runtime.CompilerServices;
 using WinformsMicrosoft.Forms;
 using WinformsMicrosoft.WordChanger;
 
@@ -18,6 +19,9 @@ namespace WinformsMicrosoft
         private string pregnancyStringData = "";
         private string pregnancyCheckBoxStringData = "";
         private string climatericStringData = "";
+        private string gestationNumericStringData = "";
+        private string childBearingStringData = "";
+        private string abortsNumericStringData = "";
         private string? wordFilePath;
 
         public Form1()
@@ -47,7 +51,9 @@ namespace WinformsMicrosoft
                 a.Enabled = false;
             }
             climactericNumeric.Enabled = false;
-
+            abortsNumericUp.Enabled = false;
+            childBearingNumericUp.Enabled = false;
+            gestationNumericUp.Enabled = false;
         }
 
 
@@ -162,7 +168,7 @@ namespace WinformsMicrosoft
                         {"<Time>", DateTime.Now.ToString("HH:mm") },
                         {"<COMPL>", complaintsTextBoxMainForm.Text },
                         {"<PAIN1>", painsMainTextBox.Text },
-                        {"<morbi>",  anamnesismorbiTextBox.Text + "<morbi>" },
+                        {"<morbi>",  anamnesismorbiTextBox.Text},
                         {"<vitae>",  anamnesisVitaeTextBox.Text},
                         {"<SLC>", $"({socialLivingConditionsCheckBox.Text})" },
                         {"<occupationalHazards>", $"({occupationalHazardsCheckbox.Text}) {occupationalHazardsTextBox.Text}" },
@@ -173,7 +179,13 @@ namespace WinformsMicrosoft
                         {"<pastillness>", pastIllness },
                         {"<zimoticdiseases>", zimoticdiseasesString },
                         {"<allergyHistory>", allergyHistoryStringData},
-                        {"<pregnancyData>", $"{pregnancyStringData} ({pregnancyCheckBoxStringData})" }
+                        {"<pregnancyData>", $"{pregnancyStringData} ({pregnancyCheckBoxStringData})" },
+                        {"<climatericNum>", climatericStringData },
+                        {"<gestationData>", gestationNumericStringData },
+                        {"<childBearingData>", childBearingStringData },
+                        {"<abortsData>", abortsNumericStringData }
+                        
+
                 };
 
                     //helper.FIOForFile = textBox1.Text + DateTime.Now.ToString(" dd_MM_yyyy HH:mm");
@@ -499,6 +511,10 @@ namespace WinformsMicrosoft
             {
                 pregnancyNumeric.Enabled = true;
                 climactericNumeric.Enabled = true;
+                abortsNumericUp.Enabled = true;
+                childBearingNumericUp.Enabled = true;
+                gestationNumericUp.Enabled = true;
+
                 foreach (var a in pregnancyCheckBox_ChekedChanged1())
                 {
                     a.Enabled = true;
@@ -508,6 +524,9 @@ namespace WinformsMicrosoft
             {
                 pregnancyNumeric.Enabled = false;
                 climactericNumeric.Enabled = false;
+                abortsNumericUp.Enabled = false;
+                childBearingNumericUp.Enabled = false;
+                gestationNumericUp.Enabled = false;
                 foreach (var a in pregnancyCheckBox_ChekedChanged1())
                 {
                     a.Enabled = false;
@@ -534,11 +553,53 @@ namespace WinformsMicrosoft
             if (pregnancyCheckBox.Checked = true)
             {
                 climactericNumeric.Enabled = true;
+                climatericStringData = $"{climactericNumeric.Value}";
             }
             else
             {
                 climactericNumeric.Enabled = false;
             }
         }
+
+        private void gestationNumericUp_ValueChanged(object sender, EventArgs e)
+        {
+            if (pregnancyCheckBox.Checked = true)
+            {
+                gestationNumericUp.Enabled = true;
+                gestationNumericStringData = $"{gestationNumericUp.Value}";
+            }
+            else
+            {
+                gestationNumericUp.Enabled = false;
+            }
+        }
+
+        private void childBearingNumericUp_ValueChanged(object sender, EventArgs e)
+        {
+            if (pregnancyCheckBox.Checked = true)
+            {
+                childBearingNumericUp.Enabled = true;
+                childBearingStringData = $"{childBearingNumericUp.Value}";
+            }
+            else
+            {
+                childBearingNumericUp.Enabled = false;
+            }
+        }
+
+        private void abortsNumericUp_ValueChanged(object sender, EventArgs e)
+        {
+            if (pregnancyCheckBox.Checked = true)
+            {
+                abortsNumericUp.Enabled = true;
+                abortsNumericStringData = $"{abortsNumericUp.Value}";
+            }
+            else
+            {
+                abortsNumericUp.Enabled = false;
+            }
+            
+        }
+
     }
 }

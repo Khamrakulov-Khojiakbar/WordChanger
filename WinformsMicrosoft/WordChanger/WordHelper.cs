@@ -44,14 +44,11 @@ namespace WinformsMicrosoft.WordChanger
                 {
                     Word.Find find = app.Selection.Find;
 
+                        find.Replacement.Font.Bold = 1;
                         find.Text = item.Key;
                         find.Replacement.Text = item.Value;
-                   
-                    if(item.Value == "НЕ НА ПЕНСИИ" || item.Value == "(нет)" || item.Value == "НЕ КУРИТ")
-                    {
-                        find.Replacement.Font.Bold = 1;
-                    }
-                    
+
+                 
 
                     object wrap = Word.WdFindWrap.wdFindContinue;
                     object replace = Word.WdReplace.wdReplaceAll;

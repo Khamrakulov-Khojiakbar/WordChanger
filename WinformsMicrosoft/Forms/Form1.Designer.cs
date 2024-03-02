@@ -37,7 +37,7 @@ namespace WinformsMicrosoft
             label1 = new Label();
             label3 = new Label();
             panel1 = new Panel();
-            numericUpDown3 = new NumericUpDown();
+            abortsNumericUp = new NumericUpDown();
             label29 = new Label();
             childBearingNumericUp = new NumericUpDown();
             label28 = new Label();
@@ -104,7 +104,7 @@ namespace WinformsMicrosoft
             complaintsTextBoxMainForm = new TextBox();
             label2 = new Label();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)abortsNumericUp).BeginInit();
             ((System.ComponentModel.ISupportInitialize)childBearingNumericUp).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gestationNumericUp).BeginInit();
             ((System.ComponentModel.ISupportInitialize)climactericNumeric).BeginInit();
@@ -193,7 +193,7 @@ namespace WinformsMicrosoft
             // panel1
             // 
             panel1.BackColor = SystemColors.GradientActiveCaption;
-            panel1.Controls.Add(numericUpDown3);
+            panel1.Controls.Add(abortsNumericUp);
             panel1.Controls.Add(label29);
             panel1.Controls.Add(childBearingNumericUp);
             panel1.Controls.Add(label28);
@@ -260,13 +260,14 @@ namespace WinformsMicrosoft
             panel1.Size = new Size(4000, 768);
             panel1.TabIndex = 14;
             // 
-            // numericUpDown3
+            // abortsNumericUp
             // 
-            numericUpDown3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            numericUpDown3.Location = new Point(1448, 273);
-            numericUpDown3.Name = "numericUpDown3";
-            numericUpDown3.Size = new Size(78, 29);
-            numericUpDown3.TabIndex = 67;
+            abortsNumericUp.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            abortsNumericUp.Location = new Point(1448, 273);
+            abortsNumericUp.Name = "abortsNumericUp";
+            abortsNumericUp.Size = new Size(78, 29);
+            abortsNumericUp.TabIndex = 67;
+            abortsNumericUp.ValueChanged += abortsNumericUp_ValueChanged;
             // 
             // label29
             // 
@@ -286,6 +287,7 @@ namespace WinformsMicrosoft
             childBearingNumericUp.Name = "childBearingNumericUp";
             childBearingNumericUp.Size = new Size(78, 29);
             childBearingNumericUp.TabIndex = 65;
+            childBearingNumericUp.ValueChanged += childBearingNumericUp_ValueChanged;
             // 
             // label28
             // 
@@ -305,6 +307,7 @@ namespace WinformsMicrosoft
             gestationNumericUp.Name = "gestationNumericUp";
             gestationNumericUp.Size = new Size(78, 29);
             gestationNumericUp.TabIndex = 63;
+            gestationNumericUp.ValueChanged += gestationNumericUp_ValueChanged;
             // 
             // label30
             // 
@@ -959,7 +962,7 @@ namespace WinformsMicrosoft
             WindowState = FormWindowState.Maximized;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)abortsNumericUp).EndInit();
             ((System.ComponentModel.ISupportInitialize)childBearingNumericUp).EndInit();
             ((System.ComponentModel.ISupportInitialize)gestationNumericUp).EndInit();
             ((System.ComponentModel.ISupportInitialize)climactericNumeric).EndInit();
@@ -1049,7 +1052,7 @@ namespace WinformsMicrosoft
         private Label label27;
         private NumericUpDown climactericNumeric;
         private Label label26;
-        private NumericUpDown numericUpDown3;
+        private NumericUpDown abortsNumericUp;
         private Label label29;
         private NumericUpDown childBearingNumericUp;
         private Label label28;
