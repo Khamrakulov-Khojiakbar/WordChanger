@@ -22,6 +22,7 @@ namespace WinformsMicrosoft
         private string gestationNumericStringData = "";
         private string childBearingStringData = "";
         private string abortsNumericStringData = "";
+        private string pregnancyProcessStringData = "";
         private string? wordFilePath;
 
         public Form1()
@@ -54,6 +55,7 @@ namespace WinformsMicrosoft
             abortsNumericUp.Enabled = false;
             childBearingNumericUp.Enabled = false;
             gestationNumericUp.Enabled = false;
+            pregnancyProccessingTextBox.Enabled = false;
         }
 
 
@@ -184,7 +186,7 @@ namespace WinformsMicrosoft
                         {"<gestationData>", gestationNumericStringData },
                         {"<childBearingData>", childBearingStringData },
                         {"<abortsData>", abortsNumericStringData }
-                        
+
 
                 };
 
@@ -598,8 +600,19 @@ namespace WinformsMicrosoft
             {
                 abortsNumericUp.Enabled = false;
             }
-            
+
         }
 
+        private void pregnancyProcessingChekcBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if(pregnancyProcessingChekcBox.Checked != true)
+            {
+                pregnancyProccessingTextBox.Enabled = false;
+            }
+            else
+            {
+                pregnancyProccessingTextBox.Enabled = true;
+            }
+        }
     }
 }

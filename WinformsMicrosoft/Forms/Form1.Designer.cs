@@ -37,6 +37,13 @@ namespace WinformsMicrosoft
             label1 = new Label();
             label3 = new Label();
             panel1 = new Panel();
+            pregnancyProccessingTextBox = new TextBox();
+            pregnancyProcessingChekcBox = new CheckBox();
+            pregProcessingAGCheckBox = new CheckBox();
+            pregProcessingBelokCheckBox = new CheckBox();
+            pregnancyProcessingSwellingCheckBox = new CheckBox();
+            pregnancyProcessingNormalCheckBox = new CheckBox();
+            label31 = new Label();
             abortsNumericUp = new NumericUpDown();
             label29 = new Label();
             childBearingNumericUp = new NumericUpDown();
@@ -193,6 +200,13 @@ namespace WinformsMicrosoft
             // panel1
             // 
             panel1.BackColor = SystemColors.GradientActiveCaption;
+            panel1.Controls.Add(pregnancyProccessingTextBox);
+            panel1.Controls.Add(pregnancyProcessingChekcBox);
+            panel1.Controls.Add(pregProcessingAGCheckBox);
+            panel1.Controls.Add(pregProcessingBelokCheckBox);
+            panel1.Controls.Add(pregnancyProcessingSwellingCheckBox);
+            panel1.Controls.Add(pregnancyProcessingNormalCheckBox);
+            panel1.Controls.Add(label31);
             panel1.Controls.Add(abortsNumericUp);
             panel1.Controls.Add(label29);
             panel1.Controls.Add(childBearingNumericUp);
@@ -259,6 +273,81 @@ namespace WinformsMicrosoft
             panel1.Name = "panel1";
             panel1.Size = new Size(4000, 768);
             panel1.TabIndex = 14;
+            // 
+            // pregnancyProccessingTextBox
+            // 
+            pregnancyProccessingTextBox.Location = new Point(1227, 333);
+            pregnancyProccessingTextBox.Multiline = true;
+            pregnancyProccessingTextBox.Name = "pregnancyProccessingTextBox";
+            pregnancyProccessingTextBox.Size = new Size(183, 23);
+            pregnancyProccessingTextBox.TabIndex = 74;
+            // 
+            // pregnancyProcessingChekcBox
+            // 
+            pregnancyProcessingChekcBox.AutoSize = true;
+            pregnancyProcessingChekcBox.BackColor = Color.Transparent;
+            pregnancyProcessingChekcBox.Location = new Point(1179, 336);
+            pregnancyProcessingChekcBox.Name = "pregnancyProcessingChekcBox";
+            pregnancyProcessingChekcBox.Size = new Size(42, 19);
+            pregnancyProcessingChekcBox.TabIndex = 73;
+            pregnancyProcessingChekcBox.Text = "др:";
+            pregnancyProcessingChekcBox.UseVisualStyleBackColor = false;
+            pregnancyProcessingChekcBox.CheckedChanged += pregnancyProcessingChekcBox_CheckedChanged;
+            // 
+            // pregProcessingAGCheckBox
+            // 
+            pregProcessingAGCheckBox.AutoSize = true;
+            pregProcessingAGCheckBox.BackColor = Color.Transparent;
+            pregProcessingAGCheckBox.Location = new Point(1426, 336);
+            pregProcessingAGCheckBox.Name = "pregProcessingAGCheckBox";
+            pregProcessingAGCheckBox.Size = new Size(40, 19);
+            pregProcessingAGCheckBox.TabIndex = 72;
+            pregProcessingAGCheckBox.Text = "АГ";
+            pregProcessingAGCheckBox.UseVisualStyleBackColor = false;
+            // 
+            // pregProcessingBelokCheckBox
+            // 
+            pregProcessingBelokCheckBox.AutoSize = true;
+            pregProcessingBelokCheckBox.BackColor = Color.Transparent;
+            pregProcessingBelokCheckBox.Location = new Point(1536, 312);
+            pregProcessingBelokCheckBox.Name = "pregProcessingBelokCheckBox";
+            pregProcessingBelokCheckBox.Size = new Size(59, 19);
+            pregProcessingBelokCheckBox.TabIndex = 71;
+            pregProcessingBelokCheckBox.Text = "белок";
+            pregProcessingBelokCheckBox.UseVisualStyleBackColor = false;
+            // 
+            // pregnancyProcessingSwellingCheckBox
+            // 
+            pregnancyProcessingSwellingCheckBox.AutoSize = true;
+            pregnancyProcessingSwellingCheckBox.BackColor = Color.Transparent;
+            pregnancyProcessingSwellingCheckBox.Location = new Point(1536, 337);
+            pregnancyProcessingSwellingCheckBox.Name = "pregnancyProcessingSwellingCheckBox";
+            pregnancyProcessingSwellingCheckBox.Size = new Size(57, 19);
+            pregnancyProcessingSwellingCheckBox.TabIndex = 70;
+            pregnancyProcessingSwellingCheckBox.Text = "отеки";
+            pregnancyProcessingSwellingCheckBox.UseVisualStyleBackColor = false;
+            // 
+            // pregnancyProcessingNormalCheckBox
+            // 
+            pregnancyProcessingNormalCheckBox.AutoSize = true;
+            pregnancyProcessingNormalCheckBox.BackColor = Color.Transparent;
+            pregnancyProcessingNormalCheckBox.Location = new Point(1426, 311);
+            pregnancyProcessingNormalCheckBox.Name = "pregnancyProcessingNormalCheckBox";
+            pregnancyProcessingNormalCheckBox.Size = new Size(89, 19);
+            pregnancyProcessingNormalCheckBox.TabIndex = 69;
+            pregnancyProcessingNormalCheckBox.Text = "нормально";
+            pregnancyProcessingNormalCheckBox.UseVisualStyleBackColor = false;
+            // 
+            // label31
+            // 
+            label31.AutoSize = true;
+            label31.BackColor = Color.Transparent;
+            label31.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label31.Location = new Point(1179, 307);
+            label31.Name = "label31";
+            label31.Size = new Size(222, 21);
+            label31.TabIndex = 68;
+            label31.Text = "Как протекала беременность:";
             // 
             // abortsNumericUp
             // 
@@ -1058,5 +1147,12 @@ namespace WinformsMicrosoft
         private Label label28;
         private NumericUpDown gestationNumericUp;
         private Label label30;
+        private CheckBox pregProcessingAGCheckBox;
+        private CheckBox pregProcessingBelokCheckBox;
+        private CheckBox pregnancyProcessingSwellingCheckBox;
+        private CheckBox pregnancyProcessingNormalCheckBox;
+        private Label label31;
+        private TextBox pregnancyProccessingTextBox;
+        private CheckBox pregnancyProcessingChekcBox;
     }
 }
