@@ -154,6 +154,7 @@ namespace WinformsMicrosoft
 
         private void Change_Click(object sender, EventArgs e)
         {
+            GetlastCheckBoxText();
             string time = DateTime.Now.ToString("ddMMyyyyHHmm");
             try
             {
@@ -605,14 +606,68 @@ namespace WinformsMicrosoft
 
         private void pregnancyProcessingChekcBox_CheckedChanged(object sender, EventArgs e)
         {
-            if(pregnancyProcessingChekcBox.Checked != true)
+            if (pregnancyProcessingChekcBoxOtherValue.Checked != true)
+            {
+                pregnancyProccessingTextBox.Enabled = false;
+                pregnancyProcessingNormalCheckBox.Enabled = true;
+                pregnancyProcessingSwellingCheckBox.Enabled = true;
+                pregProcessingAGCheckBox.Enabled = true;
+                pregProcessingBelokCheckBox.Enabled = true;
+
+            }
+            else
+            {
+                pregnancyProccessingTextBox.Enabled = true;
+                pregnancyProcessingNormalCheckBox.Enabled = false;
+                pregnancyProcessingSwellingCheckBox.Enabled = false;
+                pregProcessingAGCheckBox.Enabled = false;
+                pregProcessingBelokCheckBox.Enabled = false;
+            }
+        }
+
+        private void pregnancyProccessingTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (pregnancyProcessingChekcBoxOtherValue.Checked != true)
             {
                 pregnancyProccessingTextBox.Enabled = false;
             }
             else
             {
                 pregnancyProccessingTextBox.Enabled = true;
+                pregnancyProcessStringData = pregnancyProccessingTextBox.Text;
             }
         }
+
+        CheckBox lastChecked;
+
+        private void pregnancyProcessingCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            
+            CheckBox activeCheckBox = sender as CheckBox;
+
+            if (activeCheckBox.Checked && activeCheckBox != lastChecked && lastChecked != null)
+            {
+                lastChecked.Checked = false;
+            }
+
+            lastChecked = activeCheckBox.Checked ? activeCheckBox : null;
+
+        }
+
+        private void GetlastCheckBoxText()
+        {
+            if(lastChecked.Enabled != false)
+            {
+
+            pregnancyStringData = lastChecked.Text;
+            }
+            else
+            {
+                pregnancyStringData = pregnancyProccessingTextBox.Text;
+            }
+
+            MessageBox.Show(pregnancyStringData);
+        }
+
     }
 }

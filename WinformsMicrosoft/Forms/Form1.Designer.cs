@@ -38,7 +38,7 @@ namespace WinformsMicrosoft
             label3 = new Label();
             panel1 = new Panel();
             pregnancyProccessingTextBox = new TextBox();
-            pregnancyProcessingChekcBox = new CheckBox();
+            pregnancyProcessingChekcBoxOtherValue = new CheckBox();
             pregProcessingAGCheckBox = new CheckBox();
             pregProcessingBelokCheckBox = new CheckBox();
             pregnancyProcessingSwellingCheckBox = new CheckBox();
@@ -201,7 +201,7 @@ namespace WinformsMicrosoft
             // 
             panel1.BackColor = SystemColors.GradientActiveCaption;
             panel1.Controls.Add(pregnancyProccessingTextBox);
-            panel1.Controls.Add(pregnancyProcessingChekcBox);
+            panel1.Controls.Add(pregnancyProcessingChekcBoxOtherValue);
             panel1.Controls.Add(pregProcessingAGCheckBox);
             panel1.Controls.Add(pregProcessingBelokCheckBox);
             panel1.Controls.Add(pregnancyProcessingSwellingCheckBox);
@@ -281,18 +281,19 @@ namespace WinformsMicrosoft
             pregnancyProccessingTextBox.Name = "pregnancyProccessingTextBox";
             pregnancyProccessingTextBox.Size = new Size(183, 23);
             pregnancyProccessingTextBox.TabIndex = 74;
+            pregnancyProccessingTextBox.TextChanged += pregnancyProccessingTextBox_TextChanged;
             // 
-            // pregnancyProcessingChekcBox
+            // pregnancyProcessingChekcBoxOtherValue
             // 
-            pregnancyProcessingChekcBox.AutoSize = true;
-            pregnancyProcessingChekcBox.BackColor = Color.Transparent;
-            pregnancyProcessingChekcBox.Location = new Point(1179, 336);
-            pregnancyProcessingChekcBox.Name = "pregnancyProcessingChekcBox";
-            pregnancyProcessingChekcBox.Size = new Size(42, 19);
-            pregnancyProcessingChekcBox.TabIndex = 73;
-            pregnancyProcessingChekcBox.Text = "др:";
-            pregnancyProcessingChekcBox.UseVisualStyleBackColor = false;
-            pregnancyProcessingChekcBox.CheckedChanged += pregnancyProcessingChekcBox_CheckedChanged;
+            pregnancyProcessingChekcBoxOtherValue.AutoSize = true;
+            pregnancyProcessingChekcBoxOtherValue.BackColor = Color.Transparent;
+            pregnancyProcessingChekcBoxOtherValue.Location = new Point(1179, 336);
+            pregnancyProcessingChekcBoxOtherValue.Name = "pregnancyProcessingChekcBoxOtherValue";
+            pregnancyProcessingChekcBoxOtherValue.Size = new Size(42, 19);
+            pregnancyProcessingChekcBoxOtherValue.TabIndex = 73;
+            pregnancyProcessingChekcBoxOtherValue.Text = "др:";
+            pregnancyProcessingChekcBoxOtherValue.UseVisualStyleBackColor = false;
+            pregnancyProcessingChekcBoxOtherValue.CheckedChanged += pregnancyProcessingChekcBox_CheckedChanged;
             // 
             // pregProcessingAGCheckBox
             // 
@@ -304,6 +305,7 @@ namespace WinformsMicrosoft
             pregProcessingAGCheckBox.TabIndex = 72;
             pregProcessingAGCheckBox.Text = "АГ";
             pregProcessingAGCheckBox.UseVisualStyleBackColor = false;
+            pregProcessingAGCheckBox.CheckedChanged += pregnancyProcessingCheckBox_CheckedChanged;
             // 
             // pregProcessingBelokCheckBox
             // 
@@ -315,6 +317,7 @@ namespace WinformsMicrosoft
             pregProcessingBelokCheckBox.TabIndex = 71;
             pregProcessingBelokCheckBox.Text = "белок";
             pregProcessingBelokCheckBox.UseVisualStyleBackColor = false;
+            pregProcessingBelokCheckBox.CheckedChanged += pregnancyProcessingCheckBox_CheckedChanged;
             // 
             // pregnancyProcessingSwellingCheckBox
             // 
@@ -326,6 +329,7 @@ namespace WinformsMicrosoft
             pregnancyProcessingSwellingCheckBox.TabIndex = 70;
             pregnancyProcessingSwellingCheckBox.Text = "отеки";
             pregnancyProcessingSwellingCheckBox.UseVisualStyleBackColor = false;
+            pregnancyProcessingSwellingCheckBox.CheckedChanged += pregnancyProcessingCheckBox_CheckedChanged;
             // 
             // pregnancyProcessingNormalCheckBox
             // 
@@ -337,6 +341,7 @@ namespace WinformsMicrosoft
             pregnancyProcessingNormalCheckBox.TabIndex = 69;
             pregnancyProcessingNormalCheckBox.Text = "нормально";
             pregnancyProcessingNormalCheckBox.UseVisualStyleBackColor = false;
+            pregnancyProcessingNormalCheckBox.CheckedChanged += pregnancyProcessingCheckBox_CheckedChanged;
             // 
             // label31
             // 
@@ -1153,6 +1158,6 @@ namespace WinformsMicrosoft
         private CheckBox pregnancyProcessingNormalCheckBox;
         private Label label31;
         private TextBox pregnancyProccessingTextBox;
-        private CheckBox pregnancyProcessingChekcBox;
+        private CheckBox pregnancyProcessingChekcBoxOtherValue;
     }
 }
