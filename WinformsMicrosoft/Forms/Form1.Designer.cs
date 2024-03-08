@@ -110,6 +110,8 @@ namespace WinformsMicrosoft
             painsMainTextBox = new TextBox();
             complaintsTextBoxMainForm = new TextBox();
             label2 = new Label();
+            breastsTextBox = new TextBox();
+            label32 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)abortsNumericUp).BeginInit();
             ((System.ComponentModel.ISupportInitialize)childBearingNumericUp).BeginInit();
@@ -200,6 +202,8 @@ namespace WinformsMicrosoft
             // panel1
             // 
             panel1.BackColor = SystemColors.GradientActiveCaption;
+            panel1.Controls.Add(label32);
+            panel1.Controls.Add(breastsTextBox);
             panel1.Controls.Add(pregnancyProccessingTextBox);
             panel1.Controls.Add(pregnancyProcessingChekcBoxOtherValue);
             panel1.Controls.Add(pregProcessingAGCheckBox);
@@ -1041,6 +1045,25 @@ namespace WinformsMicrosoft
             label2.TabIndex = 21;
             label2.Text = "Боли:";
             // 
+            // breastsTextBox
+            // 
+            breastsTextBox.Location = new Point(1326, 373);
+            breastsTextBox.Name = "breastsTextBox";
+            breastsTextBox.Size = new Size(315, 23);
+            breastsTextBox.TabIndex = 75;
+            breastsTextBox.TextChanged += breastsTextBox_TextChanged;
+            // 
+            // label32
+            // 
+            label32.AutoSize = true;
+            label32.BackColor = Color.Transparent;
+            label32.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label32.Location = new Point(1174, 373);
+            label32.Name = "label32";
+            label32.Size = new Size(148, 21);
+            label32.TabIndex = 76;
+            label32.Text = "Молочные железы:";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1159,5 +1182,7 @@ namespace WinformsMicrosoft
         private Label label31;
         private TextBox pregnancyProccessingTextBox;
         private CheckBox pregnancyProcessingChekcBoxOtherValue;
+        private Label label32;
+        private TextBox breastsTextBox;
     }
 }

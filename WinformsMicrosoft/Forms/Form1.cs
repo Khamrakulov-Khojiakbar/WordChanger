@@ -1,5 +1,4 @@
 using System.Configuration;
-using System.Runtime.CompilerServices;
 using WinformsMicrosoft.Forms;
 using WinformsMicrosoft.WordChanger;
 
@@ -23,6 +22,7 @@ namespace WinformsMicrosoft
         private string childBearingStringData = "";
         private string abortsNumericStringData = "";
         private string pregnancyProcessStringData = "";
+        private string breastsStringData = "";
         private string? wordFilePath;
 
         public Form1()
@@ -186,8 +186,9 @@ namespace WinformsMicrosoft
                         {"<climatericNum>", climatericStringData },
                         {"<gestationData>", gestationNumericStringData },
                         {"<childBearingData>", childBearingStringData },
-                        {"<abortsData>", abortsNumericStringData }
-
+                        {"<abortsData>", abortsNumericStringData },
+                        {"<pregnancyProccessing>", pregnancyProcessStringData },
+                        {"<breasts>", breastsStringData }
 
                 };
 
@@ -642,7 +643,7 @@ namespace WinformsMicrosoft
 
         private void pregnancyProcessingCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            
+
             CheckBox activeCheckBox = sender as CheckBox;
 
             if (activeCheckBox.Checked && activeCheckBox != lastChecked && lastChecked != null)
@@ -656,18 +657,20 @@ namespace WinformsMicrosoft
 
         private void GetlastCheckBoxText()
         {
-            if(lastChecked.Enabled != false)
+            if (lastChecked.Enabled != false)
             {
-
-            pregnancyStringData = lastChecked.Text;
+                pregnancyStringData = lastChecked.Text;
             }
             else
             {
                 pregnancyStringData = pregnancyProccessingTextBox.Text;
             }
 
-            MessageBox.Show(pregnancyStringData);
         }
 
+        private void breastsTextBox_TextChanged(object sender, EventArgs e)
+        {
+            breastsStringData = breastsTextBox.Text;
+        }
     }
 }

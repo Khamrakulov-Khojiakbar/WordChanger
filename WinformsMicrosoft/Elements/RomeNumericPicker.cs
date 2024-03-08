@@ -8,8 +8,8 @@ namespace WinformsMicrosoft.Elements
 {
     public class RomeNumericPicker : System.Windows.Forms.NumericUpDown
     {
-        public decimal Maximum { get; set; } = 3;
-        public decimal Minimum { get; set; } = 1;
+        public new decimal Maximum { get; set; } = 3;
+        public new decimal Minimum { get; set; } = 1;
 
 
         public override string Text
