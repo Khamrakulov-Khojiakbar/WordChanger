@@ -37,6 +37,8 @@ namespace WinformsMicrosoft
             label1 = new Label();
             label3 = new Label();
             panel1 = new Panel();
+            label32 = new Label();
+            breastsTextBox = new TextBox();
             pregnancyProccessingTextBox = new TextBox();
             pregnancyProcessingChekcBoxOtherValue = new CheckBox();
             pregProcessingAGCheckBox = new CheckBox();
@@ -110,8 +112,7 @@ namespace WinformsMicrosoft
             painsMainTextBox = new TextBox();
             complaintsTextBoxMainForm = new TextBox();
             label2 = new Label();
-            breastsTextBox = new TextBox();
-            label32 = new Label();
+            panel5 = new Panel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)abortsNumericUp).BeginInit();
             ((System.ComponentModel.ISupportInitialize)childBearingNumericUp).BeginInit();
@@ -131,7 +132,7 @@ namespace WinformsMicrosoft
             // 
             // Change
             // 
-            Change.Location = new Point(2162, 666);
+            Change.Location = new Point(1517, 645);
             Change.Margin = new Padding(4, 3, 4, 3);
             Change.Name = "Change";
             Change.Size = new Size(88, 27);
@@ -164,7 +165,7 @@ namespace WinformsMicrosoft
             // label4
             // 
             label4.AutoSize = true;
-            label4.BackColor = Color.SkyBlue;
+            label4.BackColor = Color.Transparent;
             label4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label4.Location = new Point(37, 28);
             label4.Margin = new Padding(0);
@@ -176,7 +177,7 @@ namespace WinformsMicrosoft
             // label1
             // 
             label1.AutoSize = true;
-            label1.BackColor = SystemColors.ActiveCaption;
+            label1.BackColor = Color.Transparent;
             label1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label1.Location = new Point(13, 7);
             label1.Margin = new Padding(4, 0, 4, 0);
@@ -189,7 +190,7 @@ namespace WinformsMicrosoft
             // label3
             // 
             label3.AutoSize = true;
-            label3.BackColor = SystemColors.ActiveCaption;
+            label3.BackColor = Color.Transparent;
             label3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label3.Location = new Point(21, 52);
             label3.Margin = new Padding(4, 0, 4, 0);
@@ -201,7 +202,7 @@ namespace WinformsMicrosoft
             // 
             // panel1
             // 
-            panel1.BackColor = SystemColors.GradientActiveCaption;
+            panel1.BackColor = Color.Cyan;
             panel1.Controls.Add(label32);
             panel1.Controls.Add(breastsTextBox);
             panel1.Controls.Add(pregnancyProccessingTextBox);
@@ -275,8 +276,27 @@ namespace WinformsMicrosoft
             panel1.Location = new Point(-1, 0);
             panel1.Margin = new Padding(4, 3, 4, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(4000, 768);
+            panel1.Size = new Size(1722, 768);
             panel1.TabIndex = 14;
+            // 
+            // label32
+            // 
+            label32.AutoSize = true;
+            label32.BackColor = Color.Transparent;
+            label32.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label32.Location = new Point(1174, 373);
+            label32.Name = "label32";
+            label32.Size = new Size(148, 21);
+            label32.TabIndex = 76;
+            label32.Text = "Молочные железы:";
+            // 
+            // breastsTextBox
+            // 
+            breastsTextBox.Location = new Point(1326, 373);
+            breastsTextBox.Name = "breastsTextBox";
+            breastsTextBox.Size = new Size(315, 23);
+            breastsTextBox.TabIndex = 75;
+            breastsTextBox.TextChanged += breastsTextBox_TextChanged;
             // 
             // pregnancyProccessingTextBox
             // 
@@ -1045,35 +1065,25 @@ namespace WinformsMicrosoft
             label2.TabIndex = 21;
             label2.Text = "Боли:";
             // 
-            // breastsTextBox
+            // panel5
             // 
-            breastsTextBox.Location = new Point(1326, 373);
-            breastsTextBox.Name = "breastsTextBox";
-            breastsTextBox.Size = new Size(315, 23);
-            breastsTextBox.TabIndex = 75;
-            breastsTextBox.TextChanged += breastsTextBox_TextChanged;
-            // 
-            // label32
-            // 
-            label32.AutoSize = true;
-            label32.BackColor = Color.Transparent;
-            label32.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label32.Location = new Point(1174, 373);
-            label32.Name = "label32";
-            label32.Size = new Size(148, 21);
-            label32.TabIndex = 76;
-            label32.Text = "Молочные железы:";
+            panel5.Location = new Point(1717, 0);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(1618, 768);
+            panel5.TabIndex = 15;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
-            ClientSize = new Size(3364, 721);
+            ClientSize = new Size(3364, 729);
+            Controls.Add(panel5);
             Controls.Add(textBox1);
             Controls.Add(panel1);
             Margin = new Padding(4, 3, 4, 3);
-            MaximumSize = new Size(6000, 766);
+            MaximumSize = new Size(6000, 768);
+            MinimumSize = new Size(0, 768);
             Name = "Form1";
             Text = "Form1";
             WindowState = FormWindowState.Maximized;
@@ -1184,5 +1194,6 @@ namespace WinformsMicrosoft
         private CheckBox pregnancyProcessingChekcBoxOtherValue;
         private Label label32;
         private TextBox breastsTextBox;
+        private Panel panel5;
     }
 }

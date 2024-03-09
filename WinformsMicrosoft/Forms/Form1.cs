@@ -28,6 +28,11 @@ namespace WinformsMicrosoft
         public Form1()
         {
             InitializeComponent();
+            panel1.BackColor = ColorTranslator.FromHtml("#C5EBAA");
+            panel2.BackColor = ColorTranslator.FromHtml("#A5DD9B");
+            panel3.BackColor = ColorTranslator.FromHtml("#A5DD9B");
+            panel4.BackColor = ColorTranslator.FromHtml("#A5DD9B");
+            panel5.BackColor = ColorTranslator.FromHtml("#F6F193");
             InitializeCheckBoxes();
             IntializePregnancyCheckBox();
             FalseAll();
