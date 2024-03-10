@@ -24,6 +24,15 @@ namespace WinformsMicrosoft
 
         #region Windows Form Designer generated code
 
+        private void CustomDesign()
+        {
+            panel1.BackColor = ColorTranslator.FromHtml("#C5EBAA");
+            panel2.BackColor = ColorTranslator.FromHtml("#A5DD9B");
+            panel3.BackColor = ColorTranslator.FromHtml("#A5DD9B");
+            panel4.BackColor = ColorTranslator.FromHtml("#A5DD9B");
+            panel5.BackColor = ColorTranslator.FromHtml("#F6F193");
+        }
+
         /// <summary>
         ///  Required method for Designer support - do not modify
         ///  the contents of this method with the code editor.
@@ -140,6 +149,8 @@ namespace WinformsMicrosoft
             Change.Text = "Изменить";
             Change.UseVisualStyleBackColor = true;
             Change.Click += Change_Click;
+            
+
             // 
             // dateTimePicker1
             // 
@@ -202,7 +213,7 @@ namespace WinformsMicrosoft
             // 
             // panel1
             // 
-            panel1.BackColor = Color.Cyan;
+            
             panel1.Controls.Add(label32);
             panel1.Controls.Add(breastsTextBox);
             panel1.Controls.Add(pregnancyProccessingTextBox);
@@ -276,7 +287,7 @@ namespace WinformsMicrosoft
             panel1.Location = new Point(-1, 0);
             panel1.Margin = new Padding(4, 3, 4, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1722, 768);
+            panel1.Size = new Size(1722, 725);
             panel1.TabIndex = 14;
             // 
             // label32
@@ -1069,14 +1080,27 @@ namespace WinformsMicrosoft
             // 
             panel5.Location = new Point(1717, 0);
             panel5.Name = "panel5";
-            panel5.Size = new Size(1618, 768);
+            panel5.Size = new Size(1618, 725);
             panel5.TabIndex = 15;
+            //
+            // CustomDesign
+            //
+            panel1.BackColor = ColorTranslator.FromHtml("#C5EBAA");
+            panel2.BackColor = ColorTranslator.FromHtml("#A5DD9B");
+            panel3.BackColor = ColorTranslator.FromHtml("#A5DD9B");
+            panel4.BackColor = ColorTranslator.FromHtml("#A5DD9B");
+            panel5.BackColor = ColorTranslator.FromHtml("#F6F193");
+            //
+            //CustomDesign
+            //
+
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
+            BackColor = Color.MediumTurquoise;
             ClientSize = new Size(3364, 729);
             Controls.Add(panel5);
             Controls.Add(textBox1);
