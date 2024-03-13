@@ -644,27 +644,43 @@ namespace WinformsMicrosoft
             }
         }
 
-        CheckBox lastChecked;
+        CheckBox pregnancyProcessCheckBox;
 
         private void pregnancyProcessingCheckBox_CheckedChanged(object sender, EventArgs e)
         {
 
             CheckBox activeCheckBox = sender as CheckBox;
 
-            if (activeCheckBox.Checked && activeCheckBox != lastChecked && lastChecked != null)
+            if (activeCheckBox.Checked && activeCheckBox != pregnancyProcessCheckBox && pregnancyProcessCheckBox != null)
             {
-                lastChecked.Checked = false;
+                pregnancyProcessCheckBox.Checked = false;
             }
 
-            lastChecked = activeCheckBox.Checked ? activeCheckBox : null;
+            pregnancyProcessCheckBox = activeCheckBox.Checked ? activeCheckBox : null;
 
         }
 
+        CheckBox bodyTypeLastCheckedCheckBox;
+        private void bodyTypeCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+
+            CheckBox activeCheckBox = sender as CheckBox;
+
+            if (activeCheckBox.Checked && activeCheckBox != bodyTypeLastCheckedCheckBox && bodyTypeLastCheckedCheckBox != null)
+            {
+                bodyTypeLastCheckedCheckBox.Checked = false;
+            }
+
+            bodyTypeLastCheckedCheckBox = activeCheckBox.Checked ? activeCheckBox : null;
+
+        }
+
+
         private void GetlastCheckBoxText()
         {
-            if (lastChecked.Enabled != false)
+            if (pregnancyProcessCheckBox.Enabled != false)
             {
-                pregnancyStringData = lastChecked.Text;
+                pregnancyStringData = pregnancyProcessCheckBox.Text;
             }
             else
             {

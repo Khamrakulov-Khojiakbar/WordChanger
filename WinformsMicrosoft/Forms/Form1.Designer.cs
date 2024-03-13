@@ -122,6 +122,10 @@ namespace WinformsMicrosoft
             complaintsTextBoxMainForm = new TextBox();
             label2 = new Label();
             panel5 = new Panel();
+            normasthenicCheckBox = new CheckBox();
+            hypersthenicCheckBox = new CheckBox();
+            asthenicCheckBox = new CheckBox();
+            label43 = new Label();
             textBox5 = new TextBox();
             label42 = new Label();
             textBox4 = new TextBox();
@@ -138,10 +142,6 @@ namespace WinformsMicrosoft
             label34 = new Label();
             generalStatePresentTime = new TextBox();
             label33 = new Label();
-            label43 = new Label();
-            asthenicCheckBox = new CheckBox();
-            hypersthenicCheckBox = new CheckBox();
-            normasthenicCheckBox = new CheckBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)abortsNumericUp).BeginInit();
             ((System.ComponentModel.ISupportInitialize)childBearingNumericUp).BeginInit();
@@ -322,9 +322,9 @@ namespace WinformsMicrosoft
             // 
             // breastsTextBox
             // 
-            breastsTextBox.Location = new Point(1326, 373);
+            breastsTextBox.Location = new Point(1339, 373);
             breastsTextBox.Name = "breastsTextBox";
-            breastsTextBox.Size = new Size(315, 23);
+            breastsTextBox.Size = new Size(308, 23);
             breastsTextBox.TabIndex = 75;
             breastsTextBox.TextChanged += breastsTextBox_TextChanged;
             // 
@@ -341,7 +341,7 @@ namespace WinformsMicrosoft
             // 
             pregnancyProcessingChekcBoxOtherValue.AutoSize = true;
             pregnancyProcessingChekcBoxOtherValue.BackColor = Color.Transparent;
-            pregnancyProcessingChekcBoxOtherValue.Location = new Point(1179, 336);
+            pregnancyProcessingChekcBoxOtherValue.Location = new Point(1174, 336);
             pregnancyProcessingChekcBoxOtherValue.Name = "pregnancyProcessingChekcBoxOtherValue";
             pregnancyProcessingChekcBoxOtherValue.Size = new Size(42, 19);
             pregnancyProcessingChekcBoxOtherValue.TabIndex = 73;
@@ -402,7 +402,7 @@ namespace WinformsMicrosoft
             label31.AutoSize = true;
             label31.BackColor = Color.Transparent;
             label31.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label31.Location = new Point(1179, 307);
+            label31.Location = new Point(1174, 307);
             label31.Name = "label31";
             label31.Size = new Size(222, 21);
             label31.TabIndex = 68;
@@ -462,7 +462,7 @@ namespace WinformsMicrosoft
             label30.AutoSize = true;
             label30.BackColor = Color.Transparent;
             label30.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label30.Location = new Point(1179, 242);
+            label30.Location = new Point(1174, 242);
             label30.Name = "label30";
             label30.Size = new Size(121, 21);
             label30.TabIndex = 61;
@@ -504,7 +504,7 @@ namespace WinformsMicrosoft
             label25.AutoSize = true;
             label25.BackColor = Color.Transparent;
             label25.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label25.Location = new Point(1179, 205);
+            label25.Location = new Point(1174, 205);
             label25.Name = "label25";
             label25.Size = new Size(73, 21);
             label25.TabIndex = 57;
@@ -1123,6 +1123,50 @@ namespace WinformsMicrosoft
             panel5.Size = new Size(1618, 725);
             panel5.TabIndex = 15;
             // 
+            // normasthenicCheckBox
+            // 
+            normasthenicCheckBox.AutoSize = true;
+            normasthenicCheckBox.Location = new Point(287, 146);
+            normasthenicCheckBox.Name = "normasthenicCheckBox";
+            normasthenicCheckBox.Size = new Size(131, 19);
+            normasthenicCheckBox.TabIndex = 95;
+            normasthenicCheckBox.Text = "нормастеническое";
+            normasthenicCheckBox.UseVisualStyleBackColor = true;
+            normasthenicCheckBox.CheckedChanged += bodyTypeCheckBox_CheckedChanged;
+            // 
+            // hypersthenicCheckBox
+            // 
+            hypersthenicCheckBox.AutoSize = true;
+            hypersthenicCheckBox.Location = new Point(424, 146);
+            hypersthenicCheckBox.Name = "hypersthenicCheckBox";
+            hypersthenicCheckBox.Size = new Size(127, 19);
+            hypersthenicCheckBox.TabIndex = 94;
+            hypersthenicCheckBox.Text = "гиперстеническое";
+            hypersthenicCheckBox.UseVisualStyleBackColor = true;
+            hypersthenicCheckBox.CheckedChanged += bodyTypeCheckBox_CheckedChanged;
+            // 
+            // asthenicCheckBox
+            // 
+            asthenicCheckBox.AutoSize = true;
+            asthenicCheckBox.Location = new Point(179, 146);
+            asthenicCheckBox.Name = "asthenicCheckBox";
+            asthenicCheckBox.Size = new Size(101, 19);
+            asthenicCheckBox.TabIndex = 93;
+            asthenicCheckBox.Text = "астеническое";
+            asthenicCheckBox.UseVisualStyleBackColor = true;
+            asthenicCheckBox.CheckedChanged += bodyTypeCheckBox_CheckedChanged;
+            // 
+            // label43
+            // 
+            label43.AutoSize = true;
+            label43.BackColor = Color.FromArgb(242, 193, 141);
+            label43.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label43.Location = new Point(52, 145);
+            label43.Name = "label43";
+            label43.Size = new Size(116, 21);
+            label43.TabIndex = 92;
+            label43.Text = "Телосложение:";
+            // 
             // textBox5
             // 
             textBox5.Location = new Point(426, 112);
@@ -1274,47 +1318,6 @@ namespace WinformsMicrosoft
             label33.Size = new Size(372, 21);
             label33.TabIndex = 0;
             label33.Text = "СОСТОЯНИЕ БОЛЬНОГО В НАСТОЯЩЕЕ ВРЕМЯ";
-            // 
-            // label43
-            // 
-            label43.AutoSize = true;
-            label43.BackColor = Color.FromArgb(242, 193, 141);
-            label43.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label43.Location = new Point(52, 145);
-            label43.Name = "label43";
-            label43.Size = new Size(116, 21);
-            label43.TabIndex = 92;
-            label43.Text = "Телосложение:";
-            // 
-            // asthenicCheckBox
-            // 
-            asthenicCheckBox.AutoSize = true;
-            asthenicCheckBox.Location = new Point(179, 146);
-            asthenicCheckBox.Name = "asthenicCheckBox";
-            asthenicCheckBox.Size = new Size(101, 19);
-            asthenicCheckBox.TabIndex = 93;
-            asthenicCheckBox.Text = "астеническое";
-            asthenicCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // hypersthenicCheckBox
-            // 
-            hypersthenicCheckBox.AutoSize = true;
-            hypersthenicCheckBox.Location = new Point(424, 146);
-            hypersthenicCheckBox.Name = "hypersthenicCheckBox";
-            hypersthenicCheckBox.Size = new Size(127, 19);
-            hypersthenicCheckBox.TabIndex = 94;
-            hypersthenicCheckBox.Text = "гиперстеническое";
-            hypersthenicCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // normasthenicCheckBox
-            // 
-            normasthenicCheckBox.AutoSize = true;
-            normasthenicCheckBox.Location = new Point(287, 146);
-            normasthenicCheckBox.Name = "normasthenicCheckBox";
-            normasthenicCheckBox.Size = new Size(131, 19);
-            normasthenicCheckBox.TabIndex = 95;
-            normasthenicCheckBox.Text = "нормастеническое";
-            normasthenicCheckBox.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
