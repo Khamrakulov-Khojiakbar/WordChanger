@@ -675,7 +675,7 @@ namespace WinformsMicrosoft
 
         }
 
-
+        private string Temp;
         private void GetlastCheckBoxText()
         {
             if (pregnancyProcessCheckBox.Enabled != false)
@@ -685,6 +685,7 @@ namespace WinformsMicrosoft
             else
             {
                 pregnancyStringData = pregnancyProccessingTextBox.Text;
+                Temp = pregnancyProccessingTextBox.Text;
             }
 
         }
