@@ -686,6 +686,7 @@ namespace WinformsMicrosoft
             {
                 pregnancyStringData = pregnancyProccessingTextBox.Text;
                 Temp = pregnancyProccessingTextBox.Text;
+                MessageBox.Show(Temp);
             }
 
         }
