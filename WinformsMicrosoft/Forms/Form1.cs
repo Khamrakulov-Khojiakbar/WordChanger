@@ -23,6 +23,13 @@ namespace WinformsMicrosoft
         private string abortsNumericStringData = "";
         private string pregnancyProcessStringData = "";
         private string breastsStringData = "";
+        private string generalConditionStringData = "";
+        private string bodytemperatureStringData = "";
+        private string pacientWeightStringData = "";
+        private string pacientHeightStringData = "";
+        private string consciousStringData = "";
+        private string subConsciousStringData = "";
+        private string bodyTypeStringData = "";
         private string? wordFilePath;
 
         public Form1()
@@ -675,7 +682,6 @@ namespace WinformsMicrosoft
 
         }
 
-        private string Temp;
         private void GetlastCheckBoxText()
         {
             if (pregnancyProcessCheckBox.Enabled != false)
@@ -685,8 +691,6 @@ namespace WinformsMicrosoft
             else
             {
                 pregnancyStringData = pregnancyProccessingTextBox.Text;
-                Temp = pregnancyProccessingTextBox.Text;
-                MessageBox.Show(Temp);
             }
 
         }
