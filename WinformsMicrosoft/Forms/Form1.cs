@@ -28,7 +28,7 @@ namespace WinformsMicrosoft
         private string pacientWeightStringData = "";
         private string pacientHeightStringData = "";
         private string consciousStringData = "";
-        private string subConsciousStringData = "";
+        private string positionStringData = "";
         private string bodyTypeStringData = "";
         private string? wordFilePath;
 
@@ -166,7 +166,6 @@ namespace WinformsMicrosoft
 
         private void Change_Click(object sender, EventArgs e)
         {
-            GetlastCheckBoxText();
             string time = DateTime.Now.ToString("ddMMyyyyHHmm");
             try
             {
@@ -200,7 +199,13 @@ namespace WinformsMicrosoft
                         {"<childBearingData>", childBearingStringData },
                         {"<abortsData>", abortsNumericStringData },
                         {"<pregnancyProccessing>", pregnancyProcessStringData },
-                        {"<breasts>", breastsStringData }
+                        {"<breasts>", breastsStringData },
+                        {"<generalCondition>", generalConditionStringData},
+                        {"<bodyT>", bodytemperatureStringData},
+                        {"<weightP>", pacientWeightStringData},
+                        {"<heightP>", pacientHeightStringData},
+                        {"<pacientConscious>", consciousStringData},
+                        {"<pacientPosition>", positionStringData}
 
                 };
 
@@ -663,7 +668,17 @@ namespace WinformsMicrosoft
                 pregnancyProcessCheckBox.Checked = false;
             }
 
-            pregnancyProcessCheckBox = activeCheckBox.Checked ? activeCheckBox : null;
+            //pregnancyProcessCheckBox = activeCheckBox.Checked ? activeCheckBox : null;
+            if (activeCheckBox.Checked)
+            {
+                pregnancyProcessCheckBox = activeCheckBox;
+                pregnancyProcessStringData = pregnancyProcessCheckBox.Text;
+            }
+            else
+            {
+                pregnancyProcessCheckBox = null;
+            }
+
 
         }
 
@@ -678,26 +693,100 @@ namespace WinformsMicrosoft
                 bodyTypeLastCheckedCheckBox.Checked = false;
             }
 
-            bodyTypeLastCheckedCheckBox = activeCheckBox.Checked ? activeCheckBox : null;
-
-        }
-
-        private void GetlastCheckBoxText()
-        {
-            if (pregnancyProcessCheckBox.Enabled != false)
+            //bodyTypeLastCheckedCheckBox = activeCheckBox.Checked ? activeCheckBox : null;
+            if (activeCheckBox.Checked)
             {
-                pregnancyStringData = pregnancyProcessCheckBox.Text;
+                bodyTypeLastCheckedCheckBox = activeCheckBox;
+                bodyTypeStringData = bodyTypeLastCheckedCheckBox.Text;
             }
             else
             {
-                pregnancyStringData = pregnancyProccessingTextBox.Text;
+                bodyTypeLastCheckedCheckBox = null;
             }
 
         }
+        /*
+                private void GetlastCheckBoxText()
+                {
+                    if (pregnancyProcessingChekcBoxOtherValue.Enabled != false)
+                    {
+                        pregnancyStringData = pregnancyProcessCheckBox.Text;
+                    }
+                    else
+                    {
+                        pregnancyStringData = pregnancyProccessingTextBox.Text;
+                    }
+
+                }*/
 
         private void breastsTextBox_TextChanged(object sender, EventArgs e)
         {
             breastsStringData = breastsTextBox.Text;
+        }
+
+        CheckBox pacientConsciousChk;
+        private void pacientConsciousCheckBoxes(object sender, EventArgs e)
+        {
+            CheckBox activeCheckBox = sender as CheckBox;
+
+            if (activeCheckBox.Checked && activeCheckBox != pacientConsciousChk && pacientConsciousChk != null)
+            {
+                pacientConsciousChk.Checked = false;
+            }
+
+            //pacientConsciousChk = activeCheckBox.Checked ? activeCheckBox : null;
+            if (activeCheckBox.Checked)
+            {
+                pacientConsciousChk = activeCheckBox;
+                consciousStringData = pacientConsciousChk.Text;
+            }
+            else
+            {
+                pacientConsciousChk = null;
+            }
+        }
+
+        CheckBox pacientPositionChkTemp;
+        private void pacientPositionCheckBoxes(object sender, EventArgs e)
+        {
+            CheckBox activeCheckBox = sender as CheckBox;
+
+            if (activeCheckBox.Checked && activeCheckBox != pacientPositionChkTemp && pacientPositionChkTemp != null)
+            {
+                pacientPositionChkTemp.Checked = false;
+            }
+
+            // pacientPositionChkTemp = activeCheckBox.Checked ? activeCheckBox : null; 
+
+            if (activeCheckBox.Checked)
+            {
+                pacientPositionChkTemp = activeCheckBox;
+                positionStringData = pacientPositionChkTemp.Text;
+            }
+            else
+            {
+                pacientPositionChkTemp = null;
+            }
+        }
+
+        private void generalStatePresentTime_TextChanged(object sender, EventArgs e)
+        {
+            generalConditionStringData = generalStatePresentTime.Text;
+        }
+
+        private void bodyTemperature_TextChanged(object sender, EventArgs e)
+        {
+            bodytemperatureStringData = bodyTemperature.Text;
+        }
+
+        private void pacientWeightTextBox_TextChanged(object sender, EventArgs e)
+        {
+            pacientWeightStringData = pacientWeightTextBox.Text;
+        }
+
+        private void pacientHeightTextBox_TextChanged(object sender, EventArgs e)
+        {
+            pacientHeightStringData = pacientHeightTextBox.Text;
         }
     }
 }

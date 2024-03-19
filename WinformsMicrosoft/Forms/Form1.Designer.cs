@@ -122,20 +122,23 @@ namespace WinformsMicrosoft
             complaintsTextBoxMainForm = new TextBox();
             label2 = new Label();
             panel5 = new Panel();
+            forcedPositionCheckBox = new CheckBox();
+            activePositionCheckBox = new CheckBox();
+            inhibitedConsciousCheckBox = new CheckBox();
+            absentConsciousCheckBox = new CheckBox();
+            consciousClearCheckBox = new CheckBox();
             normasthenicCheckBox = new CheckBox();
             hypersthenicCheckBox = new CheckBox();
             asthenicCheckBox = new CheckBox();
             label43 = new Label();
-            textBox5 = new TextBox();
             label42 = new Label();
-            textBox4 = new TextBox();
             label41 = new Label();
             label39 = new Label();
             label40 = new Label();
-            textBox3 = new TextBox();
+            pacientHeightTextBox = new TextBox();
             label37 = new Label();
             label38 = new Label();
-            textBox2 = new TextBox();
+            pacientWeightTextBox = new TextBox();
             label36 = new Label();
             label35 = new Label();
             bodyTemperature = new TextBox();
@@ -1098,20 +1101,23 @@ namespace WinformsMicrosoft
             // panel5
             // 
             panel5.BackColor = Color.FromArgb(246, 241, 147);
+            panel5.Controls.Add(forcedPositionCheckBox);
+            panel5.Controls.Add(activePositionCheckBox);
+            panel5.Controls.Add(inhibitedConsciousCheckBox);
+            panel5.Controls.Add(absentConsciousCheckBox);
+            panel5.Controls.Add(consciousClearCheckBox);
             panel5.Controls.Add(normasthenicCheckBox);
             panel5.Controls.Add(hypersthenicCheckBox);
             panel5.Controls.Add(asthenicCheckBox);
             panel5.Controls.Add(label43);
-            panel5.Controls.Add(textBox5);
             panel5.Controls.Add(label42);
-            panel5.Controls.Add(textBox4);
             panel5.Controls.Add(label41);
             panel5.Controls.Add(label39);
             panel5.Controls.Add(label40);
-            panel5.Controls.Add(textBox3);
+            panel5.Controls.Add(pacientHeightTextBox);
             panel5.Controls.Add(label37);
             panel5.Controls.Add(label38);
-            panel5.Controls.Add(textBox2);
+            panel5.Controls.Add(pacientWeightTextBox);
             panel5.Controls.Add(label36);
             panel5.Controls.Add(label35);
             panel5.Controls.Add(bodyTemperature);
@@ -1123,10 +1129,65 @@ namespace WinformsMicrosoft
             panel5.Size = new Size(1618, 725);
             panel5.TabIndex = 15;
             // 
+            // forcedPositionCheckBox
+            // 
+            forcedPositionCheckBox.AutoSize = true;
+            forcedPositionCheckBox.Location = new Point(288, 145);
+            forcedPositionCheckBox.Name = "forcedPositionCheckBox";
+            forcedPositionCheckBox.Size = new Size(102, 19);
+            forcedPositionCheckBox.TabIndex = 101;
+            forcedPositionCheckBox.Text = "вынужденное";
+            forcedPositionCheckBox.UseVisualStyleBackColor = true;
+            forcedPositionCheckBox.CheckedChanged += pacientPositionCheckBoxes;
+            // 
+            // activePositionCheckBox
+            // 
+            activePositionCheckBox.AutoSize = true;
+            activePositionCheckBox.Location = new Point(180, 145);
+            activePositionCheckBox.Name = "activePositionCheckBox";
+            activePositionCheckBox.Size = new Size(76, 19);
+            activePositionCheckBox.TabIndex = 99;
+            activePositionCheckBox.Text = "активное";
+            activePositionCheckBox.UseVisualStyleBackColor = true;
+            activePositionCheckBox.CheckedChanged += pacientPositionCheckBoxes;
+            // 
+            // inhibitedConsciousCheckBox
+            // 
+            inhibitedConsciousCheckBox.AutoSize = true;
+            inhibitedConsciousCheckBox.Location = new Point(288, 115);
+            inhibitedConsciousCheckBox.Name = "inhibitedConsciousCheckBox";
+            inhibitedConsciousCheckBox.Size = new Size(114, 19);
+            inhibitedConsciousCheckBox.TabIndex = 98;
+            inhibitedConsciousCheckBox.Text = "заторможенное";
+            inhibitedConsciousCheckBox.UseVisualStyleBackColor = true;
+            inhibitedConsciousCheckBox.CheckedChanged += pacientConsciousCheckBoxes;
+            // 
+            // absentConsciousCheckBox
+            // 
+            absentConsciousCheckBox.AutoSize = true;
+            absentConsciousCheckBox.Location = new Point(420, 115);
+            absentConsciousCheckBox.Name = "absentConsciousCheckBox";
+            absentConsciousCheckBox.Size = new Size(89, 19);
+            absentConsciousCheckBox.TabIndex = 97;
+            absentConsciousCheckBox.Text = "отсутствует";
+            absentConsciousCheckBox.UseVisualStyleBackColor = true;
+            absentConsciousCheckBox.CheckedChanged += pacientConsciousCheckBoxes;
+            // 
+            // consciousClearCheckBox
+            // 
+            consciousClearCheckBox.AutoSize = true;
+            consciousClearCheckBox.Location = new Point(180, 115);
+            consciousClearCheckBox.Name = "consciousClearCheckBox";
+            consciousClearCheckBox.Size = new Size(58, 19);
+            consciousClearCheckBox.TabIndex = 96;
+            consciousClearCheckBox.Text = "ясное";
+            consciousClearCheckBox.UseVisualStyleBackColor = true;
+            consciousClearCheckBox.CheckedChanged += pacientConsciousCheckBoxes;
+            // 
             // normasthenicCheckBox
             // 
             normasthenicCheckBox.AutoSize = true;
-            normasthenicCheckBox.Location = new Point(287, 146);
+            normasthenicCheckBox.Location = new Point(288, 177);
             normasthenicCheckBox.Name = "normasthenicCheckBox";
             normasthenicCheckBox.Size = new Size(131, 19);
             normasthenicCheckBox.TabIndex = 95;
@@ -1137,7 +1198,7 @@ namespace WinformsMicrosoft
             // hypersthenicCheckBox
             // 
             hypersthenicCheckBox.AutoSize = true;
-            hypersthenicCheckBox.Location = new Point(424, 146);
+            hypersthenicCheckBox.Location = new Point(420, 177);
             hypersthenicCheckBox.Name = "hypersthenicCheckBox";
             hypersthenicCheckBox.Size = new Size(127, 19);
             hypersthenicCheckBox.TabIndex = 94;
@@ -1148,7 +1209,7 @@ namespace WinformsMicrosoft
             // asthenicCheckBox
             // 
             asthenicCheckBox.AutoSize = true;
-            asthenicCheckBox.Location = new Point(179, 146);
+            asthenicCheckBox.Location = new Point(180, 177);
             asthenicCheckBox.Name = "asthenicCheckBox";
             asthenicCheckBox.Size = new Size(101, 19);
             asthenicCheckBox.TabIndex = 93;
@@ -1161,43 +1222,29 @@ namespace WinformsMicrosoft
             label43.AutoSize = true;
             label43.BackColor = Color.FromArgb(242, 193, 141);
             label43.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label43.Location = new Point(52, 145);
+            label43.Location = new Point(53, 176);
             label43.Name = "label43";
             label43.Size = new Size(116, 21);
             label43.TabIndex = 92;
             label43.Text = "Телосложение:";
-            // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(426, 112);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(126, 23);
-            textBox5.TabIndex = 91;
             // 
             // label42
             // 
             label42.AutoSize = true;
             label42.BackColor = Color.FromArgb(242, 193, 141);
             label42.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label42.Location = new Point(324, 113);
+            label42.Location = new Point(73, 146);
             label42.Name = "label42";
             label42.Size = new Size(96, 21);
             label42.TabIndex = 90;
             label42.Text = "Положение:";
-            // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(179, 112);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(119, 23);
-            textBox4.TabIndex = 89;
             // 
             // label41
             // 
             label41.AutoSize = true;
             label41.BackColor = Color.FromArgb(242, 193, 141);
             label41.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label41.Location = new Point(85, 113);
+            label41.Location = new Point(87, 113);
             label41.Name = "label41";
             label41.Size = new Size(82, 21);
             label41.TabIndex = 88;
@@ -1225,12 +1272,12 @@ namespace WinformsMicrosoft
             label40.TabIndex = 86;
             label40.Text = "Рост:";
             // 
-            // textBox3
+            // pacientHeightTextBox
             // 
-            textBox3.Location = new Point(470, 83);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(48, 23);
-            textBox3.TabIndex = 85;
+            pacientHeightTextBox.Location = new Point(470, 83);
+            pacientHeightTextBox.Name = "pacientHeightTextBox";
+            pacientHeightTextBox.Size = new Size(48, 23);
+            pacientHeightTextBox.TabIndex = 85;
             // 
             // label37
             // 
@@ -1254,12 +1301,13 @@ namespace WinformsMicrosoft
             label38.TabIndex = 83;
             label38.Text = "Вес:";
             // 
-            // textBox2
+            // pacientWeightTextBox
             // 
-            textBox2.Location = new Point(322, 83);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(48, 23);
-            textBox2.TabIndex = 82;
+            pacientWeightTextBox.Location = new Point(322, 83);
+            pacientWeightTextBox.Name = "pacientWeightTextBox";
+            pacientWeightTextBox.Size = new Size(48, 23);
+            pacientWeightTextBox.TabIndex = 82;
+            pacientWeightTextBox.TextChanged += pacientWeightTextBox_TextChanged;
             // 
             // label36
             // 
@@ -1277,7 +1325,7 @@ namespace WinformsMicrosoft
             label35.AutoSize = true;
             label35.BackColor = Color.FromArgb(242, 193, 141);
             label35.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label35.Location = new Point(27, 84);
+            label35.Location = new Point(28, 84);
             label35.Name = "label35";
             label35.Size = new Size(141, 21);
             label35.TabIndex = 80;
@@ -1285,17 +1333,18 @@ namespace WinformsMicrosoft
             // 
             // bodyTemperature
             // 
-            bodyTemperature.Location = new Point(179, 83);
+            bodyTemperature.Location = new Point(180, 83);
             bodyTemperature.Name = "bodyTemperature";
             bodyTemperature.Size = new Size(48, 23);
             bodyTemperature.TabIndex = 79;
+            bodyTemperature.TextChanged += bodyTemperature_TextChanged;
             // 
             // label34
             // 
             label34.AutoSize = true;
             label34.BackColor = Color.FromArgb(242, 193, 141);
             label34.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label34.Location = new Point(27, 52);
+            label34.Location = new Point(29, 52);
             label34.Name = "label34";
             label34.Size = new Size(140, 21);
             label34.TabIndex = 78;
@@ -1303,10 +1352,11 @@ namespace WinformsMicrosoft
             // 
             // generalStatePresentTime
             // 
-            generalStatePresentTime.Location = new Point(179, 52);
+            generalStatePresentTime.Location = new Point(180, 52);
             generalStatePresentTime.Name = "generalStatePresentTime";
             generalStatePresentTime.Size = new Size(373, 23);
             generalStatePresentTime.TabIndex = 77;
+            generalStatePresentTime.TextChanged += generalStatePresentTime_TextChanged;
             // 
             // label33
             // 
@@ -1453,17 +1503,20 @@ namespace WinformsMicrosoft
         private Label label36;
         private Label label39;
         private Label label40;
-        private TextBox textBox3;
+        private TextBox pacientHeightTextBox;
         private Label label37;
         private Label label38;
-        private TextBox textBox2;
-        private TextBox textBox5;
+        private TextBox pacientWeightTextBox;
         private Label label42;
-        private TextBox textBox4;
         private Label label41;
         private CheckBox normasthenicCheckBox;
         private CheckBox hypersthenicCheckBox;
         private CheckBox asthenicCheckBox;
         private Label label43;
+        private CheckBox forcedPositionCheckBox;
+        private CheckBox activePositionCheckBox;
+        private CheckBox inhibitedConsciousCheckBox;
+        private CheckBox absentConsciousCheckBox;
+        private CheckBox consciousClearCheckBox;
     }
 }
