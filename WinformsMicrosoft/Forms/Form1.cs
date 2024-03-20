@@ -29,7 +29,7 @@ namespace WinformsMicrosoft
         private string pacientHeightStringData = "";
         private string consciousStringData = "";
         private string positionStringData = "";
-        private string bodyTypeStringData = "";
+        private string bodyTypeStringData { get; set; } = "";
         private string? wordFilePath;
 
         public Form1()
@@ -206,6 +206,8 @@ namespace WinformsMicrosoft
                         {"<heightP>", pacientHeightStringData},
                         {"<pacientConscious>", consciousStringData},
                         {"<pacientPosition>", positionStringData}
+                        //{"<climatericNum>", climatericStringData}
+                        
 
                 };
 

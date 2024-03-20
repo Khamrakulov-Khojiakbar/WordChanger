@@ -127,9 +127,9 @@ namespace WinformsMicrosoft
             inhibitedConsciousCheckBox = new CheckBox();
             absentConsciousCheckBox = new CheckBox();
             consciousClearCheckBox = new CheckBox();
-            normasthenicCheckBox = new CheckBox();
-            hypersthenicCheckBox = new CheckBox();
-            asthenicCheckBox = new CheckBox();
+            normasthenicBodyTypeCheckBox = new CheckBox();
+            hypersthenicBodyTypeCheckBox = new CheckBox();
+            asthenicBodyTypeCheckBox = new CheckBox();
             label43 = new Label();
             label42 = new Label();
             label41 = new Label();
@@ -1106,9 +1106,9 @@ namespace WinformsMicrosoft
             panel5.Controls.Add(inhibitedConsciousCheckBox);
             panel5.Controls.Add(absentConsciousCheckBox);
             panel5.Controls.Add(consciousClearCheckBox);
-            panel5.Controls.Add(normasthenicCheckBox);
-            panel5.Controls.Add(hypersthenicCheckBox);
-            panel5.Controls.Add(asthenicCheckBox);
+            panel5.Controls.Add(normasthenicBodyTypeCheckBox);
+            panel5.Controls.Add(hypersthenicBodyTypeCheckBox);
+            panel5.Controls.Add(asthenicBodyTypeCheckBox);
             panel5.Controls.Add(label43);
             panel5.Controls.Add(label42);
             panel5.Controls.Add(label41);
@@ -1184,38 +1184,38 @@ namespace WinformsMicrosoft
             consciousClearCheckBox.UseVisualStyleBackColor = true;
             consciousClearCheckBox.CheckedChanged += pacientConsciousCheckBoxes;
             // 
-            // normasthenicCheckBox
+            // normasthenicBodyTypeCheckBox
             // 
-            normasthenicCheckBox.AutoSize = true;
-            normasthenicCheckBox.Location = new Point(288, 177);
-            normasthenicCheckBox.Name = "normasthenicCheckBox";
-            normasthenicCheckBox.Size = new Size(131, 19);
-            normasthenicCheckBox.TabIndex = 95;
-            normasthenicCheckBox.Text = "нормастеническое";
-            normasthenicCheckBox.UseVisualStyleBackColor = true;
-            normasthenicCheckBox.CheckedChanged += bodyTypeCheckBox_CheckedChanged;
+            normasthenicBodyTypeCheckBox.AutoSize = true;
+            normasthenicBodyTypeCheckBox.Location = new Point(288, 177);
+            normasthenicBodyTypeCheckBox.Name = "normasthenicBodyTypeCheckBox";
+            normasthenicBodyTypeCheckBox.Size = new Size(131, 19);
+            normasthenicBodyTypeCheckBox.TabIndex = 95;
+            normasthenicBodyTypeCheckBox.Text = "нормастеническое";
+            normasthenicBodyTypeCheckBox.UseVisualStyleBackColor = true;
+            normasthenicBodyTypeCheckBox.CheckedChanged += bodyTypeCheckBox_CheckedChanged;
             // 
-            // hypersthenicCheckBox
+            // hypersthenicBodyTypeCheckBox
             // 
-            hypersthenicCheckBox.AutoSize = true;
-            hypersthenicCheckBox.Location = new Point(420, 177);
-            hypersthenicCheckBox.Name = "hypersthenicCheckBox";
-            hypersthenicCheckBox.Size = new Size(127, 19);
-            hypersthenicCheckBox.TabIndex = 94;
-            hypersthenicCheckBox.Text = "гиперстеническое";
-            hypersthenicCheckBox.UseVisualStyleBackColor = true;
-            hypersthenicCheckBox.CheckedChanged += bodyTypeCheckBox_CheckedChanged;
+            hypersthenicBodyTypeCheckBox.AutoSize = true;
+            hypersthenicBodyTypeCheckBox.Location = new Point(420, 177);
+            hypersthenicBodyTypeCheckBox.Name = "hypersthenicBodyTypeCheckBox";
+            hypersthenicBodyTypeCheckBox.Size = new Size(127, 19);
+            hypersthenicBodyTypeCheckBox.TabIndex = 94;
+            hypersthenicBodyTypeCheckBox.Text = "гиперстеническое";
+            hypersthenicBodyTypeCheckBox.UseVisualStyleBackColor = true;
+            hypersthenicBodyTypeCheckBox.CheckedChanged += bodyTypeCheckBox_CheckedChanged;
             // 
-            // asthenicCheckBox
+            // asthenicBodyTypeCheckBox
             // 
-            asthenicCheckBox.AutoSize = true;
-            asthenicCheckBox.Location = new Point(180, 177);
-            asthenicCheckBox.Name = "asthenicCheckBox";
-            asthenicCheckBox.Size = new Size(101, 19);
-            asthenicCheckBox.TabIndex = 93;
-            asthenicCheckBox.Text = "астеническое";
-            asthenicCheckBox.UseVisualStyleBackColor = true;
-            asthenicCheckBox.CheckedChanged += bodyTypeCheckBox_CheckedChanged;
+            asthenicBodyTypeCheckBox.AutoSize = true;
+            asthenicBodyTypeCheckBox.Location = new Point(180, 177);
+            asthenicBodyTypeCheckBox.Name = "asthenicBodyTypeCheckBox";
+            asthenicBodyTypeCheckBox.Size = new Size(101, 19);
+            asthenicBodyTypeCheckBox.TabIndex = 93;
+            asthenicBodyTypeCheckBox.Text = "астеническое";
+            asthenicBodyTypeCheckBox.UseVisualStyleBackColor = true;
+            asthenicBodyTypeCheckBox.CheckedChanged += bodyTypeCheckBox_CheckedChanged;
             // 
             // label43
             // 
@@ -1509,9 +1509,9 @@ namespace WinformsMicrosoft
         private TextBox pacientWeightTextBox;
         private Label label42;
         private Label label41;
-        private CheckBox normasthenicCheckBox;
-        private CheckBox hypersthenicCheckBox;
-        private CheckBox asthenicCheckBox;
+        private CheckBox normasthenicBodyTypeCheckBox;
+        private CheckBox hypersthenicBodyTypeCheckBox;
+        private CheckBox asthenicBodyTypeCheckBox;
         private Label label43;
         private CheckBox forcedPositionCheckBox;
         private CheckBox activePositionCheckBox;
