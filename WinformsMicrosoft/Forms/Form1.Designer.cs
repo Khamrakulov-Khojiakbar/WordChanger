@@ -1193,7 +1193,7 @@ namespace WinformsMicrosoft
             normasthenicBodyTypeCheckBox.TabIndex = 95;
             normasthenicBodyTypeCheckBox.Text = "нормастеническое";
             normasthenicBodyTypeCheckBox.UseVisualStyleBackColor = true;
-            normasthenicBodyTypeCheckBox.CheckedChanged += bodyTypeCheckBox_CheckedChanged;
+            normasthenicBodyTypeCheckBox.CheckedChanged += bodyTypeCheckBoxes;
             // 
             // hypersthenicBodyTypeCheckBox
             // 
@@ -1204,7 +1204,7 @@ namespace WinformsMicrosoft
             hypersthenicBodyTypeCheckBox.TabIndex = 94;
             hypersthenicBodyTypeCheckBox.Text = "гиперстеническое";
             hypersthenicBodyTypeCheckBox.UseVisualStyleBackColor = true;
-            hypersthenicBodyTypeCheckBox.CheckedChanged += bodyTypeCheckBox_CheckedChanged;
+            hypersthenicBodyTypeCheckBox.CheckedChanged += bodyTypeCheckBoxes;
             // 
             // asthenicBodyTypeCheckBox
             // 
@@ -1215,7 +1215,7 @@ namespace WinformsMicrosoft
             asthenicBodyTypeCheckBox.TabIndex = 93;
             asthenicBodyTypeCheckBox.Text = "астеническое";
             asthenicBodyTypeCheckBox.UseVisualStyleBackColor = true;
-            asthenicBodyTypeCheckBox.CheckedChanged += bodyTypeCheckBox_CheckedChanged;
+            asthenicBodyTypeCheckBox.CheckedChanged += bodyTypeCheckBoxes;
             // 
             // label43
             // 
@@ -1278,6 +1278,7 @@ namespace WinformsMicrosoft
             pacientHeightTextBox.Name = "pacientHeightTextBox";
             pacientHeightTextBox.Size = new Size(48, 23);
             pacientHeightTextBox.TabIndex = 85;
+            pacientHeightTextBox.TextChanged += pacientHeightTextBox_TextChanged;
             // 
             // label37
             // 

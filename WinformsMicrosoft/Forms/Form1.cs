@@ -205,7 +205,8 @@ namespace WinformsMicrosoft
                         {"<weightP>", pacientWeightStringData},
                         {"<heightP>", pacientHeightStringData},
                         {"<pacientConscious>", consciousStringData},
-                        {"<pacientPosition>", positionStringData}
+                        {"<pacientPosition>", positionStringData},
+                        {"<bodyType>", bodyTypeStringData }
                         //{"<climatericNum>", climatericStringData}
                         
 
@@ -740,7 +741,7 @@ namespace WinformsMicrosoft
             if (activeCheckBox.Checked)
             {
                 pacientConsciousChk = activeCheckBox;
-                consciousStringData = pacientConsciousChk.Text;
+                consciousStringData = pacientConsciousChk.Text.ToUpper();
             }
             else
             {
@@ -763,7 +764,7 @@ namespace WinformsMicrosoft
             if (activeCheckBox.Checked)
             {
                 pacientPositionChkTemp = activeCheckBox;
-                positionStringData = pacientPositionChkTemp.Text;
+                positionStringData = pacientPositionChkTemp.Text.ToUpper();
             }
             else
             {
@@ -773,7 +774,7 @@ namespace WinformsMicrosoft
 
         private void generalStatePresentTime_TextChanged(object sender, EventArgs e)
         {
-            generalConditionStringData = generalStatePresentTime.Text;
+            generalConditionStringData = generalStatePresentTime.Text.ToUpper();
         }
 
         private void bodyTemperature_TextChanged(object sender, EventArgs e)
@@ -789,6 +790,28 @@ namespace WinformsMicrosoft
         private void pacientHeightTextBox_TextChanged(object sender, EventArgs e)
         {
             pacientHeightStringData = pacientHeightTextBox.Text;
+        }
+        CheckBox bodyTypeCheckBoxTemp;
+        private void bodyTypeCheckBoxes(object sender, EventArgs e)
+        {
+            CheckBox activeCheckBox = sender as CheckBox;
+
+            if (activeCheckBox.Checked && activeCheckBox != bodyTypeCheckBoxTemp && bodyTypeCheckBoxTemp != null)
+            {
+                bodyTypeCheckBoxTemp.Checked = false;
+            }
+
+            // pacientPositionChkTemp = activeCheckBox.Checked ? activeCheckBox : null; 
+
+            if (activeCheckBox.Checked)
+            {
+                bodyTypeCheckBoxTemp = activeCheckBox;
+                bodyTypeStringData = bodyTypeCheckBoxTemp.Text.ToUpper();
+            }
+            else
+            {
+                bodyTypeCheckBoxTemp = null;
+            }
         }
     }
 }
