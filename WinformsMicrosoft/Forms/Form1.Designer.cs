@@ -122,6 +122,20 @@ namespace WinformsMicrosoft
             complaintsTextBoxMainForm = new TextBox();
             label2 = new Label();
             panel5 = new Panel();
+            label50 = new Label();
+            lymphNodesTextBox = new TextBox();
+            label49 = new Label();
+            jointsTextBox = new TextBox();
+            label48 = new Label();
+            bonesTextBox = new TextBox();
+            label47 = new Label();
+            musculesTextBox = new TextBox();
+            label46 = new Label();
+            nailsTextBox = new TextBox();
+            label45 = new Label();
+            subSkinTissueTextBox = new TextBox();
+            label44 = new Label();
+            skinCoverTextBox = new TextBox();
             forcedPositionCheckBox = new CheckBox();
             activePositionCheckBox = new CheckBox();
             inhibitedConsciousCheckBox = new CheckBox();
@@ -145,20 +159,15 @@ namespace WinformsMicrosoft
             label34 = new Label();
             generalStatePresentTime = new TextBox();
             label33 = new Label();
-            label44 = new Label();
-            skinCoverTextBox = new TextBox();
-            label45 = new Label();
-            subSkinTissueTextBox = new TextBox();
-            label46 = new Label();
-            nailsTextBox = new TextBox();
-            label47 = new Label();
-            musculesTextBox = new TextBox();
-            label48 = new Label();
-            bonesTextBox = new TextBox();
-            label49 = new Label();
-            jointsTextBox = new TextBox();
-            label50 = new Label();
-            textBox2 = new TextBox();
+            label51 = new Label();
+            label52 = new Label();
+            eyesTextBox = new TextBox();
+            label53 = new Label();
+            hearingTextBox = new TextBox();
+            label54 = new Label();
+            skinSensivityTextBox = new TextBox();
+            label55 = new Label();
+            charmTextBox = new TextBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)abortsNumericUp).BeginInit();
             ((System.ComponentModel.ISupportInitialize)childBearingNumericUp).BeginInit();
@@ -1115,8 +1124,17 @@ namespace WinformsMicrosoft
             // panel5
             // 
             panel5.BackColor = Color.FromArgb(246, 241, 147);
+            panel5.Controls.Add(skinSensivityTextBox);
+            panel5.Controls.Add(label55);
+            panel5.Controls.Add(charmTextBox);
+            panel5.Controls.Add(label54);
+            panel5.Controls.Add(label53);
+            panel5.Controls.Add(hearingTextBox);
+            panel5.Controls.Add(label52);
+            panel5.Controls.Add(eyesTextBox);
+            panel5.Controls.Add(label51);
             panel5.Controls.Add(label50);
-            panel5.Controls.Add(textBox2);
+            panel5.Controls.Add(lymphNodesTextBox);
             panel5.Controls.Add(label49);
             panel5.Controls.Add(jointsTextBox);
             panel5.Controls.Add(label48);
@@ -1156,6 +1174,132 @@ namespace WinformsMicrosoft
             panel5.Name = "panel5";
             panel5.Size = new Size(1618, 725);
             panel5.TabIndex = 15;
+            // 
+            // label50
+            // 
+            label50.AutoSize = true;
+            label50.BackColor = Color.FromArgb(242, 193, 141);
+            label50.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label50.Location = new Point(8, 387);
+            label50.Name = "label50";
+            label50.Size = new Size(166, 21);
+            label50.TabIndex = 115;
+            label50.Text = "Лимфатические узлы:";
+            // 
+            // lymphNodesTextBox
+            // 
+            lymphNodesTextBox.Location = new Point(180, 385);
+            lymphNodesTextBox.Name = "lymphNodesTextBox";
+            lymphNodesTextBox.Size = new Size(373, 23);
+            lymphNodesTextBox.TabIndex = 114;
+            // 
+            // label49
+            // 
+            label49.AutoSize = true;
+            label49.BackColor = Color.FromArgb(242, 193, 141);
+            label49.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label49.Location = new Point(102, 356);
+            label49.Name = "label49";
+            label49.Size = new Size(72, 21);
+            label49.TabIndex = 113;
+            label49.Text = "Суставы:";
+            // 
+            // jointsTextBox
+            // 
+            jointsTextBox.Location = new Point(180, 356);
+            jointsTextBox.Name = "jointsTextBox";
+            jointsTextBox.Size = new Size(373, 23);
+            jointsTextBox.TabIndex = 112;
+            // 
+            // label48
+            // 
+            label48.AutoSize = true;
+            label48.BackColor = Color.FromArgb(242, 193, 141);
+            label48.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label48.Location = new Point(120, 327);
+            label48.Name = "label48";
+            label48.Size = new Size(54, 21);
+            label48.TabIndex = 111;
+            label48.Text = "Кости:";
+            // 
+            // bonesTextBox
+            // 
+            bonesTextBox.Location = new Point(180, 327);
+            bonesTextBox.Name = "bonesTextBox";
+            bonesTextBox.Size = new Size(373, 23);
+            bonesTextBox.TabIndex = 110;
+            // 
+            // label47
+            // 
+            label47.AutoSize = true;
+            label47.BackColor = Color.FromArgb(242, 193, 141);
+            label47.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label47.Location = new Point(102, 298);
+            label47.Name = "label47";
+            label47.Size = new Size(72, 21);
+            label47.TabIndex = 109;
+            label47.Text = "Мышцы:";
+            // 
+            // musculesTextBox
+            // 
+            musculesTextBox.Location = new Point(180, 298);
+            musculesTextBox.Name = "musculesTextBox";
+            musculesTextBox.Size = new Size(373, 23);
+            musculesTextBox.TabIndex = 108;
+            // 
+            // label46
+            // 
+            label46.AutoSize = true;
+            label46.BackColor = Color.FromArgb(242, 193, 141);
+            label46.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label46.Location = new Point(119, 269);
+            label46.Name = "label46";
+            label46.Size = new Size(55, 21);
+            label46.TabIndex = 107;
+            label46.Text = "Ногти:";
+            // 
+            // nailsTextBox
+            // 
+            nailsTextBox.Location = new Point(180, 269);
+            nailsTextBox.Name = "nailsTextBox";
+            nailsTextBox.Size = new Size(373, 23);
+            nailsTextBox.TabIndex = 106;
+            // 
+            // label45
+            // 
+            label45.AutoSize = true;
+            label45.BackColor = Color.FromArgb(242, 193, 141);
+            label45.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label45.Location = new Point(10, 240);
+            label45.Name = "label45";
+            label45.Size = new Size(164, 21);
+            label45.TabIndex = 105;
+            label45.Text = "Подкожная клечатка:";
+            // 
+            // subSkinTissueTextBox
+            // 
+            subSkinTissueTextBox.Location = new Point(180, 240);
+            subSkinTissueTextBox.Name = "subSkinTissueTextBox";
+            subSkinTissueTextBox.Size = new Size(373, 23);
+            subSkinTissueTextBox.TabIndex = 104;
+            // 
+            // label44
+            // 
+            label44.AutoSize = true;
+            label44.BackColor = Color.FromArgb(242, 193, 141);
+            label44.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label44.Location = new Point(36, 211);
+            label44.Name = "label44";
+            label44.Size = new Size(138, 21);
+            label44.TabIndex = 103;
+            label44.Text = "Кожные покровы:";
+            // 
+            // skinCoverTextBox
+            // 
+            skinCoverTextBox.Location = new Point(180, 211);
+            skinCoverTextBox.Name = "skinCoverTextBox";
+            skinCoverTextBox.Size = new Size(373, 23);
+            skinCoverTextBox.TabIndex = 102;
             // 
             // forcedPositionCheckBox
             // 
@@ -1250,7 +1394,7 @@ namespace WinformsMicrosoft
             label43.AutoSize = true;
             label43.BackColor = Color.FromArgb(242, 193, 141);
             label43.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label43.Location = new Point(51, 176);
+            label43.Location = new Point(58, 176);
             label43.Name = "label43";
             label43.Size = new Size(116, 21);
             label43.TabIndex = 92;
@@ -1261,7 +1405,7 @@ namespace WinformsMicrosoft
             label42.AutoSize = true;
             label42.BackColor = Color.FromArgb(242, 193, 141);
             label42.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label42.Location = new Point(71, 146);
+            label42.Location = new Point(78, 146);
             label42.Name = "label42";
             label42.Size = new Size(96, 21);
             label42.TabIndex = 90;
@@ -1272,7 +1416,7 @@ namespace WinformsMicrosoft
             label41.AutoSize = true;
             label41.BackColor = Color.FromArgb(242, 193, 141);
             label41.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label41.Location = new Point(85, 113);
+            label41.Location = new Point(92, 113);
             label41.Name = "label41";
             label41.Size = new Size(82, 21);
             label41.TabIndex = 88;
@@ -1354,7 +1498,7 @@ namespace WinformsMicrosoft
             label35.AutoSize = true;
             label35.BackColor = Color.FromArgb(242, 193, 141);
             label35.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label35.Location = new Point(26, 84);
+            label35.Location = new Point(33, 84);
             label35.Name = "label35";
             label35.Size = new Size(141, 21);
             label35.TabIndex = 80;
@@ -1373,7 +1517,7 @@ namespace WinformsMicrosoft
             label34.AutoSize = true;
             label34.BackColor = Color.FromArgb(242, 193, 141);
             label34.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label34.Location = new Point(27, 52);
+            label34.Location = new Point(34, 52);
             label34.Name = "label34";
             label34.Size = new Size(140, 21);
             label34.TabIndex = 78;
@@ -1398,131 +1542,88 @@ namespace WinformsMicrosoft
             label33.TabIndex = 0;
             label33.Text = "СОСТОЯНИЕ БОЛЬНОГО В НАСТОЯЩЕЕ ВРЕМЯ";
             // 
-            // label44
+            // label51
             // 
-            label44.AutoSize = true;
-            label44.BackColor = Color.FromArgb(242, 193, 141);
-            label44.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label44.Location = new Point(29, 211);
-            label44.Name = "label44";
-            label44.Size = new Size(138, 21);
-            label44.TabIndex = 103;
-            label44.Text = "Кожные покровы:";
+            label51.AutoSize = true;
+            label51.BackColor = Color.FromArgb(242, 193, 141);
+            label51.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label51.Location = new Point(270, 432);
+            label51.Name = "label51";
+            label51.Size = new Size(127, 21);
+            label51.TabIndex = 116;
+            label51.Text = "Органы чувств";
             // 
-            // skinCoverTextBox
+            // label52
             // 
-            skinCoverTextBox.Location = new Point(180, 211);
-            skinCoverTextBox.Name = "skinCoverTextBox";
-            skinCoverTextBox.Size = new Size(373, 23);
-            skinCoverTextBox.TabIndex = 102;
+            label52.AutoSize = true;
+            label52.BackColor = Color.FromArgb(242, 193, 141);
+            label52.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label52.Location = new Point(122, 467);
+            label52.Name = "label52";
+            label52.Size = new Size(52, 21);
+            label52.TabIndex = 118;
+            label52.Text = "Глаза:";
             // 
-            // label45
+            // eyesTextBox
             // 
-            label45.AutoSize = true;
-            label45.BackColor = Color.FromArgb(242, 193, 141);
-            label45.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label45.Location = new Point(3, 240);
-            label45.Name = "label45";
-            label45.Size = new Size(164, 21);
-            label45.TabIndex = 105;
-            label45.Text = "Подкожная клечатка:";
+            eyesTextBox.Location = new Point(180, 467);
+            eyesTextBox.Name = "eyesTextBox";
+            eyesTextBox.Size = new Size(373, 23);
+            eyesTextBox.TabIndex = 117;
             // 
-            // subSkinTissueTextBox
+            // label53
             // 
-            subSkinTissueTextBox.Location = new Point(180, 240);
-            subSkinTissueTextBox.Name = "subSkinTissueTextBox";
-            subSkinTissueTextBox.Size = new Size(373, 23);
-            subSkinTissueTextBox.TabIndex = 104;
+            label53.AutoSize = true;
+            label53.BackColor = Color.FromArgb(242, 193, 141);
+            label53.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label53.Location = new Point(122, 504);
+            label53.Name = "label53";
+            label53.Size = new Size(46, 21);
+            label53.TabIndex = 120;
+            label53.Text = "Слух:";
             // 
-            // label46
+            // hearingTextBox
             // 
-            label46.AutoSize = true;
-            label46.BackColor = Color.FromArgb(242, 193, 141);
-            label46.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label46.Location = new Point(112, 269);
-            label46.Name = "label46";
-            label46.Size = new Size(55, 21);
-            label46.TabIndex = 107;
-            label46.Text = "Ногти:";
+            hearingTextBox.Location = new Point(180, 513);
+            hearingTextBox.Name = "hearingTextBox";
+            hearingTextBox.Size = new Size(373, 23);
+            hearingTextBox.TabIndex = 119;
             // 
-            // nailsTextBox
+            // label54
             // 
-            nailsTextBox.Location = new Point(180, 269);
-            nailsTextBox.Name = "nailsTextBox";
-            nailsTextBox.Size = new Size(373, 23);
-            nailsTextBox.TabIndex = 106;
+            label54.AutoEllipsis = true;
+            label54.BackColor = Color.FromArgb(242, 193, 141);
+            label54.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label54.Location = new Point(92, 541);
+            label54.Name = "label54";
+            label54.Size = new Size(199, 46);
+            label54.TabIndex = 122;
+            label54.Text = "Чувствительность кожных покровов:";
             // 
-            // label47
+            // skinSensivityTextBox
             // 
-            label47.AutoSize = true;
-            label47.BackColor = Color.FromArgb(242, 193, 141);
-            label47.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label47.Location = new Point(95, 298);
-            label47.Name = "label47";
-            label47.Size = new Size(72, 21);
-            label47.TabIndex = 109;
-            label47.Text = "Мышцы:";
+            skinSensivityTextBox.Location = new Point(180, 565);
+            skinSensivityTextBox.Name = "skinSensivityTextBox";
+            skinSensivityTextBox.Size = new Size(373, 23);
+            skinSensivityTextBox.TabIndex = 121;
             // 
-            // musculesTextBox
+            // label55
             // 
-            musculesTextBox.Location = new Point(180, 298);
-            musculesTextBox.Name = "musculesTextBox";
-            musculesTextBox.Size = new Size(373, 23);
-            musculesTextBox.TabIndex = 108;
+            label55.AutoSize = true;
+            label55.BackColor = Color.FromArgb(242, 193, 141);
+            label55.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label55.Location = new Point(97, 603);
+            label55.Name = "label55";
+            label55.Size = new Size(77, 21);
+            label55.TabIndex = 124;
+            label55.Text = "Обояние:";
             // 
-            // label48
+            // charmTextBox
             // 
-            label48.AutoSize = true;
-            label48.BackColor = Color.FromArgb(242, 193, 141);
-            label48.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label48.Location = new Point(113, 327);
-            label48.Name = "label48";
-            label48.Size = new Size(54, 21);
-            label48.TabIndex = 111;
-            label48.Text = "Кости:";
-            // 
-            // bonesTextBox
-            // 
-            bonesTextBox.Location = new Point(180, 327);
-            bonesTextBox.Name = "bonesTextBox";
-            bonesTextBox.Size = new Size(373, 23);
-            bonesTextBox.TabIndex = 110;
-            // 
-            // label49
-            // 
-            label49.AutoSize = true;
-            label49.BackColor = Color.FromArgb(242, 193, 141);
-            label49.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label49.Location = new Point(95, 356);
-            label49.Name = "label49";
-            label49.Size = new Size(72, 21);
-            label49.TabIndex = 113;
-            label49.Text = "Суставы:";
-            // 
-            // jointsTextBox
-            // 
-            jointsTextBox.Location = new Point(180, 356);
-            jointsTextBox.Name = "jointsTextBox";
-            jointsTextBox.Size = new Size(373, 23);
-            jointsTextBox.TabIndex = 112;
-            // 
-            // label50
-            // 
-            label50.AutoSize = true;
-            label50.BackColor = Color.FromArgb(242, 193, 141);
-            label50.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label50.Location = new Point(95, 385);
-            label50.Name = "label50";
-            label50.Size = new Size(72, 21);
-            label50.TabIndex = 115;
-            label50.Text = "Суставы:";
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(180, 385);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(373, 23);
-            textBox2.TabIndex = 114;
+            charmTextBox.Location = new Point(180, 605);
+            charmTextBox.Name = "charmTextBox";
+            charmTextBox.Size = new Size(373, 23);
+            charmTextBox.TabIndex = 123;
             // 
             // Form1
             // 
@@ -1686,6 +1787,15 @@ namespace WinformsMicrosoft
         private Label label48;
         private TextBox bonesTextBox;
         private Label label50;
-        private TextBox textBox2;
+        private TextBox lymphNodesTextBox;
+        private Label label55;
+        private TextBox charmTextBox;
+        private Label label54;
+        private TextBox skinSensivityTextBox;
+        private Label label53;
+        private TextBox hearingTextBox;
+        private Label label52;
+        private TextBox eyesTextBox;
+        private Label label51;
     }
 }
