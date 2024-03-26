@@ -222,6 +222,10 @@ namespace WinformsMicrosoft
                     MessageBox.Show("Что-то пошло не так посмотрите настройки программы", "Не найден файл", buttons: MessageBoxButtons.OK, icon: MessageBoxIcon.Error);
                 }
             }
+            catch (FileNotFoundException ex)
+            {
+                MessageBox.Show("Что-то пошло не так посмотрите настройки программы", "Не найден файл", buttons: MessageBoxButtons.OK, icon: MessageBoxIcon.Error);
+            }
             catch (Exception ex)
             {
                 MessageBox.Show("Убедитесь что все поля заполнены!");
