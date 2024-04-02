@@ -31,6 +31,7 @@ namespace WinformsMicrosoft
             panel3.BackColor = ColorTranslator.FromHtml("#A5DD9B");
             panel4.BackColor = ColorTranslator.FromHtml("#A5DD9B");
             panel5.BackColor = ColorTranslator.FromHtml("#F6F193");
+            label56.BackColor = ColorTranslator.FromHtml("#D875C7");
         }
 
         /// <summary>
@@ -122,6 +123,20 @@ namespace WinformsMicrosoft
             complaintsTextBoxMainForm = new TextBox();
             label2 = new Label();
             panel5 = new Panel();
+            ribCageComboBox = new ComboBox();
+            label58 = new Label();
+            label57 = new Label();
+            nasalBreathingTextBox = new TextBox();
+            label56 = new Label();
+            skinSensivityTextBox = new TextBox();
+            label55 = new Label();
+            charmTextBox = new TextBox();
+            label54 = new Label();
+            label53 = new Label();
+            hearingTextBox = new TextBox();
+            label52 = new Label();
+            eyesTextBox = new TextBox();
+            label51 = new Label();
             label50 = new Label();
             lymphNodesTextBox = new TextBox();
             label49 = new Label();
@@ -159,15 +174,10 @@ namespace WinformsMicrosoft
             label34 = new Label();
             generalStatePresentTime = new TextBox();
             label33 = new Label();
-            label51 = new Label();
-            label52 = new Label();
-            eyesTextBox = new TextBox();
-            label53 = new Label();
-            hearingTextBox = new TextBox();
-            label54 = new Label();
-            skinSensivityTextBox = new TextBox();
-            label55 = new Label();
-            charmTextBox = new TextBox();
+            chestBreathingCombobox = new ComboBox();
+            label59 = new Label();
+            muscleBreathingCombobox = new ComboBox();
+            label60 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)abortsNumericUp).BeginInit();
             ((System.ComponentModel.ISupportInitialize)childBearingNumericUp).BeginInit();
@@ -1124,6 +1134,15 @@ namespace WinformsMicrosoft
             // panel5
             // 
             panel5.BackColor = Color.FromArgb(246, 241, 147);
+            panel5.Controls.Add(muscleBreathingCombobox);
+            panel5.Controls.Add(label60);
+            panel5.Controls.Add(chestBreathingCombobox);
+            panel5.Controls.Add(label59);
+            panel5.Controls.Add(ribCageComboBox);
+            panel5.Controls.Add(label58);
+            panel5.Controls.Add(label57);
+            panel5.Controls.Add(nasalBreathingTextBox);
+            panel5.Controls.Add(label56);
             panel5.Controls.Add(skinSensivityTextBox);
             panel5.Controls.Add(label55);
             panel5.Controls.Add(charmTextBox);
@@ -1174,6 +1193,138 @@ namespace WinformsMicrosoft
             panel5.Name = "panel5";
             panel5.Size = new Size(1618, 725);
             panel5.TabIndex = 15;
+            // 
+            // ribCageComboBox
+            // 
+            ribCageComboBox.FormattingEnabled = true;
+            ribCageComboBox.Items.AddRange(new object[] { "цилиндрическая", "эмфизематозная", "впавшая", "деформирована" });
+            ribCageComboBox.Location = new Point(751, 81);
+            ribCageComboBox.Name = "ribCageComboBox";
+            ribCageComboBox.Size = new Size(373, 23);
+            ribCageComboBox.TabIndex = 129;
+            // 
+            // label58
+            // 
+            label58.AutoSize = true;
+            label58.BackColor = Color.FromArgb(64, 162, 216);
+            label58.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label58.Location = new Point(607, 81);
+            label58.Name = "label58";
+            label58.Size = new Size(123, 21);
+            label58.TabIndex = 128;
+            label58.Text = "Грудная клетка:";
+            // 
+            // label57
+            // 
+            label57.AutoSize = true;
+            label57.BackColor = Color.FromArgb(64, 162, 216);
+            label57.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label57.Location = new Point(607, 54);
+            label57.Name = "label57";
+            label57.Size = new Size(139, 21);
+            label57.TabIndex = 127;
+            label57.Text = "Носовое дыхание:";
+            // 
+            // nasalBreathingTextBox
+            // 
+            nasalBreathingTextBox.Location = new Point(751, 54);
+            nasalBreathingTextBox.Name = "nasalBreathingTextBox";
+            nasalBreathingTextBox.Size = new Size(373, 23);
+            nasalBreathingTextBox.TabIndex = 126;
+            // 
+            // label56
+            // 
+            label56.AutoSize = true;
+            label56.BackColor = Color.FromArgb(64, 162, 216);
+            label56.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label56.Location = new Point(773, 16);
+            label56.Name = "label56";
+            label56.Size = new Size(149, 21);
+            label56.TabIndex = 125;
+            label56.Text = "Система дыхания";
+            // 
+            // skinSensivityTextBox
+            // 
+            skinSensivityTextBox.Location = new Point(180, 565);
+            skinSensivityTextBox.Name = "skinSensivityTextBox";
+            skinSensivityTextBox.Size = new Size(373, 23);
+            skinSensivityTextBox.TabIndex = 121;
+            // 
+            // label55
+            // 
+            label55.AutoSize = true;
+            label55.BackColor = Color.FromArgb(242, 193, 141);
+            label55.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label55.Location = new Point(97, 603);
+            label55.Name = "label55";
+            label55.Size = new Size(77, 21);
+            label55.TabIndex = 124;
+            label55.Text = "Обояние:";
+            // 
+            // charmTextBox
+            // 
+            charmTextBox.Location = new Point(180, 605);
+            charmTextBox.Name = "charmTextBox";
+            charmTextBox.Size = new Size(373, 23);
+            charmTextBox.TabIndex = 123;
+            // 
+            // label54
+            // 
+            label54.AutoEllipsis = true;
+            label54.BackColor = Color.FromArgb(242, 193, 141);
+            label54.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label54.Location = new Point(92, 541);
+            label54.Name = "label54";
+            label54.Size = new Size(199, 46);
+            label54.TabIndex = 122;
+            label54.Text = "Чувствительность кожных покровов:";
+            // 
+            // label53
+            // 
+            label53.AutoSize = true;
+            label53.BackColor = Color.FromArgb(242, 193, 141);
+            label53.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label53.Location = new Point(122, 504);
+            label53.Name = "label53";
+            label53.Size = new Size(46, 21);
+            label53.TabIndex = 120;
+            label53.Text = "Слух:";
+            // 
+            // hearingTextBox
+            // 
+            hearingTextBox.Location = new Point(180, 513);
+            hearingTextBox.Name = "hearingTextBox";
+            hearingTextBox.Size = new Size(373, 23);
+            hearingTextBox.TabIndex = 119;
+            // 
+            // label52
+            // 
+            label52.AutoSize = true;
+            label52.BackColor = Color.FromArgb(242, 193, 141);
+            label52.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label52.Location = new Point(122, 467);
+            label52.Name = "label52";
+            label52.Size = new Size(52, 21);
+            label52.TabIndex = 118;
+            label52.Text = "Глаза:";
+            // 
+            // eyesTextBox
+            // 
+            eyesTextBox.Location = new Point(180, 467);
+            eyesTextBox.Name = "eyesTextBox";
+            eyesTextBox.Size = new Size(373, 23);
+            eyesTextBox.TabIndex = 117;
+            // 
+            // label51
+            // 
+            label51.AutoSize = true;
+            label51.BackColor = Color.FromArgb(242, 193, 141);
+            label51.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label51.Location = new Point(270, 432);
+            label51.Name = "label51";
+            label51.Size = new Size(127, 21);
+            label51.TabIndex = 116;
+            label51.Text = "Органы чувств";
             // 
             // label50
             // 
@@ -1542,88 +1693,45 @@ namespace WinformsMicrosoft
             label33.TabIndex = 0;
             label33.Text = "СОСТОЯНИЕ БОЛЬНОГО В НАСТОЯЩЕЕ ВРЕМЯ";
             // 
-            // label51
+            // chestBreathingCombobox
             // 
-            label51.AutoSize = true;
-            label51.BackColor = Color.FromArgb(242, 193, 141);
-            label51.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label51.Location = new Point(270, 432);
-            label51.Name = "label51";
-            label51.Size = new Size(127, 21);
-            label51.TabIndex = 116;
-            label51.Text = "Органы чувств";
+            chestBreathingCombobox.FormattingEnabled = true;
+            chestBreathingCombobox.Items.AddRange(new object[] { "цилиндрическая", "эмфизематозная", "впавшая", "деформирована" });
+            chestBreathingCombobox.Location = new Point(910, 109);
+            chestBreathingCombobox.Name = "chestBreathingCombobox";
+            chestBreathingCombobox.Size = new Size(214, 23);
+            chestBreathingCombobox.TabIndex = 131;
             // 
-            // label52
+            // label59
             // 
-            label52.AutoSize = true;
-            label52.BackColor = Color.FromArgb(242, 193, 141);
-            label52.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label52.Location = new Point(122, 467);
-            label52.Name = "label52";
-            label52.Size = new Size(52, 21);
-            label52.TabIndex = 118;
-            label52.Text = "Глаза:";
+            label59.AutoSize = true;
+            label59.BackColor = Color.FromArgb(64, 162, 216);
+            label59.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label59.Location = new Point(607, 111);
+            label59.Name = "label59";
+            label59.Size = new Size(297, 21);
+            label59.TabIndex = 130;
+            label59.Text = "Участие грудной клетки в акте дыхания:";
             // 
-            // eyesTextBox
+            // muscleBreathingCombobox
             // 
-            eyesTextBox.Location = new Point(180, 467);
-            eyesTextBox.Name = "eyesTextBox";
-            eyesTextBox.Size = new Size(373, 23);
-            eyesTextBox.TabIndex = 117;
+            muscleBreathingCombobox.FormattingEnabled = true;
+            muscleBreathingCombobox.Items.AddRange(new object[] { "цилиндрическая", "эмфизематозная", "впавшая", "деформирована" });
+            muscleBreathingCombobox.Location = new Point(847, 141);
+            muscleBreathingCombobox.Name = "muscleBreathingCombobox";
+            muscleBreathingCombobox.Size = new Size(277, 23);
+            muscleBreathingCombobox.TabIndex = 133;
             // 
-            // label53
+            // label60
             // 
-            label53.AutoSize = true;
-            label53.BackColor = Color.FromArgb(242, 193, 141);
-            label53.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label53.Location = new Point(122, 504);
-            label53.Name = "label53";
-            label53.Size = new Size(46, 21);
-            label53.TabIndex = 120;
-            label53.Text = "Слух:";
-            // 
-            // hearingTextBox
-            // 
-            hearingTextBox.Location = new Point(180, 513);
-            hearingTextBox.Name = "hearingTextBox";
-            hearingTextBox.Size = new Size(373, 23);
-            hearingTextBox.TabIndex = 119;
-            // 
-            // label54
-            // 
-            label54.AutoEllipsis = true;
-            label54.BackColor = Color.FromArgb(242, 193, 141);
-            label54.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label54.Location = new Point(92, 541);
-            label54.Name = "label54";
-            label54.Size = new Size(199, 46);
-            label54.TabIndex = 122;
-            label54.Text = "Чувствительность кожных покровов:";
-            // 
-            // skinSensivityTextBox
-            // 
-            skinSensivityTextBox.Location = new Point(180, 565);
-            skinSensivityTextBox.Name = "skinSensivityTextBox";
-            skinSensivityTextBox.Size = new Size(373, 23);
-            skinSensivityTextBox.TabIndex = 121;
-            // 
-            // label55
-            // 
-            label55.AutoSize = true;
-            label55.BackColor = Color.FromArgb(242, 193, 141);
-            label55.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label55.Location = new Point(97, 603);
-            label55.Name = "label55";
-            label55.Size = new Size(77, 21);
-            label55.TabIndex = 124;
-            label55.Text = "Обояние:";
-            // 
-            // charmTextBox
-            // 
-            charmTextBox.Location = new Point(180, 605);
-            charmTextBox.Name = "charmTextBox";
-            charmTextBox.Size = new Size(373, 23);
-            charmTextBox.TabIndex = 123;
+            label60.AutoSize = true;
+            label60.BackColor = Color.FromArgb(64, 162, 216);
+            label60.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label60.Location = new Point(607, 143);
+            label60.Name = "label60";
+            label60.Size = new Size(234, 21);
+            label60.TabIndex = 132;
+            label60.Text = "Участие в акте дыхания мышщ:";
             // 
             // Form1
             // 
@@ -1797,5 +1905,14 @@ namespace WinformsMicrosoft
         private Label label52;
         private TextBox eyesTextBox;
         private Label label51;
+        private Label label57;
+        private TextBox nasalBreathingTextBox;
+        private Label label56;
+        private ComboBox ribCageComboBox;
+        private Label label58;
+        private ComboBox chestBreathingCombobox;
+        private Label label59;
+        private ComboBox muscleBreathingCombobox;
+        private Label label60;
     }
 }
