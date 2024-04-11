@@ -4,7 +4,7 @@ using WinformsMicrosoft.WordChanger;
 
 namespace WinformsMicrosoft
 {
-    public partial class Form1 : Form
+    public partial class MainWindowAddPacient : Form
     {
         public CheckBox socialLivingConditionsCheckBox;
         public CheckBox occupationalHazardsCheckbox;
@@ -32,7 +32,9 @@ namespace WinformsMicrosoft
         private string bodyTypeStringData { get; set; } = "";
         private string? wordFilePath;
 
-        public Form1()
+        private string lungsMobilityDownPart;
+
+        public MainWindowAddPacient()
         {
             InitializeComponent();
             panel1.BackColor = ColorTranslator.FromHtml("#C5EBAA");
@@ -41,11 +43,20 @@ namespace WinformsMicrosoft
             panel4.BackColor = ColorTranslator.FromHtml("#A5DD9B");
             panel5.BackColor = ColorTranslator.FromHtml("#F6F193");
             InitializeCheckBoxes();
+            DontDoThis();
             IntializePregnancyCheckBox();
             FalseAll();
             alcoholAge.Value = 18;
             dateTimePicker2.Text = DateTime.Now.ToString("HH:mm");
             wordFilePath = $"{ConfigurationManager.AppSettings["WordFilePath"]}";
+        }
+
+        private void DontDoThis()
+        {
+            DontWrite(chestBreathingCombobox);
+            DontWrite(muscleBreathingCombobox);
+            DontWrite(voiceTremosCombobox);
+            DontWrite(ribCageComboBox);
         }
 
         private void FalseAll()
@@ -68,6 +79,7 @@ namespace WinformsMicrosoft
             childBearingNumericUp.Enabled = false;
             gestationNumericUp.Enabled = false;
             pregnancyProccessingTextBox.Enabled = false;
+            complaintsTextBoxMainForm.Enabled = false;
         }
 
 
@@ -815,6 +827,68 @@ namespace WinformsMicrosoft
             else
             {
                 bodyTypeCheckBoxTemp = null;
+            }
+        }
+
+
+        private void DontWrite(ComboBox combobox)
+        {
+            combobox.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
+        CheckBox lungsMobility;
+        private void lungsMobilityCheckBoxes(object sender, EventArgs e)
+        {
+            CheckBox activeCheckBox = sender as CheckBox;
+
+            if (activeCheckBox.Checked && activeCheckBox != lungsMobility && lungsMobility != null)
+            {
+                lungsMobility.Checked = false;
+            }
+
+            if (activeCheckBox.Checked)
+            {
+                lungsMobility = activeCheckBox;
+                if (lungsMobility.Text == "в норме")
+                {
+                    lungsMobilityDownPart = lungsMobility.Text;
+                    lungsMobilityNumericDown.Enabled = false;
+                }
+                else
+                {
+                    if (lungsMobilityNumericDown.Enabled == false)
+                        lungsMobilityNumericDown.Enabled = true;
+                    lungsMobilityDownPart = $"{lungsMobility.Text} {lungsMobilityNumericDown.Value} см";
+
+                }
+            }
+            else
+            {
+                lungsMobility = null;
+            }
+        }
+
+        private void lungsMobilityNumericDown_ValueChanged(object sender, EventArgs e)
+        {
+            lungsMobilityDownPart = $"{lungsMobility.Text} {lungsMobilityNumericDown.Value} см";
+        }
+
+        private void lowerBordersCombobox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lowerBordersCombobox.Items[lowerBordersCombobox.SelectedIndex].ToString().Equals("др"))
+            {
+                testTexbox.Enabled = false;
+            }
+            else
+            {
+                testTexbox.Enabled = true;
+            }
+        }
+
+        private void lowerBordersCombobox_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (lowerBordersCombobox.SelectedValue == "др")
+            {
+                testTexbox.Enabled = false;
             }
         }
     }

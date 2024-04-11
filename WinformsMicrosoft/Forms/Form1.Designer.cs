@@ -2,7 +2,7 @@
 
 namespace WinformsMicrosoft
 {
-    partial class Form1
+    partial class MainWindowAddPacient
     {
         /// <summary>
         ///  Required designer variable.
@@ -123,15 +123,6 @@ namespace WinformsMicrosoft
             complaintsTextBoxMainForm = new TextBox();
             label2 = new Label();
             panel5 = new Panel();
-            muscleBreathingCombobox = new ComboBox();
-            label60 = new Label();
-            chestBreathingCombobox = new ComboBox();
-            label59 = new Label();
-            ribCageComboBox = new ComboBox();
-            label58 = new Label();
-            label57 = new Label();
-            nasalBreathingTextBox = new TextBox();
-            label56 = new Label();
             skinSensivityTextBox = new TextBox();
             label55 = new Label();
             charmTextBox = new TextBox();
@@ -178,7 +169,28 @@ namespace WinformsMicrosoft
             label34 = new Label();
             generalStatePresentTime = new TextBox();
             label33 = new Label();
+            muscleBreathingCombobox = new ComboBox();
+            label60 = new Label();
+            chestBreathingCombobox = new ComboBox();
+            label59 = new Label();
+            ribCageComboBox = new ComboBox();
+            label58 = new Label();
+            label57 = new Label();
+            nasalBreathingTextBox = new TextBox();
+            label56 = new Label();
             panel6 = new Panel();
+            label65 = new Label();
+            lungsMobilityNumericDown = new NumericUpDown();
+            lungsMobilityAllRightCheckBox = new CheckBox();
+            label64 = new Label();
+            mobilityLungsReducedToCheckBox = new CheckBox();
+            lowerBordersCombobox = new ComboBox();
+            label63 = new Label();
+            lungBiteCombobox = new ComboBox();
+            label62 = new Label();
+            voiceTremosCombobox = new ComboBox();
+            label61 = new Label();
+            testTexbox = new TextBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)abortsNumericUp).BeginInit();
             ((System.ComponentModel.ISupportInitialize)childBearingNumericUp).BeginInit();
@@ -196,6 +208,7 @@ namespace WinformsMicrosoft
             panel2.SuspendLayout();
             panel5.SuspendLayout();
             panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)lungsMobilityNumericDown).BeginInit();
             SuspendLayout();
             // 
             // Change
@@ -1187,95 +1200,6 @@ namespace WinformsMicrosoft
             panel5.Size = new Size(604, 725);
             panel5.TabIndex = 15;
             // 
-            // muscleBreathingCombobox
-            // 
-            muscleBreathingCombobox.FormattingEnabled = true;
-            muscleBreathingCombobox.Items.AddRange(new object[] { "цилиндрическая", "эмфизематозная", "впавшая", "деформирована" });
-            muscleBreathingCombobox.Location = new Point(267, 141);
-            muscleBreathingCombobox.Name = "muscleBreathingCombobox";
-            muscleBreathingCombobox.Size = new Size(277, 23);
-            muscleBreathingCombobox.TabIndex = 133;
-            // 
-            // label60
-            // 
-            label60.AutoSize = true;
-            label60.BackColor = Color.FromArgb(113, 118, 255);
-            label60.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label60.Location = new Point(27, 143);
-            label60.Name = "label60";
-            label60.Size = new Size(234, 21);
-            label60.TabIndex = 132;
-            label60.Text = "Участие в акте дыхания мышщ:";
-            // 
-            // chestBreathingCombobox
-            // 
-            chestBreathingCombobox.FormattingEnabled = true;
-            chestBreathingCombobox.Items.AddRange(new object[] { "цилиндрическая", "эмфизематозная", "впавшая", "деформирована" });
-            chestBreathingCombobox.Location = new Point(330, 109);
-            chestBreathingCombobox.Name = "chestBreathingCombobox";
-            chestBreathingCombobox.Size = new Size(214, 23);
-            chestBreathingCombobox.TabIndex = 131;
-            // 
-            // label59
-            // 
-            label59.AutoSize = true;
-            label59.BackColor = Color.FromArgb(113, 118, 255);
-            label59.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label59.Location = new Point(27, 111);
-            label59.Name = "label59";
-            label59.Size = new Size(297, 21);
-            label59.TabIndex = 130;
-            label59.Text = "Участие грудной клетки в акте дыхания:";
-            // 
-            // ribCageComboBox
-            // 
-            ribCageComboBox.FormattingEnabled = true;
-            ribCageComboBox.Items.AddRange(new object[] { "цилиндрическая", "эмфизематозная", "впавшая", "деформирована" });
-            ribCageComboBox.Location = new Point(171, 81);
-            ribCageComboBox.Name = "ribCageComboBox";
-            ribCageComboBox.Size = new Size(373, 23);
-            ribCageComboBox.TabIndex = 129;
-            // 
-            // label58
-            // 
-            label58.AutoSize = true;
-            label58.BackColor = Color.FromArgb(113, 118, 255);
-            label58.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label58.Location = new Point(27, 81);
-            label58.Name = "label58";
-            label58.Size = new Size(123, 21);
-            label58.TabIndex = 128;
-            label58.Text = "Грудная клетка:";
-            // 
-            // label57
-            // 
-            label57.AutoSize = true;
-            label57.BackColor = Color.FromArgb(113, 118, 255);
-            label57.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label57.Location = new Point(27, 54);
-            label57.Name = "label57";
-            label57.Size = new Size(139, 21);
-            label57.TabIndex = 127;
-            label57.Text = "Носовое дыхание:";
-            // 
-            // nasalBreathingTextBox
-            // 
-            nasalBreathingTextBox.Location = new Point(171, 54);
-            nasalBreathingTextBox.Name = "nasalBreathingTextBox";
-            nasalBreathingTextBox.Size = new Size(373, 23);
-            nasalBreathingTextBox.TabIndex = 126;
-            // 
-            // label56
-            // 
-            label56.AutoSize = true;
-            label56.BackColor = Color.FromArgb(113, 118, 255);
-            label56.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label56.Location = new Point(244, 8);
-            label56.Name = "label56";
-            label56.Size = new Size(149, 21);
-            label56.TabIndex = 125;
-            label56.Text = "Система дыхания";
-            // 
             // skinSensivityTextBox
             // 
             skinSensivityTextBox.Location = new Point(180, 565);
@@ -1726,9 +1650,115 @@ namespace WinformsMicrosoft
             label33.TabIndex = 0;
             label33.Text = "СОСТОЯНИЕ БОЛЬНОГО В НАСТОЯЩЕЕ ВРЕМЯ";
             // 
+            // muscleBreathingCombobox
+            // 
+            muscleBreathingCombobox.FormattingEnabled = true;
+            muscleBreathingCombobox.Items.AddRange(new object[] { "шеи", "межреберий", "плечевого пояса", "втяжение межреберий" });
+            muscleBreathingCombobox.Location = new Point(267, 141);
+            muscleBreathingCombobox.Name = "muscleBreathingCombobox";
+            muscleBreathingCombobox.Size = new Size(277, 23);
+            muscleBreathingCombobox.TabIndex = 133;
+            // 
+            // label60
+            // 
+            label60.AutoSize = true;
+            label60.BackColor = Color.FromArgb(113, 118, 255);
+            label60.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label60.ForeColor = Color.White;
+            label60.Location = new Point(27, 141);
+            label60.Name = "label60";
+            label60.Size = new Size(234, 21);
+            label60.TabIndex = 132;
+            label60.Text = "Участие в акте дыхания мышщ:";
+            // 
+            // chestBreathingCombobox
+            // 
+            chestBreathingCombobox.FormattingEnabled = true;
+            chestBreathingCombobox.Items.AddRange(new object[] { "симметричное", "отстает справа", "отстает слева" });
+            chestBreathingCombobox.Location = new Point(330, 112);
+            chestBreathingCombobox.Name = "chestBreathingCombobox";
+            chestBreathingCombobox.Size = new Size(214, 23);
+            chestBreathingCombobox.TabIndex = 131;
+            // 
+            // label59
+            // 
+            label59.AutoSize = true;
+            label59.BackColor = Color.FromArgb(113, 118, 255);
+            label59.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label59.ForeColor = Color.White;
+            label59.Location = new Point(27, 112);
+            label59.Name = "label59";
+            label59.Size = new Size(297, 21);
+            label59.TabIndex = 130;
+            label59.Text = "Участие грудной клетки в акте дыхания:";
+            // 
+            // ribCageComboBox
+            // 
+            ribCageComboBox.FormattingEnabled = true;
+            ribCageComboBox.Items.AddRange(new object[] { "цилиндрическая", "эмфизематозная", "впавшая", "деформирована" });
+            ribCageComboBox.Location = new Point(171, 83);
+            ribCageComboBox.Name = "ribCageComboBox";
+            ribCageComboBox.Size = new Size(373, 23);
+            ribCageComboBox.TabIndex = 129;
+            // 
+            // label58
+            // 
+            label58.AutoSize = true;
+            label58.BackColor = Color.FromArgb(113, 118, 255);
+            label58.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label58.ForeColor = Color.White;
+            label58.Location = new Point(27, 83);
+            label58.Name = "label58";
+            label58.Size = new Size(123, 21);
+            label58.TabIndex = 128;
+            label58.Text = "Грудная клетка:";
+            // 
+            // label57
+            // 
+            label57.AutoSize = true;
+            label57.BackColor = Color.FromArgb(113, 118, 255);
+            label57.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label57.ForeColor = Color.White;
+            label57.Location = new Point(27, 54);
+            label57.Name = "label57";
+            label57.Size = new Size(139, 21);
+            label57.TabIndex = 127;
+            label57.Text = "Носовое дыхание:";
+            // 
+            // nasalBreathingTextBox
+            // 
+            nasalBreathingTextBox.Location = new Point(171, 54);
+            nasalBreathingTextBox.Name = "nasalBreathingTextBox";
+            nasalBreathingTextBox.Size = new Size(373, 23);
+            nasalBreathingTextBox.TabIndex = 126;
+            // 
+            // label56
+            // 
+            label56.AutoSize = true;
+            label56.BackColor = Color.FromArgb(113, 118, 255);
+            label56.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label56.ForeColor = Color.White;
+            label56.Location = new Point(244, 8);
+            label56.Name = "label56";
+            label56.Size = new Size(149, 21);
+            label56.TabIndex = 125;
+            label56.Text = "Система дыхания";
+            // 
             // panel6
             // 
             panel6.BackColor = Color.FromArgb(123, 201, 255);
+            panel6.Controls.Add(testTexbox);
+            panel6.Controls.Add(label65);
+            panel6.Controls.Add(lungsMobilityNumericDown);
+            panel6.Controls.Add(lungsMobilityAllRightCheckBox);
+            panel6.Controls.Add(label64);
+            panel6.Controls.Add(mobilityLungsReducedToCheckBox);
+            panel6.Controls.Add(lowerBordersCombobox);
+            panel6.Controls.Add(label63);
+            panel6.Controls.Add(lungBiteCombobox);
+            panel6.Controls.Add(label62);
+            panel6.Controls.Add(voiceTremosCombobox);
+            panel6.Controls.Add(label61);
             panel6.Controls.Add(label56);
             panel6.Controls.Add(muscleBreathingCombobox);
             panel6.Controls.Add(label57);
@@ -1743,7 +1773,129 @@ namespace WinformsMicrosoft
             panel6.Size = new Size(671, 735);
             panel6.TabIndex = 134;
             // 
-            // Form1
+            // label65
+            // 
+            label65.AutoSize = true;
+            label65.Location = new Point(425, 281);
+            label65.Name = "label65";
+            label65.Size = new Size(22, 15);
+            label65.TabIndex = 142;
+            label65.Text = "см";
+            // 
+            // lungsMobilityNumericDown
+            // 
+            lungsMobilityNumericDown.Location = new Point(381, 276);
+            lungsMobilityNumericDown.Name = "lungsMobilityNumericDown";
+            lungsMobilityNumericDown.Size = new Size(45, 23);
+            lungsMobilityNumericDown.TabIndex = 141;
+            lungsMobilityNumericDown.ValueChanged += lungsMobilityNumericDown_ValueChanged;
+            // 
+            // lungsMobilityAllRightCheckBox
+            // 
+            lungsMobilityAllRightCheckBox.AutoSize = true;
+            lungsMobilityAllRightCheckBox.Location = new Point(295, 259);
+            lungsMobilityAllRightCheckBox.Name = "lungsMobilityAllRightCheckBox";
+            lungsMobilityAllRightCheckBox.Size = new Size(71, 19);
+            lungsMobilityAllRightCheckBox.TabIndex = 126;
+            lungsMobilityAllRightCheckBox.Text = "в норме";
+            lungsMobilityAllRightCheckBox.UseVisualStyleBackColor = true;
+            lungsMobilityAllRightCheckBox.CheckedChanged += lungsMobilityCheckBoxes;
+            // 
+            // label64
+            // 
+            label64.AutoSize = true;
+            label64.BackColor = Color.FromArgb(113, 118, 255);
+            label64.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label64.ForeColor = Color.White;
+            label64.Location = new Point(28, 258);
+            label64.Name = "label64";
+            label64.Size = new Size(261, 21);
+            label64.TabIndex = 140;
+            label64.Text = "Подвидность нижнего края легких:";
+            // 
+            // mobilityLungsReducedToCheckBox
+            // 
+            mobilityLungsReducedToCheckBox.AutoSize = true;
+            mobilityLungsReducedToCheckBox.Location = new Point(295, 279);
+            mobilityLungsReducedToCheckBox.Name = "mobilityLungsReducedToCheckBox";
+            mobilityLungsReducedToCheckBox.Size = new Size(90, 19);
+            mobilityLungsReducedToCheckBox.TabIndex = 125;
+            mobilityLungsReducedToCheckBox.Text = "снижена до";
+            mobilityLungsReducedToCheckBox.UseVisualStyleBackColor = true;
+            mobilityLungsReducedToCheckBox.CheckedChanged += lungsMobilityCheckBoxes;
+            // 
+            // lowerBordersCombobox
+            // 
+            lowerBordersCombobox.FormattingEnabled = true;
+            lowerBordersCombobox.Items.AddRange(new object[] { "производится одинаково с обеих сторон", "др" });
+            lowerBordersCombobox.Location = new Point(237, 228);
+            lowerBordersCombobox.Name = "lowerBordersCombobox";
+            lowerBordersCombobox.Size = new Size(308, 23);
+            lowerBordersCombobox.TabIndex = 139;
+            lowerBordersCombobox.SelectedIndexChanged += lowerBordersCombobox_SelectedIndexChanged;
+            // 
+            // label63
+            // 
+            label63.AutoSize = true;
+            label63.BackColor = Color.FromArgb(113, 118, 255);
+            label63.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label63.ForeColor = Color.White;
+            label63.Location = new Point(28, 228);
+            label63.Name = "label63";
+            label63.Size = new Size(203, 21);
+            label63.TabIndex = 138;
+            label63.Text = "Опущение нижних границ:";
+            // 
+            // lungBiteCombobox
+            // 
+            lungBiteCombobox.FormattingEnabled = true;
+            lungBiteCombobox.Items.AddRange(new object[] { "производится одинаково с обеих сторон" });
+            lungBiteCombobox.Location = new Point(171, 199);
+            lungBiteCombobox.Name = "lungBiteCombobox";
+            lungBiteCombobox.Size = new Size(373, 23);
+            lungBiteCombobox.TabIndex = 137;
+            // 
+            // label62
+            // 
+            label62.AutoSize = true;
+            label62.BackColor = Color.FromArgb(113, 118, 255);
+            label62.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label62.ForeColor = Color.White;
+            label62.Location = new Point(27, 199);
+            label62.Name = "label62";
+            label62.Size = new Size(138, 21);
+            label62.TabIndex = 136;
+            label62.Text = "Перкуссия легких:";
+            // 
+            // voiceTremosCombobox
+            // 
+            voiceTremosCombobox.FormattingEnabled = true;
+            voiceTremosCombobox.Items.AddRange(new object[] { "производится одинаково с обеих сторон" });
+            voiceTremosCombobox.Location = new Point(198, 170);
+            voiceTremosCombobox.Name = "voiceTremosCombobox";
+            voiceTremosCombobox.Size = new Size(346, 23);
+            voiceTremosCombobox.TabIndex = 135;
+            // 
+            // label61
+            // 
+            label61.AutoSize = true;
+            label61.BackColor = Color.FromArgb(113, 118, 255);
+            label61.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label61.ForeColor = Color.White;
+            label61.Location = new Point(27, 170);
+            label61.Name = "label61";
+            label61.Size = new Size(165, 21);
+            label61.TabIndex = 134;
+            label61.Text = "Голосовое дрожание:";
+            // 
+            // testTexbox
+            // 
+            testTexbox.Location = new Point(254, 351);
+            testTexbox.Name = "testTexbox";
+            testTexbox.Size = new Size(100, 23);
+            testTexbox.TabIndex = 143;
+            // 
+            // MainWindowAddPacient
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -1757,8 +1909,8 @@ namespace WinformsMicrosoft
             Margin = new Padding(4, 3, 4, 3);
             MaximumSize = new Size(6000, 768);
             MinimumSize = new Size(0, 768);
-            Name = "Form1";
-            Text = "Form1";
+            Name = "MainWindowAddPacient";
+            Text = "Добавление пациента";
             WindowState = FormWindowState.Maximized;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -1783,6 +1935,7 @@ namespace WinformsMicrosoft
             panel5.PerformLayout();
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)lungsMobilityNumericDown).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -1928,5 +2081,17 @@ namespace WinformsMicrosoft
         private ComboBox muscleBreathingCombobox;
         private Label label60;
         private Panel panel6;
+        private ComboBox voiceTremosCombobox;
+        private Label label61;
+        private ComboBox lowerBordersCombobox;
+        private Label label63;
+        private ComboBox lungBiteCombobox;
+        private Label label62;
+        private Label label64;
+        private CheckBox lungsMobilityAllRightCheckBox;
+        private CheckBox mobilityLungsReducedToCheckBox;
+        private Label label65;
+        private NumericUpDown lungsMobilityNumericDown;
+        private TextBox testTexbox;
     }
 }

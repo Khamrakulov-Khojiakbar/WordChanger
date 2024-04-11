@@ -66,7 +66,6 @@ C:\Projects\WordChanger\WinformsMicrosoft\bin\Debug\net7.0-windows\Npgsql.Entity
 C:\Projects\WordChanger\WinformsMicrosoft\obj\Debug\net7.0-windows\WinformsMicrosoft.csproj.AssemblyReference.cache
 C:\Projects\WordChanger\WinformsMicrosoft\obj\Debug\net7.0-windows\WinformsMicrosoft.Forms.ComplaintsAddForm.resources
 C:\Projects\WordChanger\WinformsMicrosoft\obj\Debug\net7.0-windows\WinformsMicrosoft.Forms.ComplaintsCrudForm.resources
-C:\Projects\WordChanger\WinformsMicrosoft\obj\Debug\net7.0-windows\WinformsMicrosoft.Form1.resources
 C:\Projects\WordChanger\WinformsMicrosoft\obj\Debug\net7.0-windows\WinformsMicrosoft.Forms.illnessChooseForm.resources
 C:\Projects\WordChanger\WinformsMicrosoft\obj\Debug\net7.0-windows\WinformsMicrosoft.Forms.PainInForm.resources
 C:\Projects\WordChanger\WinformsMicrosoft\obj\Debug\net7.0-windows\WinformsMicrosoft.csproj.GenerateResource.cache
@@ -81,3 +80,4 @@ C:\Projects\WordChanger\WinformsMicrosoft\obj\Debug\net7.0-windows\refint\Winfor
 C:\Projects\WordChanger\WinformsMicrosoft\obj\Debug\net7.0-windows\WinformsMicrosoft.pdb
 C:\Projects\WordChanger\WinformsMicrosoft\obj\Debug\net7.0-windows\WinformsMicrosoft.genruntimeconfig.cache
 C:\Projects\WordChanger\WinformsMicrosoft\obj\Debug\net7.0-windows\ref\WinformsMicrosoft.dll
+C:\Projects\WordChanger\WinformsMicrosoft\obj\Debug\net7.0-windows\WinformsMicrosoft.MainWindowAddPacient.resources
