@@ -57,6 +57,9 @@ namespace WinformsMicrosoft
             DontWrite(muscleBreathingCombobox);
             DontWrite(voiceTremosCombobox);
             DontWrite(ribCageComboBox);
+            DontWrite(lungBiteCombobox);
+            DontWrite(lowerBordersCombobox);
+            DontWrite(ausculatationLungsCombobox);
         }
 
         private void FalseAll()
@@ -833,7 +836,15 @@ namespace WinformsMicrosoft
 
         private void DontWrite(ComboBox combobox)
         {
-            combobox.DropDownStyle = ComboBoxStyle.DropDownList;
+            if(combobox.SelectedItem != null && combobox.SelectedItem.ToString() == "др")
+            {
+                combobox.DropDownStyle = ComboBoxStyle.DropDown;
+            }
+            else
+            {
+                combobox.DropDownStyle = ComboBoxStyle.DropDownList;
+            }
+
         }
         CheckBox lungsMobility;
         private void lungsMobilityCheckBoxes(object sender, EventArgs e)
@@ -872,24 +883,9 @@ namespace WinformsMicrosoft
             lungsMobilityDownPart = $"{lungsMobility.Text} {lungsMobilityNumericDown.Value} см";
         }
 
-        private void lowerBordersCombobox_SelectedIndexChanged(object sender, EventArgs e)
+        private void ausculatationLungs_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (lowerBordersCombobox.Items[lowerBordersCombobox.SelectedIndex].ToString().Equals("др"))
-            {
-                testTexbox.Enabled = false;
-            }
-            else
-            {
-                testTexbox.Enabled = true;
-            }
-        }
-
-        private void lowerBordersCombobox_SelectedValueChanged(object sender, EventArgs e)
-        {
-            if (lowerBordersCombobox.SelectedValue == "др")
-            {
-                testTexbox.Enabled = false;
-            }
+            DontWrite(ausculatationLungsCombobox);
         }
     }
 }

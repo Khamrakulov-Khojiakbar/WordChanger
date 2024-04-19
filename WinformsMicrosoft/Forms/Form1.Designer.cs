@@ -179,6 +179,10 @@ namespace WinformsMicrosoft
             nasalBreathingTextBox = new TextBox();
             label56 = new Label();
             panel6 = new Panel();
+            wheezingCombobo = new ComboBox();
+            label67 = new Label();
+            ausculatationLungsCombobox = new ComboBox();
+            label66 = new Label();
             label65 = new Label();
             lungsMobilityNumericDown = new NumericUpDown();
             lungsMobilityAllRightCheckBox = new CheckBox();
@@ -190,7 +194,10 @@ namespace WinformsMicrosoft
             label62 = new Label();
             voiceTremosCombobox = new ComboBox();
             label61 = new Label();
-            testTexbox = new TextBox();
+            panel7 = new Panel();
+            label68 = new Label();
+            label69 = new Label();
+            comboBox1 = new ComboBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)abortsNumericUp).BeginInit();
             ((System.ComponentModel.ISupportInitialize)childBearingNumericUp).BeginInit();
@@ -209,6 +216,7 @@ namespace WinformsMicrosoft
             panel5.SuspendLayout();
             panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)lungsMobilityNumericDown).BeginInit();
+            panel7.SuspendLayout();
             SuspendLayout();
             // 
             // Change
@@ -357,7 +365,7 @@ namespace WinformsMicrosoft
             panel1.Location = new Point(-1, 0);
             panel1.Margin = new Padding(4, 3, 4, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1719, 725);
+            panel1.Size = new Size(1719, 754);
             panel1.TabIndex = 14;
             // 
             // label32
@@ -1197,7 +1205,7 @@ namespace WinformsMicrosoft
             panel5.Controls.Add(label33);
             panel5.Location = new Point(1717, 0);
             panel5.Name = "panel5";
-            panel5.Size = new Size(604, 725);
+            panel5.Size = new Size(604, 754);
             panel5.TabIndex = 15;
             // 
             // skinSensivityTextBox
@@ -1747,7 +1755,10 @@ namespace WinformsMicrosoft
             // panel6
             // 
             panel6.BackColor = Color.FromArgb(123, 201, 255);
-            panel6.Controls.Add(testTexbox);
+            panel6.Controls.Add(wheezingCombobo);
+            panel6.Controls.Add(label67);
+            panel6.Controls.Add(ausculatationLungsCombobox);
+            panel6.Controls.Add(label66);
             panel6.Controls.Add(label65);
             panel6.Controls.Add(lungsMobilityNumericDown);
             panel6.Controls.Add(lungsMobilityAllRightCheckBox);
@@ -1770,8 +1781,51 @@ namespace WinformsMicrosoft
             panel6.Controls.Add(label59);
             panel6.Location = new Point(2319, 0);
             panel6.Name = "panel6";
-            panel6.Size = new Size(671, 735);
+            panel6.Size = new Size(607, 762);
             panel6.TabIndex = 134;
+            // 
+            // wheezingCombobo
+            // 
+            wheezingCombobo.FormattingEnabled = true;
+            wheezingCombobo.Items.AddRange(new object[] { "везикулярное", "жесткое", "с удлиненным выходом", "ослабленное", "пуэрильное", "др", "нет", "сухие при форсированном выдохе", "рассуянные сухие в умеренном кол-ве", "масса сухих хрипов", "влажные крупнопузырчатые крепитации" });
+            wheezingCombobo.Location = new Point(94, 336);
+            wheezingCombobo.Name = "wheezingCombobo";
+            wheezingCombobo.Size = new Size(450, 23);
+            wheezingCombobo.TabIndex = 146;
+            // 
+            // label67
+            // 
+            label67.AutoSize = true;
+            label67.BackColor = Color.FromArgb(113, 118, 255);
+            label67.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label67.ForeColor = Color.White;
+            label67.Location = new Point(28, 337);
+            label67.Name = "label67";
+            label67.Size = new Size(60, 21);
+            label67.TabIndex = 145;
+            label67.Text = "Хрипы:";
+            // 
+            // ausculatationLungsCombobox
+            // 
+            ausculatationLungsCombobox.FormattingEnabled = true;
+            ausculatationLungsCombobox.Items.AddRange(new object[] { "везикулярное", "жесткое", "с удлиненным выходом", "ослабленное", "пуэрильное", "др" });
+            ausculatationLungsCombobox.Location = new Point(261, 309);
+            ausculatationLungsCombobox.Name = "ausculatationLungsCombobox";
+            ausculatationLungsCombobox.Size = new Size(283, 23);
+            ausculatationLungsCombobox.TabIndex = 144;
+            ausculatationLungsCombobox.SelectedIndexChanged += ausculatationLungs_SelectedIndexChanged;
+            // 
+            // label66
+            // 
+            label66.AutoSize = true;
+            label66.BackColor = Color.FromArgb(113, 118, 255);
+            label66.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label66.ForeColor = Color.White;
+            label66.Location = new Point(28, 310);
+            label66.Name = "label66";
+            label66.Size = new Size(227, 21);
+            label66.TabIndex = 143;
+            label66.Text = "Аускультация легких: дыхание";
             // 
             // label65
             // 
@@ -1809,9 +1863,9 @@ namespace WinformsMicrosoft
             label64.ForeColor = Color.White;
             label64.Location = new Point(28, 258);
             label64.Name = "label64";
-            label64.Size = new Size(261, 21);
+            label64.Size = new Size(264, 21);
             label64.TabIndex = 140;
-            label64.Text = "Подвидность нижнего края легких:";
+            label64.Text = "Подвижность нижнего края легких:";
             // 
             // mobilityLungsReducedToCheckBox
             // 
@@ -1832,7 +1886,6 @@ namespace WinformsMicrosoft
             lowerBordersCombobox.Name = "lowerBordersCombobox";
             lowerBordersCombobox.Size = new Size(308, 23);
             lowerBordersCombobox.TabIndex = 139;
-            lowerBordersCombobox.SelectedIndexChanged += lowerBordersCombobox_SelectedIndexChanged;
             // 
             // label63
             // 
@@ -1888,12 +1941,48 @@ namespace WinformsMicrosoft
             label61.TabIndex = 134;
             label61.Text = "Голосовое дрожание:";
             // 
-            // testTexbox
+            // panel7
             // 
-            testTexbox.Location = new Point(254, 351);
-            testTexbox.Name = "testTexbox";
-            testTexbox.Size = new Size(100, 23);
-            testTexbox.TabIndex = 143;
+            panel7.BackColor = Color.FromArgb(92, 84, 112);
+            panel7.Controls.Add(comboBox1);
+            panel7.Controls.Add(label69);
+            panel7.Controls.Add(label68);
+            panel7.Location = new Point(2926, -7);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(607, 769);
+            panel7.TabIndex = 135;
+            // 
+            // label68
+            // 
+            label68.AutoSize = true;
+            label68.BackColor = Color.FromArgb(185, 180, 199);
+            label68.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label68.ForeColor = Color.Black;
+            label68.Location = new Point(174, 14);
+            label68.Name = "label68";
+            label68.Size = new Size(287, 21);
+            label68.TabIndex = 147;
+            label68.Text = "СЕРДЕЧНО-СОСУДИСТАЯ СИСТЕМА";
+            // 
+            // label69
+            // 
+            label69.AutoSize = true;
+            label69.BackColor = Color.FromArgb(185, 180, 199);
+            label69.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label69.ForeColor = Color.Black;
+            label69.Location = new Point(44, 74);
+            label69.Name = "label69";
+            label69.Size = new Size(112, 21);
+            label69.TabIndex = 148;
+            label69.Text = "При осмотре";
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(162, 74);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(400, 23);
+            comboBox1.TabIndex = 149;
             // 
             // MainWindowAddPacient
             // 
@@ -1901,7 +1990,8 @@ namespace WinformsMicrosoft
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             BackColor = Color.MediumTurquoise;
-            ClientSize = new Size(3670, 729);
+            ClientSize = new Size(3844, 729);
+            Controls.Add(panel7);
             Controls.Add(panel6);
             Controls.Add(panel5);
             Controls.Add(textBox1);
@@ -1936,6 +2026,8 @@ namespace WinformsMicrosoft
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)lungsMobilityNumericDown).EndInit();
+            panel7.ResumeLayout(false);
+            panel7.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -2092,6 +2184,13 @@ namespace WinformsMicrosoft
         private CheckBox mobilityLungsReducedToCheckBox;
         private Label label65;
         private NumericUpDown lungsMobilityNumericDown;
-        private TextBox testTexbox;
+        private ComboBox ausculatationLungsCombobox;
+        private Label label66;
+        private ComboBox wheezingCombobo;
+        private Label label67;
+        private Panel panel7;
+        private Label label68;
+        private ComboBox comboBox1;
+        private Label label69;
     }
 }
