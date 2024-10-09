@@ -8,6 +8,9 @@ namespace WinformsMicrosoft
     {
         public CheckBox socialLivingConditionsCheckBox;
         public CheckBox occupationalHazardsCheckbox;
+
+        private string? wordFilePath;
+
         private string retiredStringData = "НЕ НА ПЕНСИИ";
         private string disabilityStringData = "НЕТ ИНВАЛИДНОСТИ";
         private string smokigStringData = "НЕ КУРИТ";
@@ -29,14 +32,77 @@ namespace WinformsMicrosoft
         private string pacientHeightStringData = "";
         private string consciousStringData = "";
         private string positionStringData = "";
-        private string bodyTypeStringData { get; set; } = "";
-        private string? wordFilePath;
+        private string bodyTypeStringData = "";
+        public string skinCoverStringData { get; set; }
+        public string subSkinCoverStringData { get; set; }
+        public string lungsMobilityDownPart { get; set; }
+        private string nasalBreathingStringData = "";
+        private string lymphNodesStringData = "";
+        public string jointsStringData { get; set; }
+        public string bonesStringData { get; set; }
+        public string musculesStringData { get; set; }
+        public string hearingStringData { get; set; }
+        public string eyesStringData { get; set; }
+        public string skinSensivityStringData { get; set; }
+        public string charmStringData { get; set; }
+        public string ribCageStringData { get; set; }
+        public string chestBreathingStringData { get; set; }
+        public string muscleBreathingStringData { get; set; }
+        public string voiceTremosStringData { get; set; }
+        public string lungBiteStringData { get; set; }
+        public string lowerBordersStringData { get; set; }
+        public string lungsMobitlityStringData { get; set; }
+        public string ausculatationLungsStringData { get; set; }
+        public string wheezingStringData { get; set; }
+        public string heartExamStringData { get; set; }
+        public string precordialPulsationStringData { get; set; }
+        public string epigastricPulsationStringData { get; set; }
+        public string pulsationVisibleStringData { get; set; }
+        public string cyanosisStringData { get; set; }
+        public string neckVeinsSwellingStringData { get; set; }
+        public string rightHeartBorderStringData { get; set; }
+        public string leftHeartBorderStringData { get; set; }
+        public string topHeartBorderStringData { get; set; }
+        public string ausculatationHeartStringData { get; set; }
+        public string systolicNoiseStringData { get; set; }
+        public string flapValveStringData { get; set; }
+        public string leftEdgeSternumStringData { get; set; }
+        public string dystonicNoiseStringData { get; set; }
+        public string pulmonaryArteryStringData { get; set; }
+        public string systolicAndDistonicNoisesStringData { get; set; }
+        public string veinsStringData { get; set; }
+        public string pulseRhytmStringData { get; set; }
+        public string frequencyStringData { get; set; }
+        public string heartRateDeficitStringData { get; set; }
+        public string bloodPressureStringData { get; set; }
+        public string umbilicalAreaNoiseStringData { get; set; }
+        public string slizistayaPolostiRtaStringData { get; set; }
+        public string teethStringData { get; set; }
+        public string pharynxStringData { get; set; }
+        public string tonsilsStringData { get; set; }
+        public string stomachStringData { get; set; }
+        public string liverStringData { get; set; }
+        public string priPalpaciiKrayStringData { get; set; }
+        public string priPalpaciiPoverhStringData { get; set; }
+        public string boleznennostStringData { get; set; }
+        public string konsitenciaStringData { get; set; }
+        public string simptomyJelchnogoPuzyryaStringData { get; set; }
+        public string podJeludochnyaJelezaStringData { get; set; }
+        public string selezenkaGranicStringData { get; set; }
+        public string nijnyayaGranicaStringData { get; set; }
+        public string priPalpaciiKraySelezenkaStringData { get; set; }
+        public string priPalpaciiPoverhnostSelezenkaStringData { get; set; }
+        public string boleznennocstSelezenkaStringData { get; set; }
+        public string konsistenciaSelezenkaStringData { get; set; }
+        public string stulSoSlovStringData { get; set; }
+        public string palpaciyaCheckBoxStringData { get; set; }
 
-        private string lungsMobilityDownPart;
+
 
         public MainWindowAddPacient()
         {
             InitializeComponent();
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             panel1.BackColor = ColorTranslator.FromHtml("#C5EBAA");
             panel2.BackColor = ColorTranslator.FromHtml("#A5DD9B");
             panel3.BackColor = ColorTranslator.FromHtml("#A5DD9B");
@@ -85,6 +151,10 @@ namespace WinformsMicrosoft
             complaintsTextBoxMainForm.Enabled = false;
         }
 
+        private void FillAll()
+        {
+
+        }
 
         #region CheckBoxChangesMethods
 
@@ -184,6 +254,7 @@ namespace WinformsMicrosoft
             string time = DateTime.Now.ToString("ddMMyyyyHHmm");
             try
             {
+                FillStrings();
                 if (!string.IsNullOrEmpty(wordFilePath))
                 {
 
@@ -191,14 +262,15 @@ namespace WinformsMicrosoft
                     var helper = new WordHelper(wordFilePath);
                     var items = new Dictionary<string, string>
                 {
+                    #region Fields program first page
                         {"<FIO>", textBox1.Text },
                         {"<BD>", dateTimePicker1.Text },
                         {"<DTN>", DateTime.Now.ToString("dd.MM.yyyy") },
                         {"<Time>", DateTime.Now.ToString("HH:mm") },
                         {"<COMPL>", complaintsTextBoxMainForm.Text },
                         {"<PAIN1>", painsMainTextBox.Text },
-                        {"<morbi>",  anamnesismorbiTextBox.Text},
-                        {"<vitae>",  anamnesisVitaeTextBox.Text},
+                        {"morbi",  anamnesismorbiTextBox.Text},
+                        {"vitae",  anamnesisVitaeTextBox.Text},
                         {"<SLC>", $"({socialLivingConditionsCheckBox.Text})" },
                         {"<occupationalHazards>", $"({occupationalHazardsCheckbox.Text}) {occupationalHazardsTextBox.Text}" },
                         {"<retired>", retiredStringData },
@@ -208,42 +280,132 @@ namespace WinformsMicrosoft
                         {"<pastillness>", pastIllness },
                         {"<zimoticdiseases>", zimoticdiseasesString },
                         {"<allergyHistory>", allergyHistoryStringData},
-                        {"<pregnancyData>", $"{pregnancyStringData} ({pregnancyCheckBoxStringData})" },
+                        {"<pregnancyData>", $"{pregnancyStringData}" },
+                        {"<pregnancyDataCheckBox>", pregnancyCheckBoxStringData},
                         {"<climatericNum>", climatericStringData },
                         {"<gestationData>", gestationNumericStringData },
                         {"<childBearingData>", childBearingStringData },
                         {"<abortsData>", abortsNumericStringData },
                         {"<pregnancyProccessing>", pregnancyProcessStringData },
                         {"<breasts>", breastsStringData },
+                    #endregion
+
+                    #region Sostoyanie bolnogo
                         {"<generalCondition>", generalConditionStringData},
                         {"<bodyT>", bodytemperatureStringData},
                         {"<weightP>", pacientWeightStringData},
                         {"<heightP>", pacientHeightStringData},
                         {"<pacientConscious>", consciousStringData},
                         {"<pacientPosition>", positionStringData},
-                        {"<bodyType>", bodyTypeStringData }
-                        //{"<climatericNum>", climatericStringData}
+                        {"<bodyType>", bodyTypeStringData },
+                        {"<skinCover>", skinCoverStringData},
+                        {"<subSkinTissue>", subSkinCoverStringData},
+                        {"<nails>", nailsTextBox.Text},
+                        {"<muscules>", musculesStringData},
+                        {"<bones>", bonesStringData},
+                        {"<joints>", jointsStringData},
+                        {"<lymphNodes>", lymphNodesStringData},
+                        {"<eyes>", eyesStringData},
+                        {"<hearing>", hearingStringData},
+                        {"<skinSensivity>", skinSensivityStringData},
+                    #endregion
+
+                    #region Sistema Dyhaniya
+                        {"<nasalBreathing>", nasalBreathingStringData},
+                        {"<ribCage>", ribCageStringData},
+                        {"<chestBreathing>", chestBreathingStringData},
+                        {"<muscleBreathing>", muscleBreathingStringData},
+                        {"<voiceTremos>", voiceTremosStringData},
+                        {"<lungBite>", lungBiteStringData},
+                        {"<lowerBorders>", lowerBordersStringData},
+                        {"<lungsMobilityDownPart>", lungsMobilityDownPart},
+                        {"<ausculatationData>", ausculatationHeartStringData},
+                        {"<wheezingData>", wheezingStringData},
+                    #endregion
+
+                    #region Serdechno-Sosudistaya sistema
+                        {"<heartExam>", heartExamStringData},
+                        {"<precordialPulsation>", precordialPulsationStringData},
+                        {"<epicgastricPulsation>", epigastricPulsationStringData},
+                        {"<pulsationVisible>", pulsationVisibleStringData},
+                        {"<cyanosisData>", cyanosisStringData},
+                        {"<neckveinsSwelling>", neckVeinsSwellingStringData},
+                        //{"<>"}
+                        {"<ausculatationHeaart>", ausculatationHeartStringData},
+                        {"<systolicNoise>", systolicNoiseStringData},
+                        {"<dystonicNoise>", dystonicNoiseStringData},
+                        {"<pulmonaryArtery>", pulmonaryArteryStringData},
+                        {"systolicAndDistonicNoises", systolicAndDistonicNoisesStringData},
+                        {"<flapValve>", flapValveStringData},
+                        {"<leftEdgeSternum>", leftEdgeSternumStringData},
+                        //{}
+                        {"<veinsData>", veinsStringData},
+                        {"<pulseRhytm>", pulseRhytmStringData},
+                        {"<freq>", frequencyStringData},
+                        {"<hrd>", heartRateDeficitStringData},
+                        {"<bloodPressure>", bloodPressureStringData},
+                        {"<umAreaNoise>", umbilicalAreaNoiseStringData},
+
                         
+
+                    #endregion
+
+                    #region Sistema-pishevareniya
+
+                        {"<slizistayaPolos>", slizistayaPolostiRtaStringData},
+                        {"<teeth>", teethStringData},
+                        {"<tongue>", },
+                        {"<pharynx>", pharynxStringData},
+                        {"<tonsils>", tonsilsStringData},
+                        {"<stomachData>", stomachStringData},
+                        {"<liverData>", liverStringData},
+                        {"<liverU>", liverUpNUm.ToString()},
+                        {"<dn>", liverDownNum.ToString()},
+                        {"<ln>", liverLeftNum.ToString()},
+                        {"<livPal>", priPalpaciiKrayStringData},
+                        {"<livPov>", priPalpaciiPoverhStringData},
+                        {"<livbol>", boleznennostStringData},
+                        {"<livKon>", konsitenciaStringData},
+                        {"<palpacChkBox>", palpaciyaCheckBoxStringData},
+                        {"<symptJelch>", simptomyJelchnogoPuzyryaStringData},
+                        {"<>", },
+                        {"<>", },
+                        {"<>", },
+                        {"<>", },
+                        {"<>", },
+
+
+
+                    #endregion
+
+
+
+
 
                 };
 
                     //helper.FIOForFile = textBox1.Text + DateTime.Now.ToString(" dd_MM_yyyy HH:mm");
                     helper.FIOForFile = textBox1.Text;
                     helper.FIOForFile += $" {time}";
+
+                    string documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                    string appFolderPath = Path.Combine(documentsPath, "Пациенты Авангард");
+
                     helper.Process(items);
+                    System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo($"{appFolderPath}/{helper.FIOForFile + ".docx"}") { UseShellExecute = true }); ;
                 }
                 else
                 {
-                    MessageBox.Show("Что-то пошло не так посмотрите настройки программы", "Не найден файл", buttons: MessageBoxButtons.OK, icon: MessageBoxIcon.Error);
+                    MessageBox.Show("Возможно указан не верный путь к файлу", "Не найден файл", buttons: MessageBoxButtons.OK, icon: MessageBoxIcon.Error);
                 }
             }
             catch (FileNotFoundException ex)
             {
-                MessageBox.Show("Что-то пошло не так посмотрите настройки программы", "Не найден файл", buttons: MessageBoxButtons.OK, icon: MessageBoxIcon.Error);
+                MessageBox.Show($"FileNotFound Error: {ex.Message}", "Не найден файл", buttons: MessageBoxButtons.OK, icon: MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Убедитесь что все поля заполнены!");
+                MessageBox.Show(ex.Message);
             }
 
 
@@ -523,7 +685,7 @@ namespace WinformsMicrosoft
         #endregion
 
 
-
+        #region
         private void zimoticdeseasesTextBox_TextChanged(object sender, EventArgs e)
         {
             if (zimoticdeseasesTextBox.Text != "ОТРИЦАЕТ")
@@ -836,7 +998,7 @@ namespace WinformsMicrosoft
 
         private void DontWrite(ComboBox combobox)
         {
-            if(combobox.SelectedItem != null && combobox.SelectedItem.ToString() == "др")
+            if (combobox.SelectedItem != null && combobox.SelectedItem.ToString() == "др")
             {
                 combobox.DropDownStyle = ComboBoxStyle.DropDown;
             }
@@ -846,6 +1008,7 @@ namespace WinformsMicrosoft
             }
 
         }
+        #endregion
         CheckBox lungsMobility;
         private void lungsMobilityCheckBoxes(object sender, EventArgs e)
         {
@@ -887,5 +1050,178 @@ namespace WinformsMicrosoft
         {
             DontWrite(ausculatationLungsCombobox);
         }
+
+        private void furtherOpenButton_Click(object sender, EventArgs e)
+        {
+            SecondInfoMenu secondInfoMenu = new SecondInfoMenu();
+            secondInfoMenu.Show();
+        }
+
+        private void nasalBreathingTextBox_TextChanged(object sender, EventArgs e)
+        {
+            nasalBreathingStringData = nasalBreathingTextBox.Text;
+        }
+
+        private void lymphNodesTextBox_TextChanged(object sender, EventArgs e)
+        {
+            lymphNodesStringData = lymphNodesTextBox.Text;
+        }
+
+        private void jointsTextBox_TextChanged(object sender, EventArgs e)
+        {
+            //jointsStringData = jointsTextBox.Text;
+        }
+
+        private void bonesTextBox_TextChanged(object sender, EventArgs e)
+        {
+            //bonesStringData = bonesTextBox.Text;
+        }
+
+        private void musculesTextBox_TextChanged(object sender, EventArgs e)
+        {
+            //musculesStringData = musculesTextBox.Text;
+        }
+
+        private void eyesTextBox_TextChanged(object sender, EventArgs e)
+        {
+            // eyesStringData = eyesTextBox.Text;
+        }
+
+        private void hearingTextBox_TextChanged(object sender, EventArgs e)
+        {
+            //  hearingStringData = hearingTextBox.Text;
+        }
+
+        private void skinSensivityTextBox_TextChanged(object sender, EventArgs e)
+        {
+            // skinSensivityStringData = skinSensivityTextBox.Text;
+        }
+
+        private void charmTextBox_TextChanged(object sender, EventArgs e)
+        {
+            // charmStringData = charmTextBox.Text;
+        }
+
+        private void ribCageComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //ribCageStringData = ribCageComboBox.SelectedIndex.ToString();
+        }
+
+        private void chestBreathingCombobox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            chestBreathingStringData = chestBreathingCombobox.SelectedIndex.ToString();
+        }
+
+
+
+
+        private  void FillStrings()
+        {
+                skinCoverStringData = skinCoverTextBox.Text;
+                subSkinCoverStringData = subSkinTissueTextBox.Text;
+                lymphNodesStringData = lymphNodesTextBox.Text;
+                nasalBreathingStringData = nasalBreathingTextBox.Text;
+                jointsStringData = jointsTextBox.Text;
+                bonesStringData = bonesTextBox.Text;
+                musculesStringData = musculesTextBox.Text;
+                hearingStringData = hearingTextBox.Text;
+                eyesStringData = eyesTextBox.Text;
+                skinSensivityStringData = skinSensivityTextBox.Text;
+                charmStringData = charmTextBox.Text;
+                ribCageStringData = ribCageComboBox.SelectedIndex.ToString();
+                chestBreathingStringData = chestBreathingCombobox.SelectedIndex.ToString();
+                muscleBreathingStringData = muscleBreathingCombobox.SelectedIndex.ToString();
+                voiceTremosStringData = voiceTremosCombobox.SelectedIndex.ToString();
+                lungBiteStringData = lungBiteCombobox.SelectedIndex.ToString();
+                lowerBordersStringData = lowerBordersCombobox.SelectedIndex.ToString();
+                ausculatationLungsStringData = ausculatationLungsCombobox.SelectedIndex.ToString();
+                wheezingStringData = wheezingCombobo.SelectedIndex.ToString();
+                heartExamStringData = heartExamCombobo.SelectedIndex.ToString();
+                precordialPulsationStringData = precordialPulsationCombobox.SelectedIndex.ToString();
+                epigastricPulsationStringData = epigastricPulsationCombobox.SelectedIndex.ToString();
+                pulsationVisibleStringData = pulsationVisibleCombobox.SelectedIndex.ToString();
+                cyanosisStringData = cyanosisCombobox.SelectedIndex.ToString();
+                neckVeinsSwellingStringData = neckVeinsSwellingCombobox.SelectedIndex.ToString();
+                rightHeartBorderStringData = rightHeartBorderTextBox.Text;
+                leftHeartBorderStringData = leftHeartBorderTextBox.Text;
+                topHeartBorderStringData = topHeartBordertextBox.Text;
+                ausculatationHeartStringData = ausculatationHeartCombobox.SelectedIndex.ToString();
+                systolicNoiseStringData = systolicNoiseCombobox.SelectedIndex.ToString();
+                flapValveStringData = flapValveTextBox.Text;
+                leftEdgeSternumStringData = leftEdgeSternumTextBox.Text;
+                dystonicNoiseStringData = dystonicNoiseCombobox.SelectedIndex.ToString();
+                pulmonaryArteryStringData = pulmonaryArteryCombobox.SelectedIndex.ToString();
+                systolicAndDistonicNoisesStringData = systolicAndDistonicNoisesCombobox.SelectedIndex.ToString();
+                veinsStringData = veinsTextBox.Text;
+                pulseRhytmStringData = pulseRhytmTextBox.Text;
+                frequencyStringData = frequencyTextBox.Text;
+                heartRateDeficitStringData = heartRateDeficitTextBox.Text;
+                bloodPressureStringData = $"{bloodPressureTextBox.Text}/{bloodPressure2TextBox.Text} ";
+                umbilicalAreaNoiseStringData = umbilicalAreaNoiseTextBox.Text;
+                slizistayaPolostiRtaStringData = slizistayaPolostiRtaCombobox.SelectedIndex.ToString();
+                teethStringData = teethTextBox.Text;
+                pharynxStringData = pharynxTextBox.Text;
+                tonsilsStringData = tonsilsTextBox.Text;
+                stomachStringData = $"{stomachCombobox.SelectedIndex.ToString()} {stomachCombobox1.SelectedIndex.ToString()} {stomachCombobox2.SelectedIndex.ToString()}";
+                liverStringData = liverCombobox.SelectedIndex.ToString();
+                priPalpaciiKrayStringData = priPalpaciiKrayCombobox.SelectedIndex.ToString();
+                priPalpaciiPoverhStringData = priPalpaciiPovernostCombobox.SelectedIndex.ToString();
+                boleznennostStringData = boleznennostCombobox.SelectedIndex.ToString();
+                konsitenciaStringData = konsitenciaCombobox.SelectedIndex.ToString();
+                simptomyJelchnogoPuzyryaStringData = simptomyJelchnogoPuzyryaCombobox.SelectedIndex.ToString();
+                podJeludochnyaJelezaStringData = podJeludochnyaJelezaCombobox.SelectedIndex.ToString();
+                selezenkaGranicStringData = selezenkaGranicCombobox.SelectedIndex.ToString();
+                nijnyayaGranicaStringData = nijnyayaGranicaCombobox.SelectedIndex.ToString();
+                priPalpaciiKraySelezenkaStringData = priPalpaciiKrayCombobox.SelectedIndex.ToString();
+                priPalpaciiPoverhnostSelezenkaStringData = priPalpaciiPoverhnostSelezenkaCombobox.SelectedIndex.ToString();
+                boleznennocstSelezenkaStringData = boleznennocstSelezenkaCombobox.SelectedIndex.ToString();
+                konsistenciaSelezenkaStringData = konsistenciaSelezenkaCombobox.SelectedIndex.ToString();
+                stulSoSlovStringData = stulSoSlovCombobox.SelectedIndex.ToString();
+                palpaciyaCheckBoxStringData = "пальпируется";
+        }
+        CheckBox palpaciyaChkBoxTemp;
+        private void palpaciyaCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckBox activeCheckBox = sender as CheckBox;
+
+            if(activeCheckBox.Checked && activeCheckBox != palpaciyaChkBoxTemp && palpaciyaChkBoxTemp != null)
+            {
+                palpaciyaChkBoxTemp.Checked = false;
+            }
+
+            if(activeCheckBox.Checked)
+            {
+                palpaciyaChkBoxTemp = activeCheckBox;
+                palpaciyaCheckBoxStringData = palpaciyaChkBoxTemp.Text.ToUpper();
+            }
+            else
+            {
+                palpaciyaChkBoxTemp = null;
+            }
+        }
+
+        public string SCM_urineAmountStringData { get; set; }
+        public string SCM_bladderStringData { get; set; }
+        public string SCM_urinationStringData { get; set; }
+        public string SCM_kidneyPalpationStringData { get; set; }
+        public string SCM_urineColorStringData { get; set; }
+        public string SCM_thyroidPalpableStringData { get; set; }
+        public string SCM_thyroidSizeStringData { get; set; }
+        public string SCM_thyroidNodelusStringData { get; set; }
+        public string SCM_FeelingStringData { get; set; }
+        public string SCM_Feeling2StringData { get; set; }
+        public string SCM_memoryStringData { get; set; }
+        public string SCM_intelligenceStringData { get; set; }
+        public string SCM_speechStringData { get; set; }
+        public string SCM_gaitStringData { get; set; }
+        public string SCM_pathologicalReflexesStringData { get; set; }
+        public string SCM_dermographsimStringData { get; set; }
+        public string SCM_dermographsim2StringData { get; set; }
+        public string SCM_rombergPoseStringData { get; set; }
+
+        public string SCM_rombergPose2StringData { get; set; }
+
+
+
     }
 }

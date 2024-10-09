@@ -1,4 +1,5 @@
-﻿using Word = Microsoft.Office.Interop.Word;
+﻿using WinformsMicrosoft.Forms;
+using Word = Microsoft.Office.Interop.Word;
 
 namespace WinformsMicrosoft.WordChanger
 {
@@ -6,6 +7,8 @@ namespace WinformsMicrosoft.WordChanger
     {
         private FileInfo _fileInfo;
         public string FIOForFile;
+        
+
 
         public WordHelper(string fileName)
         {
@@ -30,7 +33,10 @@ namespace WinformsMicrosoft.WordChanger
                 {
                     Directory.CreateDirectory(appFolderPath);
                 }
+                ProgressBarForm progressBarForm = new ProgressBarForm();
+                
                 ProgressBar progressBar = new ProgressBar();
+
                 progressBar.Visible = true;
                 progressBar.Show();
                 app = new Word.Application();
@@ -38,30 +44,43 @@ namespace WinformsMicrosoft.WordChanger
 
                 object missing = Type.Missing;
 
-                app.Documents.Open(file);
+                Word.Document doc = app.Documents.Open(file);
                 int i = 0;
+                progressBarForm.Show();
                 foreach (var item in items)
                 {
-                    Word.Find find = app.Selection.Find;
+                    progressBarForm.WorkProgressBar(items.Count, item.Value, item.Key);
+                    if (item.Value.Length > 60)
+                    {
+                        ReplaceBookmarkText(doc, item.Key, item.Value);
+
+                    }
+                    else
+                    {
+
+
+                        Word.Find find = app.Selection.Find;
 
                         find.Replacement.Font.Bold = 1;
                         find.Text = item.Key;
                         find.Replacement.Text = item.Value;
 
-                 
 
-                    object wrap = Word.WdFindWrap.wdFindContinue;
-                    object replace = Word.WdReplace.wdReplaceAll;
 
-                    find.Execute(FindText: Type.Missing,
-                        Wrap: wrap, ReplaceWith: missing, Replace: replace);
+                        object wrap = Word.WdFindWrap.wdFindContinue;
+                        object replace = Word.WdReplace.wdReplaceAll;
 
+                        find.Execute(FindText: Type.Missing,
+                            Wrap: wrap, ReplaceWith: missing, Replace: replace);
+
+                    }
                     progressBar.Value = items.Count - (items.Count - i);
                     i++;
                 }
 
                 object newFileName = Path.Combine(appFolderPath, FIOForFile);
                 app.ActiveDocument.SaveAs2(newFileName);
+                progressBarForm.Close();
                 MessageBox.Show("Файл успешно создан");
                 return true;
             }
@@ -79,6 +98,18 @@ namespace WinformsMicrosoft.WordChanger
             }
             return false;
 
+        }
+
+        private void ReplaceBookmarkText(Word.Document doc, string bookmarkName, string text)
+        {
+            // Проверяем, существует ли закладка с заданным именем в документе
+            if (doc.Bookmarks.Exists(bookmarkName))
+            {
+                // Получаем закладку по имени
+                var bookmark = doc.Bookmarks[bookmarkName];
+                // Заменяем текст в диапазоне закладки
+                bookmark.Range.Text = text;
+            }
         }
     }
 }

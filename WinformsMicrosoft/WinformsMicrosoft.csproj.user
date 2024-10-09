@@ -19,5 +19,11 @@
     <Compile Update="Forms\PainInForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\ProgressBarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\SecondInfoMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>
